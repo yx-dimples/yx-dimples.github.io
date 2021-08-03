@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
 <meta property="article:published_time" content="2021-08-02T07:42:43.414Z">
-<meta property="article:modified_time" content="2021-08-02T09:54:16.598Z">
+<meta property="article:modified_time" content="2021-08-03T02:12:14.292Z">
 <meta property="article:author" content="dimples">
 <meta property="article:tag" content="MongoDB">
 <meta name="twitter:card" content="summary">
@@ -58,7 +58,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2021-08-02 17:54:16'
+  postUpdate: '2021-08-03 10:12:14'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -147,13 +147,61 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/static-butterfly/dist/css/index.min.css"><link rel="stylesheet" href="/css/flipcountdown.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/poem/poem.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="wizard-scene"><div class="wizard-objects"><div class="wizard-square"></div><div class="wizard-circle"></div><div class="wizard-triangle"></div></div><div class="wizard"><div class="wizard-body"></div><div class="wizard-right-arm"><div class="wizard-right-hand"></div></div><div class="wizard-left-arm"><div class="wizard-left-hand"></div></div><div class="wizard-head"><div class="wizard-beard"></div><div class="wizard-face"><div class="wizard-adds"></div></div><div class="wizard-hat"><div class="wizard-hat-of-the-hat"></div><div class="wizard-four-point-star --first"></div><div class="wizard-four-point-star --second"></div><div class="wizard-four-point-star --third"></div></div></div></div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><!--!=partial('includes/header/nav', {}, {cache: true})--><nav id="nav"><span id="blog_name"><a id="site-name" onclick="btf.scrollToDest(0, 500)" data-title="愿你有愉快的一天">MongoDB--文档基本CRUD</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MongoDB--文档基本CRUD</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-02T07:42:43.414Z" title="发表于 2021-08-02 15:42:43">2021-08-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-02T09:54:16.598Z" title="更新于 2021-08-02 17:54:16">2021-08-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MongoDB--文档基本CRUD"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="文档基本CRUD"><a href="#文档基本CRUD" class="headerlink" title="文档基本CRUD"></a>文档基本CRUD</h2><p>文档（document）的数据库和JSON基本一样。<br>所有存储在集合中的数据都是BSON格式</p>
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/static-butterfly/dist/css/index.min.css"><link rel="stylesheet" href="/css/flipcountdown.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/poem/poem.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="wizard-scene"><div class="wizard-objects"><div class="wizard-square"></div><div class="wizard-circle"></div><div class="wizard-triangle"></div></div><div class="wizard"><div class="wizard-body"></div><div class="wizard-right-arm"><div class="wizard-right-hand"></div></div><div class="wizard-left-arm"><div class="wizard-left-hand"></div></div><div class="wizard-head"><div class="wizard-beard"></div><div class="wizard-face"><div class="wizard-adds"></div></div><div class="wizard-hat"><div class="wizard-hat-of-the-hat"></div><div class="wizard-four-point-star --first"></div><div class="wizard-four-point-star --second"></div><div class="wizard-four-point-star --third"></div></div></div></div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><!--!=partial('includes/header/nav', {}, {cache: true})--><nav id="nav"><span id="blog_name"><a id="site-name" onclick="btf.scrollToDest(0, 500)" data-title="愿你有愉快的一天">MongoDB--文档基本CRUD</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MongoDB--文档基本CRUD</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-02T07:42:43.414Z" title="发表于 2021-08-02 15:42:43">2021-08-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-03T02:12:14.292Z" title="更新于 2021-08-03 10:12:14">2021-08-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MongoDB--文档基本CRUD"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="文档基本CRUD"><a href="#文档基本CRUD" class="headerlink" title="文档基本CRUD"></a>文档基本CRUD</h2><p>文档（document）的数据库和JSON基本一样。<br>所有存储在集合中的数据都是BSON格式</p>
 <blockquote>
 <p>“BSON是一种类json的一种二进制形式的存储格式,简称Binary JSON,它和JSON一样,支持内嵌的文档对象和数组对象,但是BSON有JSON没有的一些数据类型,如Date和BinData类型。”</p>
 </blockquote>
 <h3 id="文档的插入"><a href="#文档的插入" class="headerlink" title="文档的插入"></a>文档的插入</h3><p>(1) 单个文档插入<br>使用 <code>insert()</code> 或 <code>save()</code> 方法向集合中插入文档，语法如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.集合名字.insert(</span><br><span class="line">   &lt;document or array od documents&gt;,</span><br><span class="line">   &#123;</span><br><span class="line">       writeConcern: &lt;document&gt;,</span><br><span class="line">       ordered: &lt;boolean&gt;</span><br><span class="line">   &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>参数:<br>| Parameter    | Type              | Description                                        |<br>| ———— | —————– | ————————————————– |<br>| document     | document or array | document：要写入的文档。                           |<br>| writeConcern | document          | 写入策略，默认为 1，即要求确认写操作，0 是不要求。 |<br>| ordered      | boolean           | 指定是否按顺序写入，默认 true，按顺序写入。        |</p>
+<p>参数:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>document</td>
+<td>document or array</td>
+<td>document：要写入的文档。</td>
+</tr>
+<tr>
+<td>writeConcern</td>
+<td>document</td>
+<td>写入策略，默认为 1，即要求确认写操作，0 是不要求。</td>
+</tr>
+<tr>
+<td>ordered</td>
+<td>boolean</td>
+<td>指定是否按顺序写入，默认 true，按顺序写入。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>document</td>
+<td>document or array</td>
+<td>document：要写入的文档。</td>
+</tr>
+<tr>
+<td></td>
+<td>document</td>
+<td>写入策略，默认为 1，即要求确认写操作，0 是不要求。</td>
+</tr>
+<tr>
+<td>ordered</td>
+<td>boolean</td>
+<td>指定是否按顺序写入，默认 true，按顺序写入。</td>
+</tr>
+</tbody></table>
 <p><strong>【示例】</strong><br>要向document的集合（表）中插入一条测试数据:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.document.insert(&#123;&quot;articleid&quot;: &quot;100000&quot;,&quot;content&quot;: &quot;今天天气真好，阳光明媚&quot;,&quot;userid&quot;: &quot;1001&quot;,&quot;nickname&quot;: &quot;Rose&quot;,&quot;createdatetime&quot;: new Date(),&quot;likenum&quot;: NumberInt(10),&quot;state&quot;: null&#125;)</span><br></pre></td></tr></table></figure>
 <p>提示:</p>
@@ -179,7 +227,31 @@
 </ul>
 <p>(2) 批量插入<br>语法如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.集合名字.insertMany(</span><br><span class="line">   [&lt;document1&gt;, &lt;document2&gt;], ...],</span><br><span class="line">   &#123;</span><br><span class="line">       writeConcern: &lt;document&gt;,</span><br><span class="line">       ordered: &lt;boolean&gt;</span><br><span class="line">   &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>参数:<br>| Parameter    | Type              | Description                                        |<br>| ———— | —————– | ————————————————– |<br>| document     | document or array | document：要写入的文档。                           |<br>| writeConcern | document          | 写入策略，默认为 1，即要求确认写操作，0 是不要求。 |<br>| ordered      | boolean           | 指定是否按顺序写入，默认 true，按顺序写入。        |</p>
+<p>参数:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>document</td>
+<td>document or array</td>
+<td>document：要写入的文档。</td>
+</tr>
+<tr>
+<td>writeConcern</td>
+<td>document</td>
+<td>写入策略，默认为 1，即要求确认写操作，0 是不要求。</td>
+</tr>
+<tr>
+<td>ordered</td>
+<td>boolean</td>
+<td>指定是否按顺序写入，默认 true，按顺序写入。</td>
+</tr>
+</tbody></table>
 <p><strong>【示例】</strong><br>批量插入多条文档的评论：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.document.insertMany([</span><br><span class="line">  &#123;&quot;_id&quot;: &quot;1&quot;, &quot;articleid&quot;: &quot;100001&quot;,&quot;content&quot;: &quot;给大家讲一下，这个歌单是私人定制，根据你听的歌来制定的歌单，所以会有你收藏的歌，每个人都不一样的。&quot;,&quot;userid&quot;: &quot;1002&quot;,&quot;nickname&quot;: &quot;春天吃了自己&quot;,&quot;createdatetime&quot;: new Date(&quot;2020-1-19T22:08:15.522z&quot;),&quot;likenum&quot;: NumberInt(1000),&quot;state&quot;: &quot;1&quot;&#125;,</span><br><span class="line">  &#123;&quot;_id&quot;: &quot;2&quot;, &quot;articleid&quot;: &quot;100001&quot;,&quot;content&quot;: &quot;我们收藏的是同一个歌单，听的是不同的歌曲。&quot;,&quot;userid&quot;: &quot;1003&quot;,&quot;nickname&quot;: &quot;景随风&quot;,&quot;createdatetime&quot;: new Date(&quot;2020-1-20T23:23:12.485z&quot;),&quot;likenum&quot;: NumberInt(8888),&quot;state&quot;: &quot;1&quot;&#125;,</span><br><span class="line">  &#123;&quot;_id&quot;: &quot;3&quot;, &quot;articleid&quot;: &quot;100001&quot;,&quot;content&quot;: &quot;有些歌你已经忘了,网易云还帮你记着.&quot;,&quot;userid&quot;: &quot;1004&quot;,&quot;nickname&quot;: &quot;低温低气压&quot;,&quot;createdatetime&quot;: new Date(&quot;2020-2-29-T08:18:35.288z&quot;),&quot;likenum&quot;: NumberInt(999),&quot;state&quot;: &quot;1&quot;&#125;,</span><br><span class="line">  &#123;&quot;_id&quot;: &quot;4&quot;, &quot;articleid&quot;: &quot;100001&quot;,&quot;content&quot;: &quot;今天从《Let Me Love You》听起&quot;,&quot;userid&quot;: &quot;1005&quot;,&quot;nickname&quot;: &quot;银牙不是熊猫&quot;,&quot;createdatetime&quot;: new Date(),&quot;likenum&quot;: NumberInt(),&quot;state&quot;: &quot;1&quot;&#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
 
@@ -189,7 +261,26 @@
 <h3 id="文档的基本查询"><a href="#文档的基本查询" class="headerlink" title="文档的基本查询"></a>文档的基本查询</h3><p>查询数据的语法格式如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.集合名字.find(&lt;query&gt;, &lt;projection&gt;)</span><br></pre></td></tr></table></figure>
 
-<p>参数:<br>| Parameter      | Type              | Description                                        |<br>| ————– | —————– | ————————————————– |<br>| query      | document | 可选，使用查询操作符指定查询条件。           |<br>| projection | document          | 可选，使用投影操作符指定返回的键。查询时返回文档中所有键值， 只需省略该参数即可（默认省略）。 |</p>
+<p>参数:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>query</td>
+<td>document</td>
+<td>可选，使用查询操作符指定查询条件。</td>
+</tr>
+<tr>
+<td>projection</td>
+<td>document</td>
+<td>可选，使用投影操作符指定返回的键。查询时返回文档中所有键值， 只需省略该参数即可（默认省略）。</td>
+</tr>
+</tbody></table>
 <p><strong>【示例】</strong><br>(1) 查询所有<br>如果我们要查询<code>document</code>集合的所有的文档</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.document.find()</span><br><span class="line">或</span><br><span class="line">db.document.find(&#123;&#125;)</span><br></pre></td></tr></table></figure>
 <p>这里你会发现每条文档会有一个叫<code>_id</code>的字段，这个相当于我们原来关系数据中表的主键，当你在插入文档记录时没有指定该字段，MongoDB会自动创建，其类型是ObjectID类型。</p>
@@ -209,7 +300,41 @@
 
 <h3 id="文档的更新"><a href="#文档的更新" class="headerlink" title="文档的更新"></a>文档的更新</h3><p>更新文档的语法：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.集合名字.update(query, update, options)</span><br><span class="line">db.集合名字.update(</span><br><span class="line">   &lt;query&gt;,</span><br><span class="line">   &lt;update&gt;,</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="attr">upsert</span>: &lt;boolean&gt;,</span><br><span class="line">     multi: &lt;boolean&gt;,</span><br><span class="line">     writeConcern: &lt;<span class="built_in">document</span>&gt;</span><br><span class="line">   &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>参数:<br>| Parameter      | Type              | Description                                        |<br>| ————– | —————– | ————————————————– |<br>| query      | document | update的查询条件，类似sql update查询内where后面的。 |<br>| update | document or pipeline | update的对象和一些更新的操作符（如$,$inc…）等，也可以理解为sql update查询内set后面的 |<br>| upsert | boolean | 可选，这个参数的意思是，如果不存在update的记录，是否插入objNew,true为插入，默认是false，不插入。 |<br>| multi | boolean | 可选，mongodb 默认是false,只更新找到的第一条记录，如果这个参数为true,就把按条件查出来多条记录全部更新。 |<br>| writeConcern | document | 可选，抛出异常的级别。 |</p>
+<p>参数:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>query</td>
+<td>document</td>
+<td>update的查询条件，类似sql update查询内where后面的。</td>
+</tr>
+<tr>
+<td>update</td>
+<td>document or pipeline</td>
+<td>update的对象和一些更新的操作符（如$,$inc…）等，也可以理解为sql update查询内set后面的</td>
+</tr>
+<tr>
+<td>upsert</td>
+<td>boolean</td>
+<td>可选，这个参数的意思是，如果不存在update的记录，是否插入objNew,true为插入，默认是false，不插入。</td>
+</tr>
+<tr>
+<td>multi</td>
+<td>boolean</td>
+<td>可选，mongodb 默认是false,只更新找到的第一条记录，如果这个参数为true,就把按条件查出来多条记录全部更新。</td>
+</tr>
+<tr>
+<td>writeConcern</td>
+<td>document</td>
+<td>可选，抛出异常的级别。</td>
+</tr>
+</tbody></table>
 <p><strong>【示例】</strong><br>(1) 覆盖的修改<br>如果我们想修改<code>_id</code>为1的记录，点赞量为<code>1001</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.document.update(&#123;_id: &quot;1&quot;&#125;,&#123;likenum: NumberInt(1001)&#125;)</span><br></pre></td></tr></table></figure>
 <p>执行后，我们发现，这条文档除了<code>likenum</code>字段其它字段都不见了。</p>
@@ -227,7 +352,7 @@
 <p>如果想删除全部数据：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.document.remove(&#123;&#125;)</span><br></pre></td></tr></table></figure>
 <p>如果想删除<code>_id=1</code>的记录：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.document.remove(&#123;_id: &quot;1&quot;&#125;)</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">dimples</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/08/02/MongoDB--%E6%96%87%E6%A1%A3%E5%9F%BA%E6%9C%ACCRUD/">http://example.com/2021/08/02/MongoDB--%E6%96%87%E6%A1%A3%E5%9F%BA%E6%9C%ACCRUD/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">dimplesの酒窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MongoDB/">MongoDB</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/08/02/MongoDB--%E6%96%87%E6%A1%A3%E7%9A%84%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MongoDB--文档的分页查询</div></div></a></div><div class="next-post pull-right"><a href="/2021/08/02/MongoDB--%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MongoDB--集合操作</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/08/02/MongoDB--单机部署/" title="MongoDB---单机部署"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB---单机部署</div></div></a></div><div><a href="/2021/08/02/MongoDB--数据库操作/" title="MongoDB--数据库操作"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB--数据库操作</div></div></a></div><div><a href="/2021/08/02/MongoDB--文档的更多查询/" title="MongoDB--文档的更多查询"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB--文档的更多查询</div></div></a></div><div><a href="/2021/08/02/MongoDB--索引-Index/" title="MongoDB--索引-Index"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB--索引-Index</div></div></a></div><div><a href="/2021/08/02/MongoDB--集合操作/" title="MongoDB--集合操作"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB--集合操作</div></div></a></div><div><a href="/2021/08/02/MongoDB--文档的分页查询/" title="MongoDB--文档的分页查询"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB--文档的分页查询</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">dimples</div><div class="author-info__description">好运加倍</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yx-dimples" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="card-widget" id="card-poem"><div id="poem_sentence"></div><div id="poem_info"><div id="poem_dynasty"></div><div id="poem_author"></div></div></div><script src="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/poem/jinrishici.js" charset="utf-8"></script><script type="text/javascript">jinrishici.load(function(result) {
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.document.remove(&#123;_id: &quot;1&quot;&#125;)</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">dimples</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/08/02/MongoDB--%E6%96%87%E6%A1%A3%E5%9F%BA%E6%9C%ACCRUD/">http://example.com/2021/08/02/MongoDB--%E6%96%87%E6%A1%A3%E5%9F%BA%E6%9C%ACCRUD/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">dimplesの酒窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MongoDB/">MongoDB</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/08/02/MongoDB--%E6%96%87%E6%A1%A3%E7%9A%84%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MongoDB--文档的分页查询</div></div></a></div><div class="next-post pull-right"><a href="/2021/08/02/MongoDB--%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MongoDB--集合操作</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/08/02/MongoDB--数据库操作/" title="MongoDB--数据库操作"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB--数据库操作</div></div></a></div><div><a href="/2021/08/02/MongoDB--单机部署/" title="MongoDB---单机部署"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB---单机部署</div></div></a></div><div><a href="/2021/08/02/MongoDB--文档的分页查询/" title="MongoDB--文档的分页查询"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB--文档的分页查询</div></div></a></div><div><a href="/2021/08/02/MongoDB--文档的更多查询/" title="MongoDB--文档的更多查询"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB--文档的更多查询</div></div></a></div><div><a href="/2021/08/02/MongoDB--索引-Index/" title="MongoDB--索引-Index"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB--索引-Index</div></div></a></div><div><a href="/2021/08/02/MongoDB--集合操作/" title="MongoDB--集合操作"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">MongoDB--集合操作</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">dimples</div><div class="author-info__description">好运加倍</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yx-dimples" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="card-widget" id="card-poem"><div id="poem_sentence"></div><div id="poem_info"><div id="poem_dynasty"></div><div id="poem_author"></div></div></div><script src="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/poem/jinrishici.js" charset="utf-8"></script><script type="text/javascript">jinrishici.load(function(result) {
     var sentence = document.querySelector("#poem_sentence")
     var author = document.querySelector("#poem_author")
     var dynasty = document.querySelector("#poem_dynasty")
