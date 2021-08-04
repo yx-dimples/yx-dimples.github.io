@@ -170,6 +170,50 @@
   </entry>
   <entry>
     <title>Javascript</title>
+    <url>/2021/07/30/JavaScript---data/</url>
+    <content><![CDATA[<h2 id="1-1数据类型"><a href="#1-1数据类型" class="headerlink" title="1-1数据类型"></a>1-1数据类型</h2><h4 id="5种基本类型"><a href="#5种基本类型" class="headerlink" title="5种基本类型"></a>5种基本类型</h4><p>number<br>String<br>boolean<br>undefined<br>null</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">特例：</span><br><span class="line"><span class="comment">/* undefined</span></span><br><span class="line"><span class="comment">  如果声明一个变量没有赋值的情况下，就会输出undefined</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line"></span><br><span class="line"><span class="comment">/* null</span></span><br><span class="line"><span class="comment">   null就是空，不占内存空间</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 声明提前，变量提升 (仅存在ES5中)</span></span><br><span class="line"><span class="comment">    js在执行代码的时候会将所有使用var声明的变量，放在作用域</span></span><br><span class="line"><span class="comment">    的顶部集中创建，赋值留在原地</span></span><br><span class="line"><span class="comment">    var a;</span></span><br><span class="line"><span class="comment">    console.log(a);</span></span><br><span class="line"><span class="comment">    a =20;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="built_in">console</span>.log(a) <span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">//报错</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">20</span>;	</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">30</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*转换成number型*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;12&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">&quot;12.22px&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> num = <span class="built_in">Number</span>(a); <span class="comment">//12</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="built_in">Number</span>(b); <span class="comment">//1</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="built_in">Number</span>(c); <span class="comment">//isNaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(c)) <span class="comment">//12</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(c))	<span class="comment">//12.22</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*转换成String型*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>];</span><br><span class="line"><span class="keyword">var</span> t = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> arr);  <span class="comment">//object,无法判断数组。</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">String</span>(a));   <span class="comment">//方法一</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> t.toString());		<span class="comment">//方法二</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*转换成boolean型*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;tr&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> d = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> e = <span class="literal">NaN</span>;</span><br><span class="line"><span class="keyword">var</span> f = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">Boolean</span>(a); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Boolean</span>(b); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Boolean</span>(c); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Boolean</span>(d); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Boolean</span>(e); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Boolean</span>(f); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 自动转换 隐式转换 </span></span><br><span class="line"><span class="comment">   不需要程序员干预，js自动完成的类型转换</span></span><br><span class="line"><span class="comment">   场景:主要在算术计算中 + - * / %</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">/* 1.在加运算中的自动转换 </span></span><br><span class="line"><span class="comment">算术计算中，先将两边的变量转换为Number再计算</span></span><br><span class="line"><span class="comment">特殊：只要有一边在加运算中碰到字符串，+就作为拼接符的作用</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">&quot;hello&quot;</span> ;</span><br><span class="line"><span class="keyword">var</span> str = a+b;</span><br><span class="line"><span class="keyword">var</span> sum = a+c;</span><br><span class="line"><span class="built_in">console</span>.log(str)    <span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(sum)    <span class="comment">//1hello</span></span><br><span class="line"><span class="built_in">console</span>.log(b+c)    <span class="comment">//truehello</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a-(b+<span class="string">&quot;2&quot;</span>)); <span class="comment">//NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">20</span>-b+<span class="string">&quot;false&quot;</span>) <span class="comment">//NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">20</span>-b+<span class="built_in">Number</span>(<span class="string">&quot;12.34&quot;</span>)); <span class="comment">//31.34</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-2算术运算符"><a href="#1-2算术运算符" class="headerlink" title="1-2算术运算符"></a>1-2算术运算符</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">	&gt; &lt; &lt;= &gt;= 比较运算的结果是TURE FLASE</span></span><br><span class="line"><span class="comment">	先将两边的值转换为Number再比较</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">&quot;20&quot;</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">&quot;true&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(a&gt;b)  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(a&gt;c)  <span class="comment">//false  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 比较运算</span></span><br><span class="line"><span class="comment">&lt; &gt; &lt;= &gt;=  == != */</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a=b);   <span class="comment">//20</span></span><br><span class="line"><span class="built_in">console</span>.log(a==b);  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(a!=b);  <span class="comment">//true</span></span><br><span class="line"><span class="comment">/* NaN与任何值做！= 比较时，结果为True */</span></span><br><span class="line"><span class="built_in">console</span>.log(a!=<span class="string">&quot;true&quot;</span>)  <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*isNaN()方法判断是否为NaN*/</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(a));  <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*三目运算*/</span></span><br><span class="line"><span class="keyword">var</span> c = (a&gt;b)?<span class="string">&quot;a大于b&quot;</span>:<span class="string">&quot;a小于b&quot;</span> <span class="comment">//（条件）？Y:N;</span></span><br><span class="line"><span class="built_in">console</span>.log(c)</span><br></pre></td></tr></table></figure>
+<h5 id="三木运算符（vue）"><a href="#三木运算符（vue）" class="headerlink" title="三木运算符（vue）"></a>三木运算符（vue）</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;img @click=&quot;handleClick&quot; :src=&quot;isPlay?&#x27;images/hh.png&#x27;:&#x27;images/zs.png&#x27;&quot; alt=&quot;&quot;&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123;isPlay&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:&quot;#app&quot;,</span><br><span class="line">        data()&#123;</span><br><span class="line">            return&#123;</span><br><span class="line">                isPlay:false</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            handleClick()&#123;</span><br><span class="line">                this.isPlay = !this.isPlay</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-循环"><a href="#1-3-循环" class="headerlink" title="1-3 循环"></a>1-3 循环</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//whlle循环</span></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//switch case break continue循环</span></span><br><span class="line"><span class="keyword">switch</span>(variety)&#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;等于1&quot;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;等于2&quot;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;等于3&quot;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;其他值&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="死循环实例"><a href="#死循环实例" class="headerlink" title="死循环实例"></a>死循环实例</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">window</span>.confirm(<span class="string">&quot;我帅吗&quot;</span>);</span><br><span class="line">  a+=<span class="number">10</span>;</span><br><span class="line">  <span class="keyword">while</span>(a)&#123;</span><br><span class="line">      alert(<span class="string">&quot;请说我很帅一百遍&quot;</span>); <span class="comment">//死循环</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*continue 和 break*/</span></span><br><span class="line"><span class="keyword">continue</span>是跳出本次循环</span><br><span class="line"><span class="keyword">break</span>是结束循环</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">/* break 中断跳出循环 */</span>  </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">4</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;***********&quot;</span>)</span><br><span class="line">    <span class="comment">/* continue 跳出当前循环 */</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">1</span>;j&lt;=<span class="number">5</span>;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">4</span>)&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(j)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Javascript</title>
+    <url>/2021/07/30/JavaScript---method/</url>
+    <content><![CDATA[<h3 id="1-小数化整"><a href="#1-小数化整" class="headerlink" title="1.小数化整"></a>1.小数化整</h3><p>Math.ceil( ) 上取整<br>​        Math.floor( ) 下取整<br>​        Math.round( ) 四舍五入取整</p>
+<ul>
+<li>1-1保留一位小数<ul>
+<li>num.toFixed(1)<h3 id="2-重置下标"><a href="#2-重置下标" class="headerlink" title="2.重置下标"></a>2.重置下标</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//javascript</span></span><br><span class="line"><span class="keyword">var</span> index = <span class="built_in">this</span>.index;</span><br><span class="line"><span class="comment">//jquery</span></span><br><span class="line"><span class="keyword">var</span> index = $(<span class="built_in">this</span>).index();</span><br></pre></td></tr></table></figure>
+<h3 id="3-更改CSS里的属性"><a href="#3-更改CSS里的属性" class="headerlink" title="3.更改CSS里的属性"></a>3.更改CSS里的属性</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> move = <span class="built_in">document</span>.getElementById(<span class="string">&quot;move&quot;</span>);</span><br><span class="line">move.style.cssText = <span class="string">`left:<span class="subst">$&#123;left&#125;</span>px;top:<span class="subst">$&#123;top&#125;</span>px`</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="4-给标签填充文字"><a href="#4-给标签填充文字" class="headerlink" title="4.给标签填充文字"></a>4.给标签填充文字</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 如果有引号用转义符\ */</span></span><br><span class="line">p.innerHTML = <span class="string">&quot;搜索\&quot;&quot;</span>+v.value+<span class="string">&quot;\&quot;,找到600首单曲&quot;</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="5-JS装换时分秒"><a href="#5-JS装换时分秒" class="headerlink" title="5.JS装换时分秒"></a>5.JS装换时分秒</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">如果你红框内返回的是毫秒数，你就要先转换为date类型 比如红框内是X ;</span><br><span class="line">(注:这里的毫秒数是由具体年月日转换来的，但接口里就是根据时间转换过来的，可以直接用)</span><br><span class="line">(不能用年月日的时间差去转换)</span><br><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>(X);</span><br><span class="line"><span class="keyword">var</span> year = now.getFullYear(); <span class="comment">//获取年份</span></span><br><span class="line"><span class="keyword">var</span> month = now.getMonth(); <span class="comment">//获取月份 月份要+1</span></span><br><span class="line"><span class="keyword">var</span> date = now.getDate(); <span class="comment">//获取日期</span></span><br><span class="line"><span class="keyword">var</span> hour = now.getHours(); <span class="comment">//获取时</span></span><br><span class="line"><span class="keyword">var</span> minu = now.getMinutes(); <span class="comment">//获取分钟</span></span><br><span class="line"><span class="keyword">var</span> sec = now.getSeconds(); <span class="comment">//获取秒钟</span></span><br><span class="line">这些都是原生的js方法</span><br></pre></td></tr></table></figure>
+<h3 id="6-JS封装入口（窗口加载完成）"><a href="#6-JS封装入口（窗口加载完成）" class="headerlink" title="6.JS封装入口（窗口加载完成）"></a>6.JS封装入口（窗口加载完成）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="built_in">window</span>.onload(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="7-遍历接口中多个相同属性"><a href="#7-遍历接口中多个相同属性" class="headerlink" title="7.遍历接口中多个相同属性"></a>7.遍历接口中多个相同属性</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> names = [];</span><br><span class="line"><span class="keyword">var</span> castnames = [];</span><br><span class="line">writers.forEach(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">  names.push(item.name)</span><br><span class="line">&#125;);  </span><br><span class="line">obj.writers = names.join(<span class="string">&quot;/&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="8-关于冒号"><a href="#8-关于冒号" class="headerlink" title="8.关于冒号 :"></a>8.关于冒号 :</h3>$(“:button”) 表示匹配所有的按钮。<br>$(“input:checked”)表示匹配所有选中的被选中元素(复选框、单选框等，不包括select中的option)。 </li>
+</ul>
+</li>
+</ul>
+<h3 id="9-is"><a href="#9-is" class="headerlink" title="9.is()"></a>9.is()</h3><ul>
+<li>$(selector).is(selectorElement,function(index,element))<ul>
+<li>选择器表达式，根据选择器/元素/jQuery 对象检查匹配元素集合，如果存在至少一个匹配元素，则返回 true，否则返回 false.</li>
+<li>function()可选项<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(<span class="string">&quot;p&quot;</span>).parent().is(<span class="string">&quot;div&quot;</span>)) &#123;</span><br><span class="line">    alert(<span class="string">&quot;p 的父元素是 div&quot;</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">判断动画播放完</span><br><span class="line"><span class="keyword">if</span>(!$(<span class="string">&quot;.pic&gt;img&quot;</span>).is(<span class="string">&quot;:animated&quot;</span>))</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// -----------生命周期--------</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 可以获取dom元素，但无法获取宽高等属性（window.onload可以获取）</span></span><br><span class="line"><span class="comment">* 可以依次执行多个ready函数（但window.onload只执行一次）</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; &#125;) </span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行函数（等同于上面的ready函数）</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------获取dom-----------</span></span><br><span class="line"><span class="keyword">var</span> $dom = $(<span class="string">&quot;p&quot;</span>);  <span class="comment">//这里是jq对象的dom，如果$(&quot;p&quot;)[0],这是原生dom，下同。</span></span><br><span class="line"><span class="keyword">var</span> $dom_class = $(<span class="string">&quot;.box&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> $dom_id = $(<span class="string">&quot;#box&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------修改CSS-----------</span></span><br><span class="line">$dom.css(&#123;</span><br><span class="line">  <span class="attr">background</span>: <span class="string">&#x27;red&#x27;</span>;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------获取宽高-----------</span></span><br><span class="line">$dom.width()</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------创建DOM------------</span></span><br><span class="line"><span class="keyword">var</span> $p = $(<span class="string">&quot;&lt;p&gt;hello&lt;/p&gt;&quot;</span>);</span><br><span class="line">$dom.append($p)</span><br><span class="line"></span><br><span class="line"><span class="comment">// -----------遍历伪数组----------</span></span><br><span class="line"><span class="keyword">var</span> warr = &#123;<span class="number">0</span>: <span class="string">&#x27;s&#x27;</span>, <span class="number">1</span>: <span class="string">&#x27;r&#x27;</span>, <span class="attr">length</span>: <span class="number">2</span>&#125;;</span><br><span class="line">$.each(warr, <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>)</span>&#123; &#125;); <span class="comment">// $.each也可以遍历数组，返回值是原对象</span></span><br><span class="line">$.map(warr, <span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>)</span>&#123; <span class="keyword">return</span> item &#125;); <span class="comment">// $.map也可以遍历数组,</span></span><br><span class="line">	返回值是<span class="keyword">return</span>处理的数组</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Javascript</title>
     <url>/2021/07/30/JavaScript---event/</url>
     <content><![CDATA[<h2 id="3-1常用的事件"><a href="#3-1常用的事件" class="headerlink" title="3-1常用的事件"></a>3-1常用的事件</h2><h4 id="1-常用的事件"><a href="#1-常用的事件" class="headerlink" title="1.常用的事件"></a>1.常用的事件</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">onclick     点击事件</span><br><span class="line">onmouseover 鼠标悬停</span><br><span class="line">onmouseout  鼠标移出</span><br><span class="line">onchange    元素改变</span><br><span class="line">onkeydown   按下键盘</span><br><span class="line">onkeyup    松开键盘</span><br><span class="line">onload     浏览器完成页面加载</span><br><span class="line">onblur     元素失去焦点</span><br><span class="line">onfocus    元素获得焦点</span><br><span class="line">onscroll   滚动事件（scrollTop获取滚动条距离顶部的高度）</span><br><span class="line">onresize   当浏览器被重置大小时触发</span><br><span class="line">onmousemove 鼠标移动</span><br><span class="line">onmousedown 鼠标按下</span><br><span class="line">onmouseup 鼠标松开</span><br></pre></td></tr></table></figure>
 <h4 id="2-获取键盘码"><a href="#2-获取键盘码" class="headerlink" title="2.获取键盘码"></a>2.获取键盘码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">input.onkeyup = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="comment">/* keyCode返回一个键盘码 */</span></span><br><span class="line">    <span class="keyword">if</span>(event.keyCode==<span class="number">13</span>)&#123; <span class="comment">//回车键：13</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -190,22 +234,6 @@
 <li>try-catch-throw<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line"><span class="comment">//try中的语句错误,将会执行catch中的语句</span></span><br><span class="line">     alertt(<span class="string">&quot;good&quot;</span>)</span><br><span class="line">&#125;<span class="keyword">catch</span>(err)&#123;</span><br><span class="line">     alert(<span class="string">&quot;hello&quot;</span>)；</span><br><span class="line">     <span class="comment">//err.message输出错误的信息</span></span><br><span class="line">     <span class="comment">//alert(err.message)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>()&#123;</span><br><span class="line">        <span class="comment">/* throw可以自定义错误并传给err */</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="string">&quot;输入的值不能为空&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    alert(err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 ]]></content>
-      <tags>
-        <tag>Javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javascript</title>
-    <url>/2021/07/30/JavaScript---data/</url>
-    <content><![CDATA[<h2 id="1-1数据类型"><a href="#1-1数据类型" class="headerlink" title="1-1数据类型"></a>1-1数据类型</h2><h4 id="5种基本类型"><a href="#5种基本类型" class="headerlink" title="5种基本类型"></a>5种基本类型</h4><p>number<br>String<br>boolean<br>undefined<br>null</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">特例：</span><br><span class="line"><span class="comment">/* undefined</span></span><br><span class="line"><span class="comment">  如果声明一个变量没有赋值的情况下，就会输出undefined</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line"></span><br><span class="line"><span class="comment">/* null</span></span><br><span class="line"><span class="comment">   null就是空，不占内存空间</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 声明提前，变量提升 (仅存在ES5中)</span></span><br><span class="line"><span class="comment">    js在执行代码的时候会将所有使用var声明的变量，放在作用域</span></span><br><span class="line"><span class="comment">    的顶部集中创建，赋值留在原地</span></span><br><span class="line"><span class="comment">    var a;</span></span><br><span class="line"><span class="comment">    console.log(a);</span></span><br><span class="line"><span class="comment">    a =20;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="built_in">console</span>.log(a) <span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">//报错</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">20</span>;	</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">30</span>;</span><br></pre></td></tr></table></figure>
-<h4 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*转换成number型*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;12&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">&quot;12.22px&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> num = <span class="built_in">Number</span>(a); <span class="comment">//12</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="built_in">Number</span>(b); <span class="comment">//1</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="built_in">Number</span>(c); <span class="comment">//isNaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(c)) <span class="comment">//12</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(c))	<span class="comment">//12.22</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*转换成String型*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>];</span><br><span class="line"><span class="keyword">var</span> t = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> arr);  <span class="comment">//object,无法判断数组。</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">String</span>(a));   <span class="comment">//方法一</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> t.toString());		<span class="comment">//方法二</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*转换成boolean型*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;tr&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> d = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> e = <span class="literal">NaN</span>;</span><br><span class="line"><span class="keyword">var</span> f = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">Boolean</span>(a); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Boolean</span>(b); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Boolean</span>(c); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Boolean</span>(d); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Boolean</span>(e); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Boolean</span>(f); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 自动转换 隐式转换 </span></span><br><span class="line"><span class="comment">   不需要程序员干预，js自动完成的类型转换</span></span><br><span class="line"><span class="comment">   场景:主要在算术计算中 + - * / %</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">/* 1.在加运算中的自动转换 </span></span><br><span class="line"><span class="comment">算术计算中，先将两边的变量转换为Number再计算</span></span><br><span class="line"><span class="comment">特殊：只要有一边在加运算中碰到字符串，+就作为拼接符的作用</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">&quot;hello&quot;</span> ;</span><br><span class="line"><span class="keyword">var</span> str = a+b;</span><br><span class="line"><span class="keyword">var</span> sum = a+c;</span><br><span class="line"><span class="built_in">console</span>.log(str)    <span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(sum)    <span class="comment">//1hello</span></span><br><span class="line"><span class="built_in">console</span>.log(b+c)    <span class="comment">//truehello</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a-(b+<span class="string">&quot;2&quot;</span>)); <span class="comment">//NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">20</span>-b+<span class="string">&quot;false&quot;</span>) <span class="comment">//NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">20</span>-b+<span class="built_in">Number</span>(<span class="string">&quot;12.34&quot;</span>)); <span class="comment">//31.34</span></span><br></pre></td></tr></table></figure>
-<h2 id="1-2算术运算符"><a href="#1-2算术运算符" class="headerlink" title="1-2算术运算符"></a>1-2算术运算符</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">	&gt; &lt; &lt;= &gt;= 比较运算的结果是TURE FLASE</span></span><br><span class="line"><span class="comment">	先将两边的值转换为Number再比较</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">&quot;20&quot;</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">&quot;true&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(a&gt;b)  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(a&gt;c)  <span class="comment">//false  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 比较运算</span></span><br><span class="line"><span class="comment">&lt; &gt; &lt;= &gt;=  == != */</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a=b);   <span class="comment">//20</span></span><br><span class="line"><span class="built_in">console</span>.log(a==b);  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(a!=b);  <span class="comment">//true</span></span><br><span class="line"><span class="comment">/* NaN与任何值做！= 比较时，结果为True */</span></span><br><span class="line"><span class="built_in">console</span>.log(a!=<span class="string">&quot;true&quot;</span>)  <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*isNaN()方法判断是否为NaN*/</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(a));  <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*三目运算*/</span></span><br><span class="line"><span class="keyword">var</span> c = (a&gt;b)?<span class="string">&quot;a大于b&quot;</span>:<span class="string">&quot;a小于b&quot;</span> <span class="comment">//（条件）？Y:N;</span></span><br><span class="line"><span class="built_in">console</span>.log(c)</span><br></pre></td></tr></table></figure>
-<h5 id="三木运算符（vue）"><a href="#三木运算符（vue）" class="headerlink" title="三木运算符（vue）"></a>三木运算符（vue）</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;img @click=&quot;handleClick&quot; :src=&quot;isPlay?&#x27;images/hh.png&#x27;:&#x27;images/zs.png&#x27;&quot; alt=&quot;&quot;&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123;isPlay&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:&quot;#app&quot;,</span><br><span class="line">        data()&#123;</span><br><span class="line">            return&#123;</span><br><span class="line">                isPlay:false</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            handleClick()&#123;</span><br><span class="line">                this.isPlay = !this.isPlay</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-3-循环"><a href="#1-3-循环" class="headerlink" title="1-3 循环"></a>1-3 循环</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//whlle循环</span></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//switch case break continue循环</span></span><br><span class="line"><span class="keyword">switch</span>(variety)&#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;等于1&quot;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;等于2&quot;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;等于3&quot;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;其他值&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="死循环实例"><a href="#死循环实例" class="headerlink" title="死循环实例"></a>死循环实例</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">window</span>.confirm(<span class="string">&quot;我帅吗&quot;</span>);</span><br><span class="line">  a+=<span class="number">10</span>;</span><br><span class="line">  <span class="keyword">while</span>(a)&#123;</span><br><span class="line">      alert(<span class="string">&quot;请说我很帅一百遍&quot;</span>); <span class="comment">//死循环</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*continue 和 break*/</span></span><br><span class="line"><span class="keyword">continue</span>是跳出本次循环</span><br><span class="line"><span class="keyword">break</span>是结束循环</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">/* break 中断跳出循环 */</span>  </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">4</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;***********&quot;</span>)</span><br><span class="line">    <span class="comment">/* continue 跳出当前循环 */</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">1</span>;j&lt;=<span class="number">5</span>;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">4</span>)&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(j)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>Javascript</tag>
       </tags>
@@ -278,98 +306,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Javascript</title>
-    <url>/2021/07/30/JavaScript---method/</url>
-    <content><![CDATA[<h3 id="1-小数化整"><a href="#1-小数化整" class="headerlink" title="1.小数化整"></a>1.小数化整</h3><p>Math.ceil( ) 上取整<br>​        Math.floor( ) 下取整<br>​        Math.round( ) 四舍五入取整</p>
-<ul>
-<li>1-1保留一位小数<ul>
-<li>num.toFixed(1)<h3 id="2-重置下标"><a href="#2-重置下标" class="headerlink" title="2.重置下标"></a>2.重置下标</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//javascript</span></span><br><span class="line"><span class="keyword">var</span> index = <span class="built_in">this</span>.index;</span><br><span class="line"><span class="comment">//jquery</span></span><br><span class="line"><span class="keyword">var</span> index = $(<span class="built_in">this</span>).index();</span><br></pre></td></tr></table></figure>
-<h3 id="3-更改CSS里的属性"><a href="#3-更改CSS里的属性" class="headerlink" title="3.更改CSS里的属性"></a>3.更改CSS里的属性</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> move = <span class="built_in">document</span>.getElementById(<span class="string">&quot;move&quot;</span>);</span><br><span class="line">move.style.cssText = <span class="string">`left:<span class="subst">$&#123;left&#125;</span>px;top:<span class="subst">$&#123;top&#125;</span>px`</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="4-给标签填充文字"><a href="#4-给标签填充文字" class="headerlink" title="4.给标签填充文字"></a>4.给标签填充文字</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 如果有引号用转义符\ */</span></span><br><span class="line">p.innerHTML = <span class="string">&quot;搜索\&quot;&quot;</span>+v.value+<span class="string">&quot;\&quot;,找到600首单曲&quot;</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="5-JS装换时分秒"><a href="#5-JS装换时分秒" class="headerlink" title="5.JS装换时分秒"></a>5.JS装换时分秒</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">如果你红框内返回的是毫秒数，你就要先转换为date类型 比如红框内是X ;</span><br><span class="line">(注:这里的毫秒数是由具体年月日转换来的，但接口里就是根据时间转换过来的，可以直接用)</span><br><span class="line">(不能用年月日的时间差去转换)</span><br><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>(X);</span><br><span class="line"><span class="keyword">var</span> year = now.getFullYear(); <span class="comment">//获取年份</span></span><br><span class="line"><span class="keyword">var</span> month = now.getMonth(); <span class="comment">//获取月份 月份要+1</span></span><br><span class="line"><span class="keyword">var</span> date = now.getDate(); <span class="comment">//获取日期</span></span><br><span class="line"><span class="keyword">var</span> hour = now.getHours(); <span class="comment">//获取时</span></span><br><span class="line"><span class="keyword">var</span> minu = now.getMinutes(); <span class="comment">//获取分钟</span></span><br><span class="line"><span class="keyword">var</span> sec = now.getSeconds(); <span class="comment">//获取秒钟</span></span><br><span class="line">这些都是原生的js方法</span><br></pre></td></tr></table></figure>
-<h3 id="6-JS封装入口（窗口加载完成）"><a href="#6-JS封装入口（窗口加载完成）" class="headerlink" title="6.JS封装入口（窗口加载完成）"></a>6.JS封装入口（窗口加载完成）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="built_in">window</span>.onload(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="7-遍历接口中多个相同属性"><a href="#7-遍历接口中多个相同属性" class="headerlink" title="7.遍历接口中多个相同属性"></a>7.遍历接口中多个相同属性</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> names = [];</span><br><span class="line"><span class="keyword">var</span> castnames = [];</span><br><span class="line">writers.forEach(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">  names.push(item.name)</span><br><span class="line">&#125;);  </span><br><span class="line">obj.writers = names.join(<span class="string">&quot;/&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="8-关于冒号"><a href="#8-关于冒号" class="headerlink" title="8.关于冒号 :"></a>8.关于冒号 :</h3>$(“:button”) 表示匹配所有的按钮。<br>$(“input:checked”)表示匹配所有选中的被选中元素(复选框、单选框等，不包括select中的option)。 </li>
-</ul>
-</li>
-</ul>
-<h3 id="9-is"><a href="#9-is" class="headerlink" title="9.is()"></a>9.is()</h3><ul>
-<li>$(selector).is(selectorElement,function(index,element))<ul>
-<li>选择器表达式，根据选择器/元素/jQuery 对象检查匹配元素集合，如果存在至少一个匹配元素，则返回 true，否则返回 false.</li>
-<li>function()可选项<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(<span class="string">&quot;p&quot;</span>).parent().is(<span class="string">&quot;div&quot;</span>)) &#123;</span><br><span class="line">    alert(<span class="string">&quot;p 的父元素是 div&quot;</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">判断动画播放完</span><br><span class="line"><span class="keyword">if</span>(!$(<span class="string">&quot;.pic&gt;img&quot;</span>).is(<span class="string">&quot;:animated&quot;</span>))</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// -----------生命周期--------</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 可以获取dom元素，但无法获取宽高等属性（window.onload可以获取）</span></span><br><span class="line"><span class="comment">* 可以依次执行多个ready函数（但window.onload只执行一次）</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; &#125;) </span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行函数（等同于上面的ready函数）</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------获取dom-----------</span></span><br><span class="line"><span class="keyword">var</span> $dom = $(<span class="string">&quot;p&quot;</span>);  <span class="comment">//这里是jq对象的dom，如果$(&quot;p&quot;)[0],这是原生dom，下同。</span></span><br><span class="line"><span class="keyword">var</span> $dom_class = $(<span class="string">&quot;.box&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> $dom_id = $(<span class="string">&quot;#box&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------修改CSS-----------</span></span><br><span class="line">$dom.css(&#123;</span><br><span class="line">  <span class="attr">background</span>: <span class="string">&#x27;red&#x27;</span>;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------获取宽高-----------</span></span><br><span class="line">$dom.width()</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------创建DOM------------</span></span><br><span class="line"><span class="keyword">var</span> $p = $(<span class="string">&quot;&lt;p&gt;hello&lt;/p&gt;&quot;</span>);</span><br><span class="line">$dom.append($p)</span><br><span class="line"></span><br><span class="line"><span class="comment">// -----------遍历伪数组----------</span></span><br><span class="line"><span class="keyword">var</span> warr = &#123;<span class="number">0</span>: <span class="string">&#x27;s&#x27;</span>, <span class="number">1</span>: <span class="string">&#x27;r&#x27;</span>, <span class="attr">length</span>: <span class="number">2</span>&#125;;</span><br><span class="line">$.each(warr, <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>)</span>&#123; &#125;); <span class="comment">// $.each也可以遍历数组，返回值是原对象</span></span><br><span class="line">$.map(warr, <span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>)</span>&#123; <span class="keyword">return</span> item &#125;); <span class="comment">// $.map也可以遍历数组,</span></span><br><span class="line">	返回值是<span class="keyword">return</span>处理的数组</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MongoDB--数据库操作</title>
-    <url>/2021/08/02/MongoDB--databse/</url>
-    <content><![CDATA[<h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h2><h5 id="选择和创建数据库"><a href="#选择和创建数据库" class="headerlink" title="选择和创建数据库"></a>选择和创建数据库</h5><p>选择和创建数据库的语法格式</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">use 数据库名称</span><br></pre></td></tr></table></figure>
-
-<p>查看有权限查看的所有的数据库命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">show dbs</span><br><span class="line">或</span><br><span class="line">show dababases</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>注意：</strong> 在MongoDB中，集合只有在插入后才会创建！就是说，创建集合（数据表）后要再插入一个文档（记录），集合才会真正创建</p>
-</blockquote>
-<p>查看当前正在使用的数据库命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db</span><br></pre></td></tr></table></figure>
-<p>MongoDB中默认的数据库为test，如果你没有选择数据库，集合将存放在test数据库中。</p>
-<p>数据库名可以是满足以下条件的任意UTF-8字符串:</p>
-<ul>
-<li>不能是空字符串（””)。</li>
-<li>不得含有’ ‘（空格)、.、$、/、\和\0 (空字符)。</li>
-<li>应全部小写。</li>
-<li>最多64字节。<br>有一些数据库名是保留的，可以直接访问这些有特殊作用的数据库。</li>
-<li><strong>admin</strong>： 从权限的角度来看，这是”root”数据库。要是将一个用户添加到这个数据库，这个用户自动继承所有数据库的权限。一些特定的服务器端命令也只能从这个数据库运行，比如列出所有的数据库或者关闭服务器。</li>
-<li><strong>local</strong>: 这个数据永远不会被复制，可以用来存储限于本地单台服务器的任意集合</li>
-<li><strong>config</strong>: 当Mongo用于分片设置时，config数据库在内部使用，用于保存分片的相关信息。</li>
-</ul>
-<h5 id="数据的删除"><a href="#数据的删除" class="headerlink" title="数据的删除"></a>数据的删除</h5><p>MongoDB删除数据库的语法格式如下：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.dropDatabase()</span><br></pre></td></tr></table></figure>
-<p>提示：主要用来删除已经持久化的数据库</p>
-]]></content>
-      <tags>
-        <tag>MongoDB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MongoDB--集合操作</title>
-    <url>/2021/08/02/MongoDB--collection/</url>
-    <content><![CDATA[<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h2><p>集合，类似关系型数据库中的表<br>可以显示的创建，也可以隐式的创建</p>
-<h5 id="集合的显示创建-了解"><a href="#集合的显示创建-了解" class="headerlink" title="集合的显示创建(了解)"></a>集合的显示创建(了解)</h5><p>基本语法格式：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.createCollection(name)</span><br></pre></td></tr></table></figure>
-<p>参数说明：</p>
-<ul>
-<li>name: 要创建的集合名称</li>
-</ul>
-<p>例如：创建一个名为<code>mycollection</code>的普通集合。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.createCollection(&quot;mycollection&quot;)</span><br></pre></td></tr></table></figure>
-<p>查看当前库中的表：show tables命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">show collections</span><br><span class="line">或</span><br><span class="line">show tables</span><br></pre></td></tr></table></figure>
-
-<p>集合的命名规范：</p>
-<ul>
-<li>集合名不能是空字符串(“”)</li>
-<li>集合名不能包含 \0 字符(空字符)，这个字符标识集合名的结束</li>
-<li>集合名不能以 “system.” 开头，这是为系统保留的前缀</li>
-<li>用户创建的集合名字不能有保留字符。有些驱动程序的确支持在集合名里面包含，这是因为某些系统生成的集合中包含该字符。除非你要访问这种系统创建的合集，否则千万不要在名字里出现$</li>
-</ul>
-<h5 id="集合的隐式创建"><a href="#集合的隐式创建" class="headerlink" title="集合的隐式创建"></a>集合的隐式创建</h5><p>当前一个集合中插入一个文档的时候，如果集合不存在，则会自动创建集合。<br>详见<code>文档的插入</code>章节<br>提示：通常我们使用隐式创建文档即可</p>
-<h5 id="集合的删除"><a href="#集合的删除" class="headerlink" title="集合的删除"></a>集合的删除</h5><p>集合删除语法格式：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.集合名字.drop()</span><br></pre></td></tr></table></figure>
-<p><strong>返回值</strong><br>如果成功删除选定集合，则 drop() 方法返回 true，否则返回 false。</p>
-<p>例如：要删除<code>mycollection</code>集合</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.mycollection.drop()</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>MongoDB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Javascrip</title>
     <url>/2021/07/30/JavaScript---object/</url>
     <content><![CDATA[<h2 id="2-1Dom树"><a href="#2-1Dom树" class="headerlink" title="2-1Dom树"></a>2-1Dom树</h2><h4 id="Dom-document-object-model-文档对象模型"><a href="#Dom-document-object-model-文档对象模型" class="headerlink" title="Dom (document object model)文档对象模型"></a>Dom (document object model)文档对象模型</h4><p>Dom树 :增删改查元素的标准,可以动态的修改元素的内容，样式，结构</p>
@@ -436,6 +372,97 @@
 ]]></content>
       <tags>
         <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB---单机部署</title>
+    <url>/2021/08/02/MongoDB--deplpy/</url>
+    <content><![CDATA[<h2 id="Windows系统中的安装启动"><a href="#Windows系统中的安装启动" class="headerlink" title="Windows系统中的安装启动"></a>Windows系统中的安装启动</h2><h5 id="第一步：下载安装包"><a href="#第一步：下载安装包" class="headerlink" title="第一步：下载安装包"></a>第一步：下载安装包</h5><p><a href="https://www.mongodb.com/try/download/community">https://www.mongodb.com/try/download/community</a><br><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/mongodb.png"></p>
+<p>根据上图所示下载<code>zip</code>包<br>提示：版本的选择：<br>MongoDB的版本命名规范如：ｘ．ｙ．ｚ<br>ｙ为奇数时表示当前版本为开发版<br>ｙ为偶数时表示当前版本为稳定版<br>ｚ是修正版本号，数字越大越好</p>
+<h5 id="第二步：解压安装启动"><a href="#第二步：解压安装启动" class="headerlink" title="第二步：解压安装启动"></a>第二步：解压安装启动</h5><p>将压缩包解压大一个目录中。<br>在解压目录中，手动建立一个目录用于存放数据文件，如data/db</p>
+<p>方式1：命令行参数方式启动服务<br>在bin目录中打开命令提示符，输入如下命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongod --dbpath=..\data\db</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/conf.png"><br>mongoDB的默认端口是27017</p>
+<p>方式2：配置文件方式启动服务<br>在解压目录中新建<code>config</code>文件夹，该文件夹中新建配置文件<code>mongod.conf</code>，内如参考如下</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">storage:</span></span><br><span class="line">	<span class="comment">#The directory where the mongod instance stores its data.Default Value is &quot;data\db&quot; on windows</span></span><br><span class="line">	<span class="attr">dbPath:</span> <span class="string">D:\MongoDB\data</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongod -f ../config/mongod.conf</span><br><span class="line">或</span><br><span class="line">mongod --config ../config/mongod.conf</span><br></pre></td></tr></table></figure>
+
+<h2 id="Shell链接（mongo命令）"><a href="#Shell链接（mongo命令）" class="headerlink" title="Shell链接（mongo命令）"></a>Shell链接（mongo命令）</h2><p>在命令提示符输入以下shell命令即可完成登录</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
+<p>查看已经有的数据库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">show databases</span><br></pre></td></tr></table></figure>
+<p>退出mongodb</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
+<p>更多参数可以通过帮助查看：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongo --help</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>MongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB--集合操作</title>
+    <url>/2021/08/02/MongoDB--collection/</url>
+    <content><![CDATA[<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h2><p>集合，类似关系型数据库中的表<br>可以显示的创建，也可以隐式的创建</p>
+<h5 id="集合的显示创建-了解"><a href="#集合的显示创建-了解" class="headerlink" title="集合的显示创建(了解)"></a>集合的显示创建(了解)</h5><p>基本语法格式：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.createCollection(name)</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li>name: 要创建的集合名称</li>
+</ul>
+<p>例如：创建一个名为<code>mycollection</code>的普通集合。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.createCollection(&quot;mycollection&quot;)</span><br></pre></td></tr></table></figure>
+<p>查看当前库中的表：show tables命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">show collections</span><br><span class="line">或</span><br><span class="line">show tables</span><br></pre></td></tr></table></figure>
+
+<p>集合的命名规范：</p>
+<ul>
+<li>集合名不能是空字符串(“”)</li>
+<li>集合名不能包含 \0 字符(空字符)，这个字符标识集合名的结束</li>
+<li>集合名不能以 “system.” 开头，这是为系统保留的前缀</li>
+<li>用户创建的集合名字不能有保留字符。有些驱动程序的确支持在集合名里面包含，这是因为某些系统生成的集合中包含该字符。除非你要访问这种系统创建的合集，否则千万不要在名字里出现$</li>
+</ul>
+<h5 id="集合的隐式创建"><a href="#集合的隐式创建" class="headerlink" title="集合的隐式创建"></a>集合的隐式创建</h5><p>当前一个集合中插入一个文档的时候，如果集合不存在，则会自动创建集合。<br>详见<code>文档的插入</code>章节<br>提示：通常我们使用隐式创建文档即可</p>
+<h5 id="集合的删除"><a href="#集合的删除" class="headerlink" title="集合的删除"></a>集合的删除</h5><p>集合删除语法格式：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.集合名字.drop()</span><br></pre></td></tr></table></figure>
+<p><strong>返回值</strong><br>如果成功删除选定集合，则 drop() 方法返回 true，否则返回 false。</p>
+<p>例如：要删除<code>mycollection</code>集合</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.mycollection.drop()</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>MongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB--数据库操作</title>
+    <url>/2021/08/02/MongoDB--databse/</url>
+    <content><![CDATA[<h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h2><h5 id="选择和创建数据库"><a href="#选择和创建数据库" class="headerlink" title="选择和创建数据库"></a>选择和创建数据库</h5><p>选择和创建数据库的语法格式</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">use 数据库名称</span><br></pre></td></tr></table></figure>
+
+<p>查看有权限查看的所有的数据库命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">show dbs</span><br><span class="line">或</span><br><span class="line">show dababases</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意：</strong> 在MongoDB中，集合只有在插入后才会创建！就是说，创建集合（数据表）后要再插入一个文档（记录），集合才会真正创建</p>
+</blockquote>
+<p>查看当前正在使用的数据库命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db</span><br></pre></td></tr></table></figure>
+<p>MongoDB中默认的数据库为test，如果你没有选择数据库，集合将存放在test数据库中。</p>
+<p>数据库名可以是满足以下条件的任意UTF-8字符串:</p>
+<ul>
+<li>不能是空字符串（””)。</li>
+<li>不得含有’ ‘（空格)、.、$、/、\和\0 (空字符)。</li>
+<li>应全部小写。</li>
+<li>最多64字节。<br>有一些数据库名是保留的，可以直接访问这些有特殊作用的数据库。</li>
+<li><strong>admin</strong>： 从权限的角度来看，这是”root”数据库。要是将一个用户添加到这个数据库，这个用户自动继承所有数据库的权限。一些特定的服务器端命令也只能从这个数据库运行，比如列出所有的数据库或者关闭服务器。</li>
+<li><strong>local</strong>: 这个数据永远不会被复制，可以用来存储限于本地单台服务器的任意集合</li>
+<li><strong>config</strong>: 当Mongo用于分片设置时，config数据库在内部使用，用于保存分片的相关信息。</li>
+</ul>
+<h5 id="数据的删除"><a href="#数据的删除" class="headerlink" title="数据的删除"></a>数据的删除</h5><p>MongoDB删除数据库的语法格式如下：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.dropDatabase()</span><br></pre></td></tr></table></figure>
+<p>提示：主要用来删除已经持久化的数据库</p>
+]]></content>
+      <tags>
+        <tag>MongoDB</tag>
       </tags>
   </entry>
   <entry>
@@ -652,28 +679,33 @@
       </tags>
   </entry>
   <entry>
-    <title>MongoDB---单机部署</title>
-    <url>/2021/08/02/MongoDB--deplpy/</url>
-    <content><![CDATA[<h2 id="Windows系统中的安装启动"><a href="#Windows系统中的安装启动" class="headerlink" title="Windows系统中的安装启动"></a>Windows系统中的安装启动</h2><h5 id="第一步：下载安装包"><a href="#第一步：下载安装包" class="headerlink" title="第一步：下载安装包"></a>第一步：下载安装包</h5><p><a href="https://www.mongodb.com/try/download/community">https://www.mongodb.com/try/download/community</a><br><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/mongodb.png"></p>
-<p>根据上图所示下载<code>zip</code>包<br>提示：版本的选择：<br>MongoDB的版本命名规范如：ｘ．ｙ．ｚ<br>ｙ为奇数时表示当前版本为开发版<br>ｙ为偶数时表示当前版本为稳定版<br>ｚ是修正版本号，数字越大越好</p>
-<h5 id="第二步：解压安装启动"><a href="#第二步：解压安装启动" class="headerlink" title="第二步：解压安装启动"></a>第二步：解压安装启动</h5><p>将压缩包解压大一个目录中。<br>在解压目录中，手动建立一个目录用于存放数据文件，如data/db</p>
-<p>方式1：命令行参数方式启动服务<br>在bin目录中打开命令提示符，输入如下命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongod --dbpath=..\data\db</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/conf.png"><br>mongoDB的默认端口是27017</p>
-<p>方式2：配置文件方式启动服务<br>在解压目录中新建<code>config</code>文件夹，该文件夹中新建配置文件<code>mongod.conf</code>，内如参考如下</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">storage:</span></span><br><span class="line">	<span class="comment">#The directory where the mongod instance stores its data.Default Value is &quot;data\db&quot; on windows</span></span><br><span class="line">	<span class="attr">dbPath:</span> <span class="string">D:\MongoDB\data</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongod -f ../config/mongod.conf</span><br><span class="line">或</span><br><span class="line">mongod --config ../config/mongod.conf</span><br></pre></td></tr></table></figure>
+    <title>MongoDB--文档的更多查询</title>
+    <url>/2021/08/02/MongoDB--file_more/</url>
+    <content><![CDATA[<h2 id="正则的复杂条件查询"><a href="#正则的复杂条件查询" class="headerlink" title="正则的复杂条件查询"></a>正则的复杂条件查询</h2><p>MongoDB的模糊查询是通过<strong>正则表达式</strong>方式实现的。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.集合名称.find(&#123;字段: /正则表达式/&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>提示：</strong> 正则表达式是js的语法，直接量的写法<br>例如：要查询评论内容包容<code>的</code>的所有文档：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;content: /的/&#125;)</span><br></pre></td></tr></table></figure>
+<p>例如：要查询评论内容中以<code>有些</code>开头：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;content: /^有些/&#125;)</span><br></pre></td></tr></table></figure>
 
-<h2 id="Shell链接（mongo命令）"><a href="#Shell链接（mongo命令）" class="headerlink" title="Shell链接（mongo命令）"></a>Shell链接（mongo命令）</h2><p>在命令提示符输入以下shell命令即可完成登录</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
-<p>查看已经有的数据库</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">show databases</span><br></pre></td></tr></table></figure>
-<p>退出mongodb</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
-<p>更多参数可以通过帮助查看：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongo --help</span><br></pre></td></tr></table></figure>
+<h2 id="比较查询"><a href="#比较查询" class="headerlink" title="比较查询"></a>比较查询</h2><p>&lt;,&lt;=,&gt;,&gt;= ,!=这个操作符也是很常用的，格式如下：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.集合名称.find(&#123;&quot;field&quot;: &#123; $gt: value &#125;&#125;) // 大于： field &gt; value</span><br><span class="line">db.集合名称.find(&#123;&quot;field&quot;: &#123; $lt: value &#125;&#125;) // 小于： field &lt; value</span><br><span class="line">db.集合名称.find(&#123;&quot;field&quot;: &#123; $gte: value &#125;&#125;) // 大于等于： field &gt;= value</span><br><span class="line">db.集合名称.find(&#123;&quot;field&quot;: &#123; $lte: value &#125;&#125;) // 小于等于： field &lt;= value</span><br><span class="line">db.集合名称.find(&#123;&quot;field&quot;: &#123; $ne: value &#125;&#125;) // 不等于： field != value</span><br></pre></td></tr></table></figure>
+<p>例如：查询<code>likenum</code>字段数据大于<code>700</code>的记录:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;likenum: &#123; $gt: NumberInt(700)&#125;&#125;)</span><br></pre></td></tr></table></figure>
 
-]]></content>
+<h2 id="包含查询"><a href="#包含查询" class="headerlink" title="包含查询"></a>包含查询</h2><p>包含使用<code>$in</code>操作符<br>例如：查询<code>userid</code>字段包含1003或1004的文档</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;userid: &#123; $in: [&quot;1003&quot;, &quot;1004&quot;]&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<p>不包含使用<code>$nin</code>操作符<br>例如：查询<code>userid</code>字段不包含1003或1004的文档</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;userid: &#123; $nin: [&quot;1003&quot;, &quot;1004&quot;]&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="条件连接查询"><a href="#条件连接查询" class="headerlink" title="条件连接查询"></a>条件连接查询</h2><p>我们如果需要查询同时满足两个以上条件，需要使用<code>$and</code>操作符将条件进行关联<br>格式为：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">and:[&#123;&#125;,&#123;&#125;,&#123;&#125;]</span></span><br></pre></td></tr></table></figure>
+<p>例如：查询<code>likenum</code>字段包含大于等于700并且小于2000的文档：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;$and:[&#123;likenum: &#123; $gte: NumberInt(700)&#125;&#125;,&#123;likenum: &#123; $lt: NumberInt(2000)&#125;&#125;]&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>如果两个以上条件之间是或者关系，需要使用<code>$or</code>操作符将条件进行关<br>联<br>例如：查询<code>likenum</code>字段包含大于等于700或小于2000的文档：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;$or:[&#123;likenum: &#123; $gte: NumberInt(700)&#125;&#125;,&#123;likenum: &#123; $lt: NumberInt(2000)&#125;&#125;]&#125;)</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>MongoDB</tag>
       </tags>
@@ -728,38 +760,6 @@
 <p><strong>提示：</strong> <code>skip()</code>，<code>limit()</code>，<code>sort()</code>三个放在一起执行的时候，执行的顺序先<code>sort()</code>，然后是<code>skip()</code>，最后是显示的<code>limit()</code>，和命令编写的顺序无关。</p>
 </blockquote>
 ]]></content>
-      <tags>
-        <tag>MongoDB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MongoDB--文档的更多查询</title>
-    <url>/2021/08/02/MongoDB--file_more/</url>
-    <content><![CDATA[<h2 id="正则的复杂条件查询"><a href="#正则的复杂条件查询" class="headerlink" title="正则的复杂条件查询"></a>正则的复杂条件查询</h2><p>MongoDB的模糊查询是通过<strong>正则表达式</strong>方式实现的。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.集合名称.find(&#123;字段: /正则表达式/&#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>提示：</strong> 正则表达式是js的语法，直接量的写法<br>例如：要查询评论内容包容<code>的</code>的所有文档：</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;content: /的/&#125;)</span><br></pre></td></tr></table></figure>
-<p>例如：要查询评论内容中以<code>有些</code>开头：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;content: /^有些/&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="比较查询"><a href="#比较查询" class="headerlink" title="比较查询"></a>比较查询</h2><p>&lt;,&lt;=,&gt;,&gt;= ,!=这个操作符也是很常用的，格式如下：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.集合名称.find(&#123;&quot;field&quot;: &#123; $gt: value &#125;&#125;) // 大于： field &gt; value</span><br><span class="line">db.集合名称.find(&#123;&quot;field&quot;: &#123; $lt: value &#125;&#125;) // 小于： field &lt; value</span><br><span class="line">db.集合名称.find(&#123;&quot;field&quot;: &#123; $gte: value &#125;&#125;) // 大于等于： field &gt;= value</span><br><span class="line">db.集合名称.find(&#123;&quot;field&quot;: &#123; $lte: value &#125;&#125;) // 小于等于： field &lt;= value</span><br><span class="line">db.集合名称.find(&#123;&quot;field&quot;: &#123; $ne: value &#125;&#125;) // 不等于： field != value</span><br></pre></td></tr></table></figure>
-<p>例如：查询<code>likenum</code>字段数据大于<code>700</code>的记录:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;likenum: &#123; $gt: NumberInt(700)&#125;&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="包含查询"><a href="#包含查询" class="headerlink" title="包含查询"></a>包含查询</h2><p>包含使用<code>$in</code>操作符<br>例如：查询<code>userid</code>字段包含1003或1004的文档</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;userid: &#123; $in: [&quot;1003&quot;, &quot;1004&quot;]&#125;&#125;)</span><br></pre></td></tr></table></figure>
-<p>不包含使用<code>$nin</code>操作符<br>例如：查询<code>userid</code>字段不包含1003或1004的文档</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;userid: &#123; $nin: [&quot;1003&quot;, &quot;1004&quot;]&#125;&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="条件连接查询"><a href="#条件连接查询" class="headerlink" title="条件连接查询"></a>条件连接查询</h2><p>我们如果需要查询同时满足两个以上条件，需要使用<code>$and</code>操作符将条件进行关联<br>格式为：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">and:[&#123;&#125;,&#123;&#125;,&#123;&#125;]</span></span><br></pre></td></tr></table></figure>
-<p>例如：查询<code>likenum</code>字段包含大于等于700并且小于2000的文档：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;$and:[&#123;likenum: &#123; $gte: NumberInt(700)&#125;&#125;,&#123;likenum: &#123; $lt: NumberInt(2000)&#125;&#125;]&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>如果两个以上条件之间是或者关系，需要使用<code>$or</code>操作符将条件进行关<br>联<br>例如：查询<code>likenum</code>字段包含大于等于700或小于2000的文档：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.document.find(&#123;$or:[&#123;likenum: &#123; $gte: NumberInt(700)&#125;&#125;,&#123;likenum: &#123; $lt: NumberInt(2000)&#125;&#125;]&#125;)</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>MongoDB</tag>
       </tags>
@@ -931,6 +931,204 @@
       </tags>
   </entry>
   <entry>
+    <title>transform，transition，animation，keyframes区别</title>
+    <url>/2021/08/04/transform%EF%BC%8Ctransition%EF%BC%8Canimation%EF%BC%8Ckeyframes/</url>
+    <content><![CDATA[<h1 id="transform转变"><a href="#transform转变" class="headerlink" title="transform转变"></a>transform转变</h1><p><code>transform</code>并不是一个动态属性，他是一个静态的属性。专注于改变元素基于默认位置的以下值。<br>注意，只是改变，并不是一个过程，只是针对css的各种特殊改变，完全可以看作是与<code>width，height，position</code>等同类的属性。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>定义不进行转换。</td>
+</tr>
+<tr>
+<td>matrix(n,n,n,n,n,n)</td>
+<td>定义 2D 转换，使用六个值的矩阵。</td>
+</tr>
+<tr>
+<td>matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)</td>
+<td>定义 3D 转换，使用 16 个值的 4x4 矩阵。</td>
+</tr>
+<tr>
+<td>translate(x,y)</td>
+<td>定义 2D 转换。</td>
+</tr>
+<tr>
+<td>translate3d(x,y,z)</td>
+<td>定义 3D 转换。</td>
+</tr>
+<tr>
+<td>translateX(x)</td>
+<td>定义转换，只是用 X 轴的值。</td>
+</tr>
+<tr>
+<td>translateY(y)</td>
+<td>定义转换，只是用 Y 轴的值。</td>
+</tr>
+<tr>
+<td>translateZ(z)</td>
+<td>定义 3D 转换，只是用 Z 轴的值。</td>
+</tr>
+<tr>
+<td>scale(x,y)</td>
+<td>定义 2D 缩放转换。</td>
+</tr>
+<tr>
+<td>scale3d(x,y,z)</td>
+<td>定义 3D 缩放转换。</td>
+</tr>
+<tr>
+<td>scaleX(x)</td>
+<td>通过设置 X 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td>scaleY(y)</td>
+<td>通过设置 Y 轴的值来定义缩放转换。</td>
+</tr>
+<tr>
+<td>scaleZ(z)</td>
+<td>通过设置 Z 轴的值来定义 3D 缩放转换。</td>
+</tr>
+<tr>
+<td>rotate(angle)</td>
+<td>定义 2D 旋转，在参数中规定角度。</td>
+</tr>
+<tr>
+<td>rotate3d(x,y,z,angle)</td>
+<td>定义 3D 旋转。</td>
+</tr>
+<tr>
+<td>rotateX(angle)</td>
+<td>定义沿着 X 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td>rotateY(angle)</td>
+<td>定义沿着 Y 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td>rotateZ(angle)</td>
+<td>定义沿着 Z 轴的 3D 旋转。</td>
+</tr>
+<tr>
+<td>skew(x-angle,y-angle)</td>
+<td>定义沿着 X 和 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td>skewX(angle)</td>
+<td>定义沿着 X 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td>skewY(angle)</td>
+<td>定义沿着 Y 轴的 2D 倾斜转换。</td>
+</tr>
+<tr>
+<td>perspective(n)</td>
+<td>为 3D 转换元素定义透视视图。</td>
+</tr>
+</tbody></table>
+<h1 id="transition过渡"><a href="#transition过渡" class="headerlink" title="transition过渡"></a>transition过渡</h1><p><code>transition</code>是指当它所绑定的属性（比如width）发生改变的时候，不再突变，而是根据速度曲线慢慢变化。<br>这种改变不仅仅是定义好的hover改变，也包括后期js导致的改变，甚至不小心替换class名导致的css属性改变，也就是说无论在何种情况下发生的属性改变，都会导致过渡。<br>这个时候就会知道<code>transition</code>并不是与<code>transform</code>绑定的属性，初学者（比如我&gt;.&lt;）在刚看的时候总会以为有<code>transform</code>必然有<code>transition</code>，不然不可用，然而其实<code>transition</code>是完全可以不需要<code>transform</code>而独立使用的。<br><code>transform</code>可以看作只是一个基础属性，与width，height，position同类的属性，而<code>transition</code>只是规定了发生过渡的时候所需的自定义规则，两者独立使用也可。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>transition-property</td>
+<td>规定设置过渡效果的 CSS 属性的名称。</td>
+</tr>
+<tr>
+<td>transition-duration</td>
+<td>规定完成过渡效果需要多少秒或毫秒。</td>
+</tr>
+<tr>
+<td>transition-timing-function</td>
+<td>规定速度效果的速度曲线。</td>
+</tr>
+<tr>
+<td>transition-delay</td>
+<td>定义过渡效果何时开始。</td>
+</tr>
+</tbody></table>
+<h1 id="animation动画"><a href="#animation动画" class="headerlink" title="animation动画"></a>animation动画</h1><p>先看表</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>animation-name</td>
+<td>规定需要绑定到选择器的 keyframe 名称。</td>
+</tr>
+<tr>
+<td>animation-duration</td>
+<td>规定完成动画所花费的时间，以秒或毫秒计。</td>
+</tr>
+<tr>
+<td>animation-timing-function</td>
+<td>规定动画的速度曲线。</td>
+</tr>
+<tr>
+<td>animation-delay</td>
+<td>规定在动画开始之前的延迟。</td>
+</tr>
+<tr>
+<td>animation-iteration-count</td>
+<td>规定动画应该播放的次数。</td>
+</tr>
+<tr>
+<td>animation-direction</td>
+<td>规定是否应该轮流反向播放动画。</td>
+</tr>
+</tbody></table>
+<p>它已然规定需要绑定<code>keyframe</code>，这就说明<code>animation</code>才是与<code>keyframes</code>不可分割的，不定义<code>animation</code>，<code>keyframes</code>写了毫无意义，<code>keyframes</code>不写，<code>animation</code>怎么也动不起来。</p>
+<p>由此可知，<code>keyframes</code>是帮助<code>animation</code>的一个东西，那我们先看看<code>keyframes</code>再说<code>animation</code>。</p>
+<h1 id="keyframes关键帧"><a href="#keyframes关键帧" class="headerlink" title="keyframes关键帧"></a>keyframes关键帧</h1><p>熟悉动画制作的同学估计都知道关键帧，他也可以看作时间帧，这个时间在表述的时候以百分比的形式展示出来。</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> move</span><br><span class="line">&#123;</span><br><span class="line">0%   &#123;<span class="attribute">top</span>:<span class="number">0px</span>;&#125;</span><br><span class="line">25%  &#123;<span class="attribute">top</span>:<span class="number">200px</span>;&#125;</span><br><span class="line">50%  &#123;<span class="attribute">top</span>:<span class="number">100px</span>;&#125;</span><br><span class="line">75%  &#123;<span class="attribute">top</span>:<span class="number">200px</span>;&#125;</span><br><span class="line">100% &#123;<span class="attribute">top</span>:<span class="number">0px</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在每个百分比里，其实就是写好的css样式，里面可以规定width等基础属性，当然也可以写<code>transform</code>！按照时间从小到大进行过渡</p>
+<p>那最后<code>keyframes</code>就是已经写好的有过渡的动画动作，这才是动态的！<br><code>transform</code>只是某刻的转变，加了时间，才叫动态，才叫动画！</p>
+<p>那写好了动画，给谁用，就用到了<code>animation</code>，将<code>animation</code>配置好写到css里，就可以给特定元素辅以动画了！<br>每写出来的一个<code>keyframes</code>，只是代表一个动画行为，变长变短，转圈圈，仅此而已，没有别的含义了。<br>使用<code>keyframes</code>的就是<code>animation</code>了。</p>
+<h1 id="transition与animation的区别"><a href="#transition与animation的区别" class="headerlink" title="transition与animation的区别"></a>transition与animation的区别</h1><p>所以其实要说区别，应该是要区分<code>transition</code>与<code>animation</code>的区别，说了这么多，顾名思义就可以看出来，一个是过渡，一个是动画！硬要说的话，过渡是只有两个帧的动画，动画是有很多次过渡的过渡。</p>
+<p><code>transition</code>是由属性的变化而触发的，无论这个变化是不是我们期望的，只要属性改变，就会触发<code>transition</code>。<br><code>animation</code>的触发就是我们所设置的，根据她所规定的值指定我们想要的规则，可以在一开始就执行，可以执行一次再也不变。</p>
+]]></content>
+      <tags>
+        <tag>动画</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue学习笔记-实现一个分页组件</title>
+    <url>/2021/08/04/vue-note/</url>
+    <content><![CDATA[<blockquote>
+<p>分页组件在web项目中是十分常见的组件，让我们用vue来实现一个简单的分页组件。</p>
+</blockquote>
+<h4 id="功能点："><a href="#功能点：" class="headerlink" title="功能点："></a>功能点：</h4><p>1.点击页面序号可以跳转到相应页面。<br> 2.点击上一页或者下一页可以跳转页面，当页面在第一页时上一页无法点击，页面在最后一页时下一页无法点击。<br> 3.一次显示当前页面的前两页和后两页<br> 4.当当前页面的序号和第一页与最后一页相差三个以上时出现省略号<br> 5.始终显示第一页和最后一页，只有一页的时候显示一页</p>
+<h4 id="组件代码："><a href="#组件代码：" class="headerlink" title="组件代码："></a>组件代码：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Pagination.vue</span><br><span class="line">&lt;!--</span><br><span class="line">  params:</span><br><span class="line">    pageNo: 总页数</span><br><span class="line">    current: 当前的页码</span><br><span class="line"> --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;pager&quot;&gt;</span><br><span class="line">    &lt;button class=&quot;btn btn-pager&quot; :disabled=&quot;this.current == 1&quot; @click=&quot;prePage&quot;&gt;上一页&lt;/button&gt;</span><br><span class="line">    &lt;span v-if=&quot;pageNo !== 1&quot; class=&quot;page-index &#123;&#123; 1 == current ? &#x27;active&#x27;:&#x27;&#x27;&#125;&#125;&quot; @click=&quot;goPage(1)&quot;&gt;1&lt;/span&gt;</span><br><span class="line">    &lt;span v-if=&quot;preClipped&quot; class=&quot;page-index&quot;&gt;...&lt;/span&gt;</span><br><span class="line">    &lt;span v-for=&quot;index in pages&quot; class=&quot;page-index &#123;&#123; index == current ? &#x27;active&#x27;:&#x27;&#x27;&#125;&#125; &quot; @click=&quot;goPage(index)&quot;&gt;&#123;&#123;index&#125;&#125;&lt;/span&gt;</span><br><span class="line">    &lt;span v-if=&quot;backClipped&quot; class=&quot;page-index&quot;&gt;...&lt;/span&gt;</span><br><span class="line">    &lt;span class=&quot;page-index &#123;&#123; pageNo == current ? &#x27;active&#x27;:&#x27;&#x27;&#125;&#125; &quot; @click=&quot;goPage(pageNo)&quot;&gt;&#123;&#123;pageNo&#125;&#125;&lt;/span&gt;</span><br><span class="line">    &lt;button class=&quot;btn btn-pager&quot; :disabled=&quot;this.current == pageNo&quot; @click=&quot;nextPage&quot;&gt;下一页&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>1.给页码标签绑定class，使用对象语法，让当前的页码附上’active’类名，这样可以动态的得到active的样式，使得当前页码区别于其他页码<br> 2.给button绑定:disabled属性，让按钮在当前页面等于最后一页或者第一页时无法点击<br> 3.goPage方法绑定在页码标签上实现点击页面索引，跳转到相应页面<br> 4.prePage方法和nextPage方法绑定在button上实现页面跳转<br> 5.使用v-if指令动态判断省略号和第一页是否能显示<br> 6使用v-for指令将所有应该显示的页码遍历出来</p>
+<p>JS部分就直接以注释来说明</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">props</span>: &#123;</span><br><span class="line">    <span class="comment">// 用于记录总页码，可由父组件传过来</span></span><br><span class="line">    <span class="attr">pageNo</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="attr">default</span>: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 用于记录当前页数，这个与父组件进行数据交互来完成每一页的数据更新，所以我们只要改变current的值来控制整个页面的数据即可</span></span><br><span class="line">    <span class="attr">current</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="attr">default</span>: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="comment">// 用于判断省略号是否显示</span></span><br><span class="line">      <span class="attr">backClipped</span>: <span class="literal">true</span>, </span><br><span class="line">      <span class="attr">preClipped</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    prePage () &#123;</span><br><span class="line">      <span class="comment">// 上一页</span></span><br><span class="line">      <span class="built_in">this</span>.current--</span><br><span class="line">    &#125;,</span><br><span class="line">    nextPage () &#123;</span><br><span class="line">      <span class="comment">// 下一页</span></span><br><span class="line">      <span class="built_in">this</span>.current++</span><br><span class="line">    &#125;,</span><br><span class="line">    goPage (index) &#123;</span><br><span class="line">      <span class="comment">// 跳转到相应页面</span></span><br><span class="line">      <span class="keyword">if</span> (index !== <span class="built_in">this</span>.current) &#123;</span><br><span class="line">        <span class="built_in">this</span>.current = index</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">computed</span>: &#123;</span><br><span class="line">    <span class="comment">// 使用计算属性来得到每次应该显示的页码</span></span><br><span class="line">    <span class="attr">pages</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> ret = []</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.current &gt; <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="comment">// 当前页码大于三时，显示当前页码的前2个</span></span><br><span class="line">        ret.push(<span class="built_in">this</span>.current - <span class="number">2</span>)</span><br><span class="line">        ret.push(<span class="built_in">this</span>.current - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.current &gt; <span class="number">4</span>) &#123;</span><br><span class="line">          <span class="comment">// 当前页与第一页差距4以上时显示省略号</span></span><br><span class="line">          <span class="built_in">this</span>.preClipped = <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.preClipped = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt; <span class="built_in">this</span>.current; i++) &#123;</span><br><span class="line">          ret.push(i)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.current !== <span class="built_in">this</span>.pageNo &amp;&amp; <span class="built_in">this</span>.current !== <span class="number">1</span>) &#123;</span><br><span class="line">        ret.push(<span class="built_in">this</span>.current)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.current &lt; (<span class="built_in">this</span>.pageNo - <span class="number">2</span>)) &#123;</span><br><span class="line">        <span class="comment">// 显示当前页码的后2个</span></span><br><span class="line">        ret.push(<span class="built_in">this</span>.current + <span class="number">1</span>)</span><br><span class="line">        ret.push(<span class="built_in">this</span>.current + <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.current &lt;= (<span class="built_in">this</span>.pageNo - <span class="number">3</span>)) &#123;</span><br><span class="line">          当前页与最后一页差距<span class="number">3</span>以上时显示省略号</span><br><span class="line">          <span class="built_in">this</span>.backClipped = <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.backClipped = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = (<span class="built_in">this</span>.current + <span class="number">1</span>); i &lt; <span class="built_in">this</span>.pageNo; i++) &#123;</span><br><span class="line">          ret.push(i)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 返回整个页码组</span></span><br><span class="line">      <span class="keyword">return</span> ret</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">// 组件样式</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line"><span class="selector-class">.pager</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.btn-pager</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#000000</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#e3e3e3</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">0px</span>;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.btn-pager</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f2f2f2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.page-index</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">35px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#000000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.active</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#0bbe06</span>;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="配合父组件使用"><a href="#配合父组件使用" class="headerlink" title="配合父组件使用"></a>配合父组件使用</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;pagination :page-no=<span class="string">&quot;pageNo&quot;</span> :current.sync=<span class="string">&quot;currentPage&quot;</span>&gt;&lt;/pagination&gt;</span><br><span class="line"><span class="comment">// 从父组件使用该分页组件的地方传递总页码pageNo</span></span><br><span class="line"><span class="comment">// 父组件与该分页组件双向绑定current</span></span><br><span class="line"><span class="comment">// 使用currentPage 来更新页面需要的数据</span></span><br><span class="line">  watch: &#123;</span><br><span class="line">    <span class="attr">currentPage</span>: <span class="string">&#x27;requestData&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  ready () &#123;</span><br><span class="line">    <span class="built_in">this</span>.requestData()</span><br><span class="line">  &#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">currentPage</span>: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    requestData () &#123;</span><br><span class="line">      <span class="comment">// 在这里使用ajax或者fetch将对应页传过去获取数据即可</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="完成后的效果图："><a href="#完成后的效果图：" class="headerlink" title="完成后的效果图："></a>完成后的效果图：</h4><p><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-17.webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-18.webp"></p>
+]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8 道高频出现的 Vue 面试题及答案</title>
     <url>/2021/08/04/vue-interview/</url>
     <content><![CDATA[<h2 style="color: rgb(53, 179, 120)"> 前言</h2>
@@ -1072,8 +1270,8 @@ Vuex
 
 ]]></content>
       <tags>
-        <tag>面试</tag>
         <tag>vue</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -1233,31 +1431,6 @@ Vuex
 ]]></content>
       <tags>
         <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue学习笔记-实现一个分页组件</title>
-    <url>/2021/08/04/vue-note/</url>
-    <content><![CDATA[<blockquote>
-<p>分页组件在web项目中是十分常见的组件，让我们用vue来实现一个简单的分页组件。</p>
-</blockquote>
-<h4 id="功能点："><a href="#功能点：" class="headerlink" title="功能点："></a>功能点：</h4><p>1.点击页面序号可以跳转到相应页面。<br> 2.点击上一页或者下一页可以跳转页面，当页面在第一页时上一页无法点击，页面在最后一页时下一页无法点击。<br> 3.一次显示当前页面的前两页和后两页<br> 4.当当前页面的序号和第一页与最后一页相差三个以上时出现省略号<br> 5.始终显示第一页和最后一页，只有一页的时候显示一页</p>
-<h4 id="组件代码："><a href="#组件代码：" class="headerlink" title="组件代码："></a>组件代码：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Pagination.vue</span><br><span class="line">&lt;!--</span><br><span class="line">  params:</span><br><span class="line">    pageNo: 总页数</span><br><span class="line">    current: 当前的页码</span><br><span class="line"> --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;pager&quot;&gt;</span><br><span class="line">    &lt;button class=&quot;btn btn-pager&quot; :disabled=&quot;this.current == 1&quot; @click=&quot;prePage&quot;&gt;上一页&lt;/button&gt;</span><br><span class="line">    &lt;span v-if=&quot;pageNo !== 1&quot; class=&quot;page-index &#123;&#123; 1 == current ? &#x27;active&#x27;:&#x27;&#x27;&#125;&#125;&quot; @click=&quot;goPage(1)&quot;&gt;1&lt;/span&gt;</span><br><span class="line">    &lt;span v-if=&quot;preClipped&quot; class=&quot;page-index&quot;&gt;...&lt;/span&gt;</span><br><span class="line">    &lt;span v-for=&quot;index in pages&quot; class=&quot;page-index &#123;&#123; index == current ? &#x27;active&#x27;:&#x27;&#x27;&#125;&#125; &quot; @click=&quot;goPage(index)&quot;&gt;&#123;&#123;index&#125;&#125;&lt;/span&gt;</span><br><span class="line">    &lt;span v-if=&quot;backClipped&quot; class=&quot;page-index&quot;&gt;...&lt;/span&gt;</span><br><span class="line">    &lt;span class=&quot;page-index &#123;&#123; pageNo == current ? &#x27;active&#x27;:&#x27;&#x27;&#125;&#125; &quot; @click=&quot;goPage(pageNo)&quot;&gt;&#123;&#123;pageNo&#125;&#125;&lt;/span&gt;</span><br><span class="line">    &lt;button class=&quot;btn btn-pager&quot; :disabled=&quot;this.current == pageNo&quot; @click=&quot;nextPage&quot;&gt;下一页&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>1.给页码标签绑定class，使用对象语法，让当前的页码附上’active’类名，这样可以动态的得到active的样式，使得当前页码区别于其他页码<br> 2.给button绑定:disabled属性，让按钮在当前页面等于最后一页或者第一页时无法点击<br> 3.goPage方法绑定在页码标签上实现点击页面索引，跳转到相应页面<br> 4.prePage方法和nextPage方法绑定在button上实现页面跳转<br> 5.使用v-if指令动态判断省略号和第一页是否能显示<br> 6使用v-for指令将所有应该显示的页码遍历出来</p>
-<p>JS部分就直接以注释来说明</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">props</span>: &#123;</span><br><span class="line">    <span class="comment">// 用于记录总页码，可由父组件传过来</span></span><br><span class="line">    <span class="attr">pageNo</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="attr">default</span>: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 用于记录当前页数，这个与父组件进行数据交互来完成每一页的数据更新，所以我们只要改变current的值来控制整个页面的数据即可</span></span><br><span class="line">    <span class="attr">current</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="attr">default</span>: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="comment">// 用于判断省略号是否显示</span></span><br><span class="line">      <span class="attr">backClipped</span>: <span class="literal">true</span>, </span><br><span class="line">      <span class="attr">preClipped</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    prePage () &#123;</span><br><span class="line">      <span class="comment">// 上一页</span></span><br><span class="line">      <span class="built_in">this</span>.current--</span><br><span class="line">    &#125;,</span><br><span class="line">    nextPage () &#123;</span><br><span class="line">      <span class="comment">// 下一页</span></span><br><span class="line">      <span class="built_in">this</span>.current++</span><br><span class="line">    &#125;,</span><br><span class="line">    goPage (index) &#123;</span><br><span class="line">      <span class="comment">// 跳转到相应页面</span></span><br><span class="line">      <span class="keyword">if</span> (index !== <span class="built_in">this</span>.current) &#123;</span><br><span class="line">        <span class="built_in">this</span>.current = index</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">computed</span>: &#123;</span><br><span class="line">    <span class="comment">// 使用计算属性来得到每次应该显示的页码</span></span><br><span class="line">    <span class="attr">pages</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> ret = []</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.current &gt; <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="comment">// 当前页码大于三时，显示当前页码的前2个</span></span><br><span class="line">        ret.push(<span class="built_in">this</span>.current - <span class="number">2</span>)</span><br><span class="line">        ret.push(<span class="built_in">this</span>.current - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.current &gt; <span class="number">4</span>) &#123;</span><br><span class="line">          <span class="comment">// 当前页与第一页差距4以上时显示省略号</span></span><br><span class="line">          <span class="built_in">this</span>.preClipped = <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.preClipped = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt; <span class="built_in">this</span>.current; i++) &#123;</span><br><span class="line">          ret.push(i)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.current !== <span class="built_in">this</span>.pageNo &amp;&amp; <span class="built_in">this</span>.current !== <span class="number">1</span>) &#123;</span><br><span class="line">        ret.push(<span class="built_in">this</span>.current)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.current &lt; (<span class="built_in">this</span>.pageNo - <span class="number">2</span>)) &#123;</span><br><span class="line">        <span class="comment">// 显示当前页码的后2个</span></span><br><span class="line">        ret.push(<span class="built_in">this</span>.current + <span class="number">1</span>)</span><br><span class="line">        ret.push(<span class="built_in">this</span>.current + <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.current &lt;= (<span class="built_in">this</span>.pageNo - <span class="number">3</span>)) &#123;</span><br><span class="line">          当前页与最后一页差距<span class="number">3</span>以上时显示省略号</span><br><span class="line">          <span class="built_in">this</span>.backClipped = <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.backClipped = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = (<span class="built_in">this</span>.current + <span class="number">1</span>); i &lt; <span class="built_in">this</span>.pageNo; i++) &#123;</span><br><span class="line">          ret.push(i)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 返回整个页码组</span></span><br><span class="line">      <span class="keyword">return</span> ret</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">// 组件样式</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line"><span class="selector-class">.pager</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.btn-pager</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#000000</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#e3e3e3</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">0px</span>;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.btn-pager</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f2f2f2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.page-index</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">35px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#000000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.active</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#0bbe06</span>;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="配合父组件使用"><a href="#配合父组件使用" class="headerlink" title="配合父组件使用"></a>配合父组件使用</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;pagination :page-no=<span class="string">&quot;pageNo&quot;</span> :current.sync=<span class="string">&quot;currentPage&quot;</span>&gt;&lt;/pagination&gt;</span><br><span class="line"><span class="comment">// 从父组件使用该分页组件的地方传递总页码pageNo</span></span><br><span class="line"><span class="comment">// 父组件与该分页组件双向绑定current</span></span><br><span class="line"><span class="comment">// 使用currentPage 来更新页面需要的数据</span></span><br><span class="line">  watch: &#123;</span><br><span class="line">    <span class="attr">currentPage</span>: <span class="string">&#x27;requestData&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  ready () &#123;</span><br><span class="line">    <span class="built_in">this</span>.requestData()</span><br><span class="line">  &#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">currentPage</span>: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    requestData () &#123;</span><br><span class="line">      <span class="comment">// 在这里使用ajax或者fetch将对应页传过去获取数据即可</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="完成后的效果图："><a href="#完成后的效果图：" class="headerlink" title="完成后的效果图："></a>完成后的效果图：</h4><p><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-17.webp"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-18.webp"></p>
-]]></content>
-      <tags>
-        <tag>vue</tag>
-        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -3984,8 +4157,8 @@ Vuex
 ]]></content>
       <tags>
         <tag>css</tag>
-        <tag>面试</tag>
         <tag>vue</tag>
+        <tag>面试</tag>
         <tag>html</tag>
         <tag>js</tag>
         <tag>eS6</tag>
