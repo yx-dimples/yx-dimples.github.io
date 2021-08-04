@@ -186,34 +186,6 @@
   </entry>
   <entry>
     <title>Javascript</title>
-    <url>/2021/07/30/JavaScript---method/</url>
-    <content><![CDATA[<h3 id="1-小数化整"><a href="#1-小数化整" class="headerlink" title="1.小数化整"></a>1.小数化整</h3><p>Math.ceil( ) 上取整<br>​        Math.floor( ) 下取整<br>​        Math.round( ) 四舍五入取整</p>
-<ul>
-<li>1-1保留一位小数<ul>
-<li>num.toFixed(1)<h3 id="2-重置下标"><a href="#2-重置下标" class="headerlink" title="2.重置下标"></a>2.重置下标</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//javascript</span></span><br><span class="line"><span class="keyword">var</span> index = <span class="built_in">this</span>.index;</span><br><span class="line"><span class="comment">//jquery</span></span><br><span class="line"><span class="keyword">var</span> index = $(<span class="built_in">this</span>).index();</span><br></pre></td></tr></table></figure>
-<h3 id="3-更改CSS里的属性"><a href="#3-更改CSS里的属性" class="headerlink" title="3.更改CSS里的属性"></a>3.更改CSS里的属性</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> move = <span class="built_in">document</span>.getElementById(<span class="string">&quot;move&quot;</span>);</span><br><span class="line">move.style.cssText = <span class="string">`left:<span class="subst">$&#123;left&#125;</span>px;top:<span class="subst">$&#123;top&#125;</span>px`</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="4-给标签填充文字"><a href="#4-给标签填充文字" class="headerlink" title="4.给标签填充文字"></a>4.给标签填充文字</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 如果有引号用转义符\ */</span></span><br><span class="line">p.innerHTML = <span class="string">&quot;搜索\&quot;&quot;</span>+v.value+<span class="string">&quot;\&quot;,找到600首单曲&quot;</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="5-JS装换时分秒"><a href="#5-JS装换时分秒" class="headerlink" title="5.JS装换时分秒"></a>5.JS装换时分秒</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">如果你红框内返回的是毫秒数，你就要先转换为date类型 比如红框内是X ;</span><br><span class="line">(注:这里的毫秒数是由具体年月日转换来的，但接口里就是根据时间转换过来的，可以直接用)</span><br><span class="line">(不能用年月日的时间差去转换)</span><br><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>(X);</span><br><span class="line"><span class="keyword">var</span> year = now.getFullYear(); <span class="comment">//获取年份</span></span><br><span class="line"><span class="keyword">var</span> month = now.getMonth(); <span class="comment">//获取月份 月份要+1</span></span><br><span class="line"><span class="keyword">var</span> date = now.getDate(); <span class="comment">//获取日期</span></span><br><span class="line"><span class="keyword">var</span> hour = now.getHours(); <span class="comment">//获取时</span></span><br><span class="line"><span class="keyword">var</span> minu = now.getMinutes(); <span class="comment">//获取分钟</span></span><br><span class="line"><span class="keyword">var</span> sec = now.getSeconds(); <span class="comment">//获取秒钟</span></span><br><span class="line">这些都是原生的js方法</span><br></pre></td></tr></table></figure>
-<h3 id="6-JS封装入口（窗口加载完成）"><a href="#6-JS封装入口（窗口加载完成）" class="headerlink" title="6.JS封装入口（窗口加载完成）"></a>6.JS封装入口（窗口加载完成）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="built_in">window</span>.onload(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="7-遍历接口中多个相同属性"><a href="#7-遍历接口中多个相同属性" class="headerlink" title="7.遍历接口中多个相同属性"></a>7.遍历接口中多个相同属性</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> names = [];</span><br><span class="line"><span class="keyword">var</span> castnames = [];</span><br><span class="line">writers.forEach(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">  names.push(item.name)</span><br><span class="line">&#125;);  </span><br><span class="line">obj.writers = names.join(<span class="string">&quot;/&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="8-关于冒号"><a href="#8-关于冒号" class="headerlink" title="8.关于冒号 :"></a>8.关于冒号 :</h3>$(“:button”) 表示匹配所有的按钮。<br>$(“input:checked”)表示匹配所有选中的被选中元素(复选框、单选框等，不包括select中的option)。 </li>
-</ul>
-</li>
-</ul>
-<h3 id="9-is"><a href="#9-is" class="headerlink" title="9.is()"></a>9.is()</h3><ul>
-<li>$(selector).is(selectorElement,function(index,element))<ul>
-<li>选择器表达式，根据选择器/元素/jQuery 对象检查匹配元素集合，如果存在至少一个匹配元素，则返回 true，否则返回 false.</li>
-<li>function()可选项<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(<span class="string">&quot;p&quot;</span>).parent().is(<span class="string">&quot;div&quot;</span>)) &#123;</span><br><span class="line">    alert(<span class="string">&quot;p 的父元素是 div&quot;</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">判断动画播放完</span><br><span class="line"><span class="keyword">if</span>(!$(<span class="string">&quot;.pic&gt;img&quot;</span>).is(<span class="string">&quot;:animated&quot;</span>))</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// -----------生命周期--------</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 可以获取dom元素，但无法获取宽高等属性（window.onload可以获取）</span></span><br><span class="line"><span class="comment">* 可以依次执行多个ready函数（但window.onload只执行一次）</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; &#125;) </span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行函数（等同于上面的ready函数）</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------获取dom-----------</span></span><br><span class="line"><span class="keyword">var</span> $dom = $(<span class="string">&quot;p&quot;</span>);  <span class="comment">//这里是jq对象的dom，如果$(&quot;p&quot;)[0],这是原生dom，下同。</span></span><br><span class="line"><span class="keyword">var</span> $dom_class = $(<span class="string">&quot;.box&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> $dom_id = $(<span class="string">&quot;#box&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------修改CSS-----------</span></span><br><span class="line">$dom.css(&#123;</span><br><span class="line">  <span class="attr">background</span>: <span class="string">&#x27;red&#x27;</span>;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------获取宽高-----------</span></span><br><span class="line">$dom.width()</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------创建DOM------------</span></span><br><span class="line"><span class="keyword">var</span> $p = $(<span class="string">&quot;&lt;p&gt;hello&lt;/p&gt;&quot;</span>);</span><br><span class="line">$dom.append($p)</span><br><span class="line"></span><br><span class="line"><span class="comment">// -----------遍历伪数组----------</span></span><br><span class="line"><span class="keyword">var</span> warr = &#123;<span class="number">0</span>: <span class="string">&#x27;s&#x27;</span>, <span class="number">1</span>: <span class="string">&#x27;r&#x27;</span>, <span class="attr">length</span>: <span class="number">2</span>&#125;;</span><br><span class="line">$.each(warr, <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>)</span>&#123; &#125;); <span class="comment">// $.each也可以遍历数组，返回值是原对象</span></span><br><span class="line">$.map(warr, <span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>)</span>&#123; <span class="keyword">return</span> item &#125;); <span class="comment">// $.map也可以遍历数组,</span></span><br><span class="line">	返回值是<span class="keyword">return</span>处理的数组</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javascript</title>
     <url>/2021/07/30/JavaScript---event/</url>
     <content><![CDATA[<h2 id="3-1常用的事件"><a href="#3-1常用的事件" class="headerlink" title="3-1常用的事件"></a>3-1常用的事件</h2><h4 id="1-常用的事件"><a href="#1-常用的事件" class="headerlink" title="1.常用的事件"></a>1.常用的事件</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">onclick     点击事件</span><br><span class="line">onmouseover 鼠标悬停</span><br><span class="line">onmouseout  鼠标移出</span><br><span class="line">onchange    元素改变</span><br><span class="line">onkeydown   按下键盘</span><br><span class="line">onkeyup    松开键盘</span><br><span class="line">onload     浏览器完成页面加载</span><br><span class="line">onblur     元素失去焦点</span><br><span class="line">onfocus    元素获得焦点</span><br><span class="line">onscroll   滚动事件（scrollTop获取滚动条距离顶部的高度）</span><br><span class="line">onresize   当浏览器被重置大小时触发</span><br><span class="line">onmousemove 鼠标移动</span><br><span class="line">onmousedown 鼠标按下</span><br><span class="line">onmouseup 鼠标松开</span><br></pre></td></tr></table></figure>
 <h4 id="2-获取键盘码"><a href="#2-获取键盘码" class="headerlink" title="2.获取键盘码"></a>2.获取键盘码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">input.onkeyup = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="comment">/* keyCode返回一个键盘码 */</span></span><br><span class="line">    <span class="keyword">if</span>(event.keyCode==<span class="number">13</span>)&#123; <span class="comment">//回车键：13</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -375,33 +347,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MongoDB---单机部署</title>
-    <url>/2021/08/02/MongoDB--deplpy/</url>
-    <content><![CDATA[<h2 id="Windows系统中的安装启动"><a href="#Windows系统中的安装启动" class="headerlink" title="Windows系统中的安装启动"></a>Windows系统中的安装启动</h2><h5 id="第一步：下载安装包"><a href="#第一步：下载安装包" class="headerlink" title="第一步：下载安装包"></a>第一步：下载安装包</h5><p><a href="https://www.mongodb.com/try/download/community">https://www.mongodb.com/try/download/community</a><br><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/mongodb.png"></p>
-<p>根据上图所示下载<code>zip</code>包<br>提示：版本的选择：<br>MongoDB的版本命名规范如：ｘ．ｙ．ｚ<br>ｙ为奇数时表示当前版本为开发版<br>ｙ为偶数时表示当前版本为稳定版<br>ｚ是修正版本号，数字越大越好</p>
-<h5 id="第二步：解压安装启动"><a href="#第二步：解压安装启动" class="headerlink" title="第二步：解压安装启动"></a>第二步：解压安装启动</h5><p>将压缩包解压大一个目录中。<br>在解压目录中，手动建立一个目录用于存放数据文件，如data/db</p>
-<p>方式1：命令行参数方式启动服务<br>在bin目录中打开命令提示符，输入如下命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongod --dbpath=..\data\db</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/conf.png"><br>mongoDB的默认端口是27017</p>
-<p>方式2：配置文件方式启动服务<br>在解压目录中新建<code>config</code>文件夹，该文件夹中新建配置文件<code>mongod.conf</code>，内如参考如下</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">storage:</span></span><br><span class="line">	<span class="comment">#The directory where the mongod instance stores its data.Default Value is &quot;data\db&quot; on windows</span></span><br><span class="line">	<span class="attr">dbPath:</span> <span class="string">D:\MongoDB\data</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongod -f ../config/mongod.conf</span><br><span class="line">或</span><br><span class="line">mongod --config ../config/mongod.conf</span><br></pre></td></tr></table></figure>
-
-<h2 id="Shell链接（mongo命令）"><a href="#Shell链接（mongo命令）" class="headerlink" title="Shell链接（mongo命令）"></a>Shell链接（mongo命令）</h2><p>在命令提示符输入以下shell命令即可完成登录</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
-<p>查看已经有的数据库</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">show databases</span><br></pre></td></tr></table></figure>
-<p>退出mongodb</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
-<p>更多参数可以通过帮助查看：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongo --help</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>MongoDB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MongoDB--集合操作</title>
     <url>/2021/08/02/MongoDB--collection/</url>
     <content><![CDATA[<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h2><p>集合，类似关系型数据库中的表<br>可以显示的创建，也可以隐式的创建</p>
@@ -463,6 +408,61 @@
 ]]></content>
       <tags>
         <tag>MongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB---单机部署</title>
+    <url>/2021/08/02/MongoDB--deplpy/</url>
+    <content><![CDATA[<h2 id="Windows系统中的安装启动"><a href="#Windows系统中的安装启动" class="headerlink" title="Windows系统中的安装启动"></a>Windows系统中的安装启动</h2><h5 id="第一步：下载安装包"><a href="#第一步：下载安装包" class="headerlink" title="第一步：下载安装包"></a>第一步：下载安装包</h5><p><a href="https://www.mongodb.com/try/download/community">https://www.mongodb.com/try/download/community</a><br><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/mongodb.png"></p>
+<p>根据上图所示下载<code>zip</code>包<br>提示：版本的选择：<br>MongoDB的版本命名规范如：ｘ．ｙ．ｚ<br>ｙ为奇数时表示当前版本为开发版<br>ｙ为偶数时表示当前版本为稳定版<br>ｚ是修正版本号，数字越大越好</p>
+<h5 id="第二步：解压安装启动"><a href="#第二步：解压安装启动" class="headerlink" title="第二步：解压安装启动"></a>第二步：解压安装启动</h5><p>将压缩包解压大一个目录中。<br>在解压目录中，手动建立一个目录用于存放数据文件，如data/db</p>
+<p>方式1：命令行参数方式启动服务<br>在bin目录中打开命令提示符，输入如下命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongod --dbpath=..\data\db</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/conf.png"><br>mongoDB的默认端口是27017</p>
+<p>方式2：配置文件方式启动服务<br>在解压目录中新建<code>config</code>文件夹，该文件夹中新建配置文件<code>mongod.conf</code>，内如参考如下</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">storage:</span></span><br><span class="line">	<span class="comment">#The directory where the mongod instance stores its data.Default Value is &quot;data\db&quot; on windows</span></span><br><span class="line">	<span class="attr">dbPath:</span> <span class="string">D:\MongoDB\data</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongod -f ../config/mongod.conf</span><br><span class="line">或</span><br><span class="line">mongod --config ../config/mongod.conf</span><br></pre></td></tr></table></figure>
+
+<h2 id="Shell链接（mongo命令）"><a href="#Shell链接（mongo命令）" class="headerlink" title="Shell链接（mongo命令）"></a>Shell链接（mongo命令）</h2><p>在命令提示符输入以下shell命令即可完成登录</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
+<p>查看已经有的数据库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">show databases</span><br></pre></td></tr></table></figure>
+<p>退出mongodb</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
+<p>更多参数可以通过帮助查看：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mongo --help</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>MongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Javascript</title>
+    <url>/2021/07/30/JavaScript---method/</url>
+    <content><![CDATA[<h3 id="1-小数化整"><a href="#1-小数化整" class="headerlink" title="1.小数化整"></a>1.小数化整</h3><p>Math.ceil( ) 上取整<br>​        Math.floor( ) 下取整<br>​        Math.round( ) 四舍五入取整</p>
+<ul>
+<li>1-1保留一位小数<ul>
+<li>num.toFixed(1)<h3 id="2-重置下标"><a href="#2-重置下标" class="headerlink" title="2.重置下标"></a>2.重置下标</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//javascript</span></span><br><span class="line"><span class="keyword">var</span> index = <span class="built_in">this</span>.index;</span><br><span class="line"><span class="comment">//jquery</span></span><br><span class="line"><span class="keyword">var</span> index = $(<span class="built_in">this</span>).index();</span><br></pre></td></tr></table></figure>
+<h3 id="3-更改CSS里的属性"><a href="#3-更改CSS里的属性" class="headerlink" title="3.更改CSS里的属性"></a>3.更改CSS里的属性</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> move = <span class="built_in">document</span>.getElementById(<span class="string">&quot;move&quot;</span>);</span><br><span class="line">move.style.cssText = <span class="string">`left:<span class="subst">$&#123;left&#125;</span>px;top:<span class="subst">$&#123;top&#125;</span>px`</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="4-给标签填充文字"><a href="#4-给标签填充文字" class="headerlink" title="4.给标签填充文字"></a>4.给标签填充文字</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 如果有引号用转义符\ */</span></span><br><span class="line">p.innerHTML = <span class="string">&quot;搜索\&quot;&quot;</span>+v.value+<span class="string">&quot;\&quot;,找到600首单曲&quot;</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="5-JS装换时分秒"><a href="#5-JS装换时分秒" class="headerlink" title="5.JS装换时分秒"></a>5.JS装换时分秒</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">如果你红框内返回的是毫秒数，你就要先转换为date类型 比如红框内是X ;</span><br><span class="line">(注:这里的毫秒数是由具体年月日转换来的，但接口里就是根据时间转换过来的，可以直接用)</span><br><span class="line">(不能用年月日的时间差去转换)</span><br><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>(X);</span><br><span class="line"><span class="keyword">var</span> year = now.getFullYear(); <span class="comment">//获取年份</span></span><br><span class="line"><span class="keyword">var</span> month = now.getMonth(); <span class="comment">//获取月份 月份要+1</span></span><br><span class="line"><span class="keyword">var</span> date = now.getDate(); <span class="comment">//获取日期</span></span><br><span class="line"><span class="keyword">var</span> hour = now.getHours(); <span class="comment">//获取时</span></span><br><span class="line"><span class="keyword">var</span> minu = now.getMinutes(); <span class="comment">//获取分钟</span></span><br><span class="line"><span class="keyword">var</span> sec = now.getSeconds(); <span class="comment">//获取秒钟</span></span><br><span class="line">这些都是原生的js方法</span><br></pre></td></tr></table></figure>
+<h3 id="6-JS封装入口（窗口加载完成）"><a href="#6-JS封装入口（窗口加载完成）" class="headerlink" title="6.JS封装入口（窗口加载完成）"></a>6.JS封装入口（窗口加载完成）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="built_in">window</span>.onload(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="7-遍历接口中多个相同属性"><a href="#7-遍历接口中多个相同属性" class="headerlink" title="7.遍历接口中多个相同属性"></a>7.遍历接口中多个相同属性</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> names = [];</span><br><span class="line"><span class="keyword">var</span> castnames = [];</span><br><span class="line">writers.forEach(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">  names.push(item.name)</span><br><span class="line">&#125;);  </span><br><span class="line">obj.writers = names.join(<span class="string">&quot;/&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="8-关于冒号"><a href="#8-关于冒号" class="headerlink" title="8.关于冒号 :"></a>8.关于冒号 :</h3>$(“:button”) 表示匹配所有的按钮。<br>$(“input:checked”)表示匹配所有选中的被选中元素(复选框、单选框等，不包括select中的option)。 </li>
+</ul>
+</li>
+</ul>
+<h3 id="9-is"><a href="#9-is" class="headerlink" title="9.is()"></a>9.is()</h3><ul>
+<li>$(selector).is(selectorElement,function(index,element))<ul>
+<li>选择器表达式，根据选择器/元素/jQuery 对象检查匹配元素集合，如果存在至少一个匹配元素，则返回 true，否则返回 false.</li>
+<li>function()可选项<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(<span class="string">&quot;p&quot;</span>).parent().is(<span class="string">&quot;div&quot;</span>)) &#123;</span><br><span class="line">    alert(<span class="string">&quot;p 的父元素是 div&quot;</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">判断动画播放完</span><br><span class="line"><span class="keyword">if</span>(!$(<span class="string">&quot;.pic&gt;img&quot;</span>).is(<span class="string">&quot;:animated&quot;</span>))</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// -----------生命周期--------</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 可以获取dom元素，但无法获取宽高等属性（window.onload可以获取）</span></span><br><span class="line"><span class="comment">* 可以依次执行多个ready函数（但window.onload只执行一次）</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; &#125;) </span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行函数（等同于上面的ready函数）</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------获取dom-----------</span></span><br><span class="line"><span class="keyword">var</span> $dom = $(<span class="string">&quot;p&quot;</span>);  <span class="comment">//这里是jq对象的dom，如果$(&quot;p&quot;)[0],这是原生dom，下同。</span></span><br><span class="line"><span class="keyword">var</span> $dom_class = $(<span class="string">&quot;.box&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> $dom_id = $(<span class="string">&quot;#box&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------修改CSS-----------</span></span><br><span class="line">$dom.css(&#123;</span><br><span class="line">  <span class="attr">background</span>: <span class="string">&#x27;red&#x27;</span>;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------获取宽高-----------</span></span><br><span class="line">$dom.width()</span><br><span class="line"></span><br><span class="line"><span class="comment">// ------------创建DOM------------</span></span><br><span class="line"><span class="keyword">var</span> $p = $(<span class="string">&quot;&lt;p&gt;hello&lt;/p&gt;&quot;</span>);</span><br><span class="line">$dom.append($p)</span><br><span class="line"></span><br><span class="line"><span class="comment">// -----------遍历伪数组----------</span></span><br><span class="line"><span class="keyword">var</span> warr = &#123;<span class="number">0</span>: <span class="string">&#x27;s&#x27;</span>, <span class="number">1</span>: <span class="string">&#x27;r&#x27;</span>, <span class="attr">length</span>: <span class="number">2</span>&#125;;</span><br><span class="line">$.each(warr, <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>)</span>&#123; &#125;); <span class="comment">// $.each也可以遍历数组，返回值是原对象</span></span><br><span class="line">$.map(warr, <span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>)</span>&#123; <span class="keyword">return</span> item &#125;); <span class="comment">// $.map也可以遍历数组,</span></span><br><span class="line">	返回值是<span class="keyword">return</span>处理的数组</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -931,6 +931,311 @@
       </tags>
   </entry>
   <entry>
+    <title>vue生命周期</title>
+    <url>/2021/08/04/vue-lifeCycle/</url>
+    <content><![CDATA[<blockquote>
+<p>生命周期：Vue 实例从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等一系列过程，我们称这是 Vue 的生命周期，各个阶段有相对应的事件钩子</p>
+</blockquote>
+<h2 id="生命周期钩子函数"><a href="#生命周期钩子函数" class="headerlink" title="生命周期钩子函数"></a>生命周期钩子函数</h2><p>下面这张图是vue生命周期各个阶段的执行情况：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-1.png" alt="img" style="zoom:50%;">
+
+
+<table>
+<thead>
+<tr>
+<th><strong>生命周期钩子</strong></th>
+<th>组件状态</th>
+<th><strong>最佳实践</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>beforeCreate</td>
+<td>实例初始化之后，this指向创建的实例，不能访问到data、computed、watch、methods上的方法和数据</td>
+<td>常用于初始化非响应式变量</td>
+</tr>
+<tr>
+<td>created</td>
+<td>实例创建完成，可访问data、computed、watch、methods上的方法和数据，未挂载到DOM，不能访问到el属性，ref属性内容为空数组</td>
+<td>常用于简单的ajax请求，页面的初始化</td>
+</tr>
+<tr>
+<td>beforeMount</td>
+<td>在挂载开始之前被调用，beforeMount之前，会找到对应的template，并编译成render函数</td>
+<td>-</td>
+</tr>
+<tr>
+<td>mounted</td>
+<td>实例挂载到DOM上，此时可以通过DOM API获取到DOM节点，$ref属性可以访问常用于获取VNode信息和操作，ajax请求</td>
+<td>常用于获取VNode信息和操作，ajax请求</td>
+</tr>
+<tr>
+<td>beforeupdate</td>
+<td>响应式数据更新时调用，发生在虚拟DOM打补丁之前</td>
+<td>适合在更新之前访问现有的DOM，比如手动移除已添加的事件监听器</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>虚拟 DOM 重新渲染和打补丁之后调用，组件DOM已经更新，可执行依赖于DOM的操作</td>
+<td>避免在这个钩子函数中操作数据，可能陷入死循环</td>
+</tr>
+<tr>
+<td>beforeDestroy</td>
+<td>实例销毁之前调用。这一步，实例仍然完全可用，this仍能获取到实例</td>
+<td>常用于销毁定时器、解绑全局事件、销毁插件对象等操作</td>
+</tr>
+<tr>
+<td>destroyed</td>
+<td>实例销毁后调用，调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>注意：</p>
+<ol>
+<li>created阶段的ajax请求与mounted请求的区别：前者页面视图未出现，如果请求信息过多，页面会长时间处于白屏状态</li>
+<li><code>mounted</code> 不会承诺所有的子组件也都一起被挂载。如果你希望等到整个视图都渲染</li>
+</ol>
+<p>完毕，可以用 <a href="https://cn.vuejs.org/v2/api/#vm-nextTick">vm.$nextTick</a></p>
+<ol>
+<li>vue2.0之后主动调用$destroy()不会移除dom节点，作者不推荐直接destroy这种做法，如果实在需要这样用可以在这个生命周期钩子中手动移除dom节点</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>vue生命周期学习<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/vue/2.4.2/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line"><span class="javascript">    <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="javascript">      <span class="attr">message</span>: <span class="string">&#x27;Vue的生命周期&#x27;</span></span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">beforeCreate</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;------beforeCreate创建前状态------&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span> , <span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el); <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); <span class="comment">//undefined </span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message) </span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;------created创建完毕状态------&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el); <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); <span class="comment">//已被初始化 </span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">beforeMount</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;------beforeMount挂载前状态------&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + (<span class="built_in">this</span>.$el)); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); <span class="comment">//已被初始化  </span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); <span class="comment">//已被初始化  </span></span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">mounted</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;------mounted 挂载结束状态------&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el);    </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); <span class="comment">//已被初始化 </span></span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">beforeUpdate</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;beforeUpdate 更新前状态===============》&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el);   </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); </span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">updated</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;updated 更新完成状态===============》&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); </span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">beforeDestroy</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;beforeDestroy 销毁前状态===============》&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el);    </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); </span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">destroyed</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;destroyed 销毁完成状态===============》&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el);  </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message)</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript">  &#125;)</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>运行后打开console可以看到打印出来内容如下:<br><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-3.png"></p>
+<h2 id="单个组件的生命周期"><a href="#单个组件的生命周期" class="headerlink" title="单个组件的生命周期"></a>单个组件的生命周期</h2><p>现根据实际代码执行情况分析：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h3&gt;单组件&lt;/h3&gt;</span><br><span class="line">        &lt;el-button @click=&quot;dataVar += 1&quot;&gt;更新 &#123;&#123;dataVar&#125;&#125;&lt;/el-button&gt;</span><br><span class="line">        &lt;el-button @click=&quot;handleDestroy&quot;&gt;销毁&lt;/el-button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            dataVar: 1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeCreate() &#123;</span><br><span class="line">        this.compName = &#x27;single&#x27;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--beforeCreate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--created`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeMount() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--beforeMount`)</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--mounted`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeUpdate() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--beforeUpdate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    updated() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--updated`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeDestroy() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--beforeDestroy`)</span><br><span class="line">    &#125;,</span><br><span class="line">    destroyed() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--destroyed`)</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        handleDestroy() &#123;</span><br><span class="line">            this.$destroy()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>初始化组件时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-2.webp" alt="14483412-308eb2388198fe14" style="zoom:80%;">
+
+<p>当data中的值变化时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-3.webp" alt="img" style="zoom:80%;">
+
+<p>当组件销毁时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-4.webp" alt="img" style="zoom:80%;">
+
+<p>从打印结果可以看出:</p>
+<ol>
+<li>初始化组件时，仅执行了beforeCreate/Created/beforeMount/mounted四个钩子函数</li>
+<li>当改变data中定义的变量（响应式变量）时，会执行beforeUpdate/updated钩子函数</li>
+<li>当切换组件（当前组件未缓存）时，会执行beforeDestory/destroyed钩子函数</li>
+<li><strong>初始化和销毁时的生命钩子函数均只会执行一次，beforeUpdate/updated可多次执行</strong></li>
+</ol>
+<h2 id="父子组件的生命周期"><a href="#父子组件的生命周期" class="headerlink" title="父子组件的生命周期"></a>父子组件的生命周期</h2><p>将单组件作为基础组件（由于props在beforeCreate()中未初始化），需要做如下更改：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">    compName: &#123;</span><br><span class="line">        type: String,</span><br><span class="line">        default: &#x27;single&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">beforeCreate() &#123;</span><br><span class="line">    // this.compName = &#x27;single&#x27;</span><br><span class="line">    // console.log(`--$&#123;this.compName&#125;--beforeCreate`)</span><br><span class="line"></span><br><span class="line">    console.log(` --data未初始化--beforeCreate`)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>父组件代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class=&quot;complex&quot;&gt;</span><br><span class="line">        &lt;h3&gt;复杂组件&lt;/h3&gt;</span><br><span class="line">        &lt;lifecycle-single compName=&quot;child&quot;&gt;&lt;/lifecycle-single&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const COMPONENT_NAME = &#x27;complex&#x27;</span><br><span class="line"></span><br><span class="line">import LifecycleSingle from &#x27;./LifeCycleSingle&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    beforeCreate() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeCreate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--created`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeMount() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeMount`)</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--mounted`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeUpdate() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeUpdate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    updated() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--updated`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeDestroy() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeDestroy`)</span><br><span class="line">    &#125;,</span><br><span class="line">    destroyed() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--destroyed`)</span><br><span class="line">    &#125;,</span><br><span class="line">    components: &#123;</span><br><span class="line">        LifecycleSingle</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>初始化组件时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-5.webp" alt="img" style="zoom:80%;">
+
+<p>当子组件data中的值变化时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-6.webp" alt="img" style="zoom:80%;">
+
+<p>当父组件data中的值变化时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-7.webp" alt="img" style="zoom:80%;">
+
+<p>当props改变时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-8.webp" alt="img" style="zoom:80%;">
+
+<p>当子组件销毁时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-9.webp" alt="img" style="zoom:80%;">
+
+<p>当父组件销毁时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-10.webp" alt="img" style="zoom:80%;">
+
+<p>从打印结果可以看出:</p>
+<ol>
+<li>仅当子组件完成挂载后，父组件才会挂载</li>
+<li>当子组件完成挂载后，父组件会主动执行一次beforeUpdate/updated钩子函数（仅首次）</li>
+<li>父子组件在data变化中是分别监控的，但是在更新props中的数据是关联的（可实践）</li>
+<li>销毁父组件时，先将子组件销毁后才会销毁父组件</li>
+</ol>
+<h2 id="在上面的基础上，复杂组件做如下更改"><a href="#在上面的基础上，复杂组件做如下更改" class="headerlink" title="在上面的基础上，复杂组件做如下更改"></a>在上面的基础上，复杂组件做如下更改</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class=&quot;complex&quot;&gt;</span><br><span class="line">        &lt;h3&gt;复杂组件&lt;/h3&gt;</span><br><span class="line">        &lt;lifecycle-single compName=&quot;cihld1&quot;&gt;&lt;/lifecycle-single&gt;</span><br><span class="line">        &lt;lifecycle-single compName=&quot;child2&quot;&gt;&lt;/lifecycle-single&gt;</span><br><span class="line">        &lt;el-button @click=&quot;dataVar += 1&quot;&gt;complex更新 &#123;&#123;dataVar&#125;&#125;&lt;/el-button&gt;</span><br><span class="line">        &lt;el-button @click=&quot;handleDestroy&quot;&gt;complex销毁&lt;/el-button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>初始化组件时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-11.webp" alt="img" style="zoom:80%;">
+
+<p>当child1更新和销毁时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-12.webp" alt="img" style="zoom:80%;">
+
+<p>当child2更新和销毁时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-13.webp" alt="img" style="zoom: 80%;">
+
+<p>当父组件销毁时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-14.webp" alt="img" style="zoom:80%;">
+
+<p>从打印结果可以看出:</p>
+<ol>
+<li>组件的初始化（mounted之前）分开进行，挂载是从上到下依次进行</li>
+<li>当没有数据关联时，兄弟组件之间的更新和销毁是互不关联的</li>
+</ol>
+<h2 id="宏mixin的生命周期"><a href="#宏mixin的生命周期" class="headerlink" title="宏mixin的生命周期"></a>宏mixin的生命周期</h2><p>在上面的基础上，添加一个mixin.js文件，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const COMPONENT_NAME = &#x27;lifecycleMixin&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: COMPONENT_NAME,</span><br><span class="line">    beforeCreate() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeCreate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--created`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeMount() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeMount`)</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--mounted`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeUpdate() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeUpdate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    updated() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--updated`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeDestroy() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeDestroy`)</span><br><span class="line">    &#125;,</span><br><span class="line">    destroyed() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--destroyed`)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同样的，复杂组件做如下更改：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import lifecycleMixin from &#x27;./mixin&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    mixins: [lifecycleMixin],</span><br><span class="line">    // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>组件初始化时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-15.webp" alt="img" style="zoom:80%;">
+
+<p>组件销毁时，打印：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-16.webp" alt="img" style="zoom:80%;">
+
+<p>从打印结果可以看出:<br>mixin中的生命周期与引入该组件的生命周期是仅仅关联的，且<strong>mixin的生命周期优先执行</strong></p>
+]]></content>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8 道高频出现的 Vue 面试题及答案</title>
+    <url>/2021/08/04/vue-interview/</url>
+    <content><![CDATA[<h2 style="color: rgb(53, 179, 120)"> 前言</h2>
+本文讲解 8 道高频出现的 Vue 面试题及答案。
+> 复习前端面试的知识，是为了巩固前端的基础知识，最重要的还是平时的积累！
+
+<p><code>注意</code>：文章的题与题之间用下划线分隔开，答案仅供参考。</p>
+<h3 style="color: rgb(53, 179, 120)"> Vue</h3>
+<h4 style="color: rgb(53, 179, 120)"> 对 MVC、MVP 、MVVM 的理解</h4>
+MVC 模式的意思是，软件可以分成三个部分。
+
+
+
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/1.png" style="zoom:50%;">
+
+<ul>
+<li>视图（View）：用户界面。</li>
+<li>控制器（Controller）：业务逻辑。</li>
+<li>模型（Model）：数据保存。<br>各部分之间的通信方式如下。</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/2.png" alt="图片" style="zoom: 50%;">
+
+<ul>
+<li><p>View 传送指令到 Controller</p>
+</li>
+<li><p>Controller 完成业务逻辑后，要求 Model 改变状态</p>
+</li>
+<li><p>Model 将新的数据发送到 View，用户得到反馈</p>
+</li>
+<li><p>所有通信都是单向的（逆时针）。</p>
+</li>
+</ul>
+<p>MVP 模式将 Controller 改名为 Presenter，同时改变了通信方向。</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/3.png" alt="图片" style="zoom:50%;">
+
+<ul>
+<li>各部分之间的通信，都是双向的（顺时针）。</li>
+<li>View 与 Model 不发生联系，都通过 Presenter 传递。</li>
+<li>View 非常薄，不部署任何业务逻辑，称为 “被动视图”（Passive View），即没有任何主动性，而 Presenter非常厚，所有逻辑都部署在那里。</li>
+</ul>
+<p>MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/4.png" alt="图片" style="zoom:50%;">
+
+<p>唯一的区别是，它采用双向绑定（data-binding）：View 的变动，自动反映在 ViewModel，反之亦然。Angular 和 Ember 都采用这种模式。</p>
+<h4 style="color: rgb(53, 179, 120)"> 如何理解 Vue 是异步执行 DOM 更新的 ？</h4>
+- Vue 是异步执行 DOM 更新。
+- 只要观察到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据改变。
+- 如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作上非常重要。
+- 然后，在下一个的事件循环` tick `中，Vue 刷新队列并执行实际 (已去重的) 工作。Vue 在内部尝试对异步队列使用原生的 Promise.then 和 MessageChannel，如果执行环境不支持，会采用 setTimeout(fn, 0) 代替。
+
+<p>例如，当你设置 vm.someData = ‘new value’ ，该组件不会立即重新渲染。</p>
+<ul>
+<li>当刷新队列时，组件会在事件循环队列清空时的下一个 <code>tick</code> 更新。</li>
+<li>多数情况我们不需要关心这个过程，但是如果你想在 DOM 状态更新后做点什么，这就可能会有些棘手。</li>
+<li>虽然 Vue.js 通常鼓励开发人员沿着 “数据驱动” 的方式思考，避免直接接触 DOM，但是有时我们确实要这么做。为了在数据变化之后等待 Vue 完成更新 DOM ，可以在数据变化之后立即使用 Vue.nextTick(callback) 。这样回调函数在 DOM 更新完成后就会调用。</li>
+</ul>
+<h4 style="color: rgb(53, 179, 120)"> 深入响应式原理</h4>
+
+<p>如何追踪变化</p>
+<ul>
+<li><p>当你把一个普通的 JavaScript 对象传给 Vue 实例的 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转 getter/setter。</p>
+</li>
+<li><p>Object.defineProperty 是 ES5 中一个无法 shim 的特性，这也就是为什么 Vue 不支持 IE8 以及更低版本浏览器的原因。</p>
+</li>
+<li><p>这些 getter/setter 对用户来说是不可见的，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。这里需要注意的问题是浏览器控制台在打印数据对象时 getter/setter 的格式化并不同，所以你可能需要安装 vue-devtools 来获取更加友好的检查接口。</p>
+</li>
+<li><p>每个组件实例都有相应的 watcher 实例对象，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新。</p>
+</li>
+<li><p>观察者订阅了可观察对象，当可观察对象发布事件，则就直接调度观察者的行为，所以这里观察者和可观察对象其实就产生了一个依赖的关系。</p>
+</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/5.png" alt="图片" style="zoom:50%;">
+
+<h4 style="color: rgb(53, 179, 120)"> 说下对 Virtual DOM 算法的理解 ?</h4>
+
+<p>包括几个步骤：</p>
+<ul>
+<li>1、用 JavaScript 对象结构表示 DOM 树的结构，然后用这个树构建一个真正的 DOM 树，插到文档当中；</li>
+<li>2、当状态变更的时候，重新构造一棵新的对象树，然后用新的树和旧的树进行比较，记录两棵树差异；</li>
+<li>3、把 2 所记录的差异应用到步骤 1 所构建的真正的 DOM 树上，视图就更新了。</li>
+</ul>
+<p>Virtual DOM 本质上就是在 JS 和 DOM 之间做了一个缓存。可以类比 CPU 和硬盘，既然硬盘这么慢，我们就在它们之间加个缓存：既然 DOM 这么慢，我们就在它们 JS 和 DOM 之间加个缓存。CPU（JS）只操作内存（Virtual DOM），最后的时候再把变更写入硬盘（DOM）。</p>
+<h4 style="color: rgb(53, 179, 120)"> 比较两棵虚拟 DOM 树的差异</h4>
+
+<p>比较两棵 DOM 树的差异是 Virtual DOM 算法最核心的部分，这也是所谓的 Virtual DOM 的 diff 算法。两个树的完全的 diff 算法是一个时间复杂度为 O(n^3) 的问题。但是在前端当中，你很少会跨越层级地移动 DOM 元素。</p>
+<p>所以 Virtual DOM 只会对同一个层级的元素进行对比：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/6.png" alt="图片" style="zoom:50%;">
+
+<p>上面的 div 只会和同一层级的 div 对比，第二层级的只会跟第二层级对比。这样算法复杂度就可以达到 O(n)。</p>
+<p>深度优先遍历，记录差异</p>
+<p>在实际的代码中，会对新旧两棵树进行一个深度优先的遍历，这样每个节点都会有一个唯一的标记：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/7.png" alt="图片" style="zoom:50%;">
+
+<p>在深度优先遍历的时候，每遍历到一个节点就把该节点和新的的树进行对比。如果有差异的话就记录到一个对象里面。</p>
+<p>Virtual DOM 算法主要是实现上面步骤的三个函数：element，diff，patch。然后就可以实际的进行使用：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1. 构建虚拟 DOM</span></span><br><span class="line"><span class="keyword">var</span> tree = el(<span class="string">&#x27;div&#x27;</span>, &#123;<span class="string">&#x27;id&#x27;</span>: <span class="string">&#x27;container&#x27;</span>&#125;, [</span><br><span class="line">    el(<span class="string">&#x27;h1&#x27;</span>, &#123;<span class="attr">style</span>: <span class="string">&#x27;color: blue&#x27;</span>&#125;, [<span class="string">&#x27;simple virtal dom&#x27;</span>]),</span><br><span class="line">    el(<span class="string">&#x27;p&#x27;</span>, [<span class="string">&#x27;Hello, virtual-dom&#x27;</span>]),</span><br><span class="line">    el(<span class="string">&#x27;ul&#x27;</span>, [el(<span class="string">&#x27;li&#x27;</span>)])</span><br><span class="line">])</span><br><span class="line"><span class="comment">// 2. 通过虚拟 DOM 构建真正的 DOM</span></span><br><span class="line"><span class="keyword">var</span> root = tree.render()</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(root)</span><br><span class="line"><span class="comment">// 3. 生成新的虚拟 DOM</span></span><br><span class="line"><span class="keyword">var</span> newTree = el(<span class="string">&#x27;div&#x27;</span>, &#123;<span class="string">&#x27;id&#x27;</span>: <span class="string">&#x27;container&#x27;</span>&#125;, [</span><br><span class="line">    el(<span class="string">&#x27;h1&#x27;</span>, &#123;<span class="attr">style</span>: <span class="string">&#x27;color: red&#x27;</span>&#125;, [<span class="string">&#x27;simple virtal dom&#x27;</span>]),</span><br><span class="line">    el(<span class="string">&#x27;p&#x27;</span>, [<span class="string">&#x27;Hello, virtual-dom&#x27;</span>]),</span><br><span class="line">    el(<span class="string">&#x27;ul&#x27;</span>, [el(<span class="string">&#x27;li&#x27;</span>), el(<span class="string">&#x27;li&#x27;</span>)])</span><br><span class="line">])</span><br><span class="line"><span class="comment">// 4. 比较两棵虚拟 DOM 树的不同</span></span><br><span class="line"><span class="keyword">var</span> patches = diff(tree, newTree)</span><br><span class="line"><span class="comment">// 5. 在真正的 DOM 元素上应用变更</span></span><br><span class="line">patch(root, patches)</span><br></pre></td></tr></table></figure>
+
+<p>当然这是非常粗糙的实践，实际中还需要处理事件监听等；生成虚拟 DOM 的时候也可以加入 JSX 语法。这些事情都做了的话，就可以构造一个简单的 ReactJS 了。</p>
+<h4 style="color: rgb(53, 179, 120)"> 非父子组件如何通信 ？</h4>
+
+<p>Vue 官网介绍了非父子组件通信方法：</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/8.png" alt="图片" style="zoom:50%;">
+
+<p>在 bus.js 里面 写入下面信息</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span><span class="string">&#x27;vue&#x27;</span></span><br><span class="line">exportdefaultnew Vue();</span><br></pre></td></tr></table></figure>
+
+<p>在需要通信的组件都引入 Bus.js</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;emit&quot;&gt;</span><br><span class="line">    &lt;button @click=&quot;bus&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template &gt;</span><br><span class="line">import Bus from &#x27;./bus.js&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      message: &#x27;&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    bus() &#123;</span><br><span class="line">      Bus.$emit(&#x27;msg&#x27;, &#x27;我要传给兄弟组件们，你收到没有&#x27;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div id=&quot;on&quot;&gt;</span><br><span class="line">      &lt;p&gt;&#123;&#123;message&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">import Bus from &#x27;./bus.js&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        message:  &#x27;&#x27;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;　　　</span><br><span class="line">       let self = this</span><br><span class="line">       Bus.$on(&#x27;msg&#x27;, (e) =&gt; &#123;</span><br><span class="line">         self.message = e</span><br><span class="line">         console.log(`传来的数据是：$&#123;e&#125;`)</span><br><span class="line">       &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>最后 p 会显示来自 $emit 传来的信息。</p>
+<h4 style="color: rgb(53, 179, 120)"> 什么情况下我应该使用 Vuex ？</h4>
+
+<ul>
+<li>虽然 Vuex 可以帮助我们管理共享状态，但也附带了更多的概念和框架。这需要对短期和长期效益进行权衡。</li>
+<li>如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此，如果您的应用够简单，您最好不要使用 Vuex。一个简单的 <strong>global event bus</strong>[2] 就足够您所需了。</li>
+<li>但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。</li>
+</ul>
+<h4 style="color: rgb(53, 179, 120)"> Vue 过程图解</h4>
+
+<p>Vue 生命周期过程图解</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/9.png" alt="图片" style="zoom:50%;">
+
+<p style="text-align:center">Vue 生命周期</p>
+
+<p>Vue 响应式原理</p>
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/10.png" alt="图片" style="zoom:50%;">
+
+<p style="text-align:center">Vue 响应式原理</p>
+Vue 过程图解
+
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/11.png" alt="图片" style="zoom:50%;">
+
+<p style="text-align:center">Vue 过程图解</p>
+Vuex
+
+<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/12.png" alt="图片" style="zoom:50%;">
+
+<p style="text-align:center">Vuex</p>
+
+]]></content>
+      <tags>
+        <tag>vue</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>transform，transition，animation，keyframes区别</title>
     <url>/2021/08/04/transform%EF%BC%8Ctransition%EF%BC%8Canimation%EF%BC%8Ckeyframes/</url>
     <content><![CDATA[<h1 id="transform转变"><a href="#transform转变" class="headerlink" title="transform转变"></a>transform转变</h1><p><code>transform</code>并不是一个动态属性，他是一个静态的属性。专注于改变元素基于默认位置的以下值。<br>注意，只是改变，并不是一个过程，只是针对css的各种特殊改变，完全可以看作是与<code>width，height，position</code>等同类的属性。</p>
@@ -1129,308 +1434,19 @@
       </tags>
   </entry>
   <entry>
-    <title>8 道高频出现的 Vue 面试题及答案</title>
-    <url>/2021/08/04/vue-interview/</url>
-    <content><![CDATA[<h2 style="color: rgb(53, 179, 120)"> 前言</h2>
-本文讲解 8 道高频出现的 Vue 面试题及答案。
-> 复习前端面试的知识，是为了巩固前端的基础知识，最重要的还是平时的积累！
-
-<p><code>注意</code>：文章的题与题之间用下划线分隔开，答案仅供参考。</p>
-<h3 style="color: rgb(53, 179, 120)"> Vue</h3>
-<h4 style="color: rgb(53, 179, 120)"> 对 MVC、MVP 、MVVM 的理解</h4>
-MVC 模式的意思是，软件可以分成三个部分。
-
-
-
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/1.png" style="zoom:50%;">
-
-<ul>
-<li>视图（View）：用户界面。</li>
-<li>控制器（Controller）：业务逻辑。</li>
-<li>模型（Model）：数据保存。<br>各部分之间的通信方式如下。</li>
+    <title>width和height的百分比是相对谁讲的？margin和padding呢？</title>
+    <url>/2021/08/04/width%E3%80%81height%E3%80%81margin%E3%80%81padding/</url>
+    <content><![CDATA[<ul>
+<li>width是相对于直接父元素的width</li>
+<li>height是相对于直接父元素的height</li>
+<li>padding是相对于直接父元素的width</li>
+<li>margin是相对于直接父元素的margin</li>
 </ul>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/2.png" alt="图片" style="zoom: 50%;">
-
-<ul>
-<li><p>View 传送指令到 Controller</p>
-</li>
-<li><p>Controller 完成业务逻辑后，要求 Model 改变状态</p>
-</li>
-<li><p>Model 将新的数据发送到 View，用户得到反馈</p>
-</li>
-<li><p>所有通信都是单向的（逆时针）。</p>
-</li>
-</ul>
-<p>MVP 模式将 Controller 改名为 Presenter，同时改变了通信方向。</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/3.png" alt="图片" style="zoom:50%;">
-
-<ul>
-<li>各部分之间的通信，都是双向的（顺时针）。</li>
-<li>View 与 Model 不发生联系，都通过 Presenter 传递。</li>
-<li>View 非常薄，不部署任何业务逻辑，称为 “被动视图”（Passive View），即没有任何主动性，而 Presenter非常厚，所有逻辑都部署在那里。</li>
-</ul>
-<p>MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/4.png" alt="图片" style="zoom:50%;">
-
-<p>唯一的区别是，它采用双向绑定（data-binding）：View 的变动，自动反映在 ViewModel，反之亦然。Angular 和 Ember 都采用这种模式。</p>
-<h4 style="color: rgb(53, 179, 120)"> 如何理解 Vue 是异步执行 DOM 更新的 ？</h4>
-- Vue 是异步执行 DOM 更新。
-- 只要观察到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据改变。
-- 如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作上非常重要。
-- 然后，在下一个的事件循环` tick `中，Vue 刷新队列并执行实际 (已去重的) 工作。Vue 在内部尝试对异步队列使用原生的 Promise.then 和 MessageChannel，如果执行环境不支持，会采用 setTimeout(fn, 0) 代替。
-
-<p>例如，当你设置 vm.someData = ‘new value’ ，该组件不会立即重新渲染。</p>
-<ul>
-<li>当刷新队列时，组件会在事件循环队列清空时的下一个 <code>tick</code> 更新。</li>
-<li>多数情况我们不需要关心这个过程，但是如果你想在 DOM 状态更新后做点什么，这就可能会有些棘手。</li>
-<li>虽然 Vue.js 通常鼓励开发人员沿着 “数据驱动” 的方式思考，避免直接接触 DOM，但是有时我们确实要这么做。为了在数据变化之后等待 Vue 完成更新 DOM ，可以在数据变化之后立即使用 Vue.nextTick(callback) 。这样回调函数在 DOM 更新完成后就会调用。</li>
-</ul>
-<h4 style="color: rgb(53, 179, 120)"> 深入响应式原理</h4>
-
-<p>如何追踪变化</p>
-<ul>
-<li><p>当你把一个普通的 JavaScript 对象传给 Vue 实例的 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转 getter/setter。</p>
-</li>
-<li><p>Object.defineProperty 是 ES5 中一个无法 shim 的特性，这也就是为什么 Vue 不支持 IE8 以及更低版本浏览器的原因。</p>
-</li>
-<li><p>这些 getter/setter 对用户来说是不可见的，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。这里需要注意的问题是浏览器控制台在打印数据对象时 getter/setter 的格式化并不同，所以你可能需要安装 vue-devtools 来获取更加友好的检查接口。</p>
-</li>
-<li><p>每个组件实例都有相应的 watcher 实例对象，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新。</p>
-</li>
-<li><p>观察者订阅了可观察对象，当可观察对象发布事件，则就直接调度观察者的行为，所以这里观察者和可观察对象其实就产生了一个依赖的关系。</p>
-</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/5.png" alt="图片" style="zoom:50%;">
-
-<h4 style="color: rgb(53, 179, 120)"> 说下对 Virtual DOM 算法的理解 ?</h4>
-
-<p>包括几个步骤：</p>
-<ul>
-<li>1、用 JavaScript 对象结构表示 DOM 树的结构，然后用这个树构建一个真正的 DOM 树，插到文档当中；</li>
-<li>2、当状态变更的时候，重新构造一棵新的对象树，然后用新的树和旧的树进行比较，记录两棵树差异；</li>
-<li>3、把 2 所记录的差异应用到步骤 1 所构建的真正的 DOM 树上，视图就更新了。</li>
-</ul>
-<p>Virtual DOM 本质上就是在 JS 和 DOM 之间做了一个缓存。可以类比 CPU 和硬盘，既然硬盘这么慢，我们就在它们之间加个缓存：既然 DOM 这么慢，我们就在它们 JS 和 DOM 之间加个缓存。CPU（JS）只操作内存（Virtual DOM），最后的时候再把变更写入硬盘（DOM）。</p>
-<h4 style="color: rgb(53, 179, 120)"> 比较两棵虚拟 DOM 树的差异</h4>
-
-<p>比较两棵 DOM 树的差异是 Virtual DOM 算法最核心的部分，这也是所谓的 Virtual DOM 的 diff 算法。两个树的完全的 diff 算法是一个时间复杂度为 O(n^3) 的问题。但是在前端当中，你很少会跨越层级地移动 DOM 元素。</p>
-<p>所以 Virtual DOM 只会对同一个层级的元素进行对比：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/6.png" alt="图片" style="zoom:50%;">
-
-<p>上面的 div 只会和同一层级的 div 对比，第二层级的只会跟第二层级对比。这样算法复杂度就可以达到 O(n)。</p>
-<p>深度优先遍历，记录差异</p>
-<p>在实际的代码中，会对新旧两棵树进行一个深度优先的遍历，这样每个节点都会有一个唯一的标记：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/7.png" alt="图片" style="zoom:50%;">
-
-<p>在深度优先遍历的时候，每遍历到一个节点就把该节点和新的的树进行对比。如果有差异的话就记录到一个对象里面。</p>
-<p>Virtual DOM 算法主要是实现上面步骤的三个函数：element，diff，patch。然后就可以实际的进行使用：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1. 构建虚拟 DOM</span></span><br><span class="line"><span class="keyword">var</span> tree = el(<span class="string">&#x27;div&#x27;</span>, &#123;<span class="string">&#x27;id&#x27;</span>: <span class="string">&#x27;container&#x27;</span>&#125;, [</span><br><span class="line">    el(<span class="string">&#x27;h1&#x27;</span>, &#123;<span class="attr">style</span>: <span class="string">&#x27;color: blue&#x27;</span>&#125;, [<span class="string">&#x27;simple virtal dom&#x27;</span>]),</span><br><span class="line">    el(<span class="string">&#x27;p&#x27;</span>, [<span class="string">&#x27;Hello, virtual-dom&#x27;</span>]),</span><br><span class="line">    el(<span class="string">&#x27;ul&#x27;</span>, [el(<span class="string">&#x27;li&#x27;</span>)])</span><br><span class="line">])</span><br><span class="line"><span class="comment">// 2. 通过虚拟 DOM 构建真正的 DOM</span></span><br><span class="line"><span class="keyword">var</span> root = tree.render()</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(root)</span><br><span class="line"><span class="comment">// 3. 生成新的虚拟 DOM</span></span><br><span class="line"><span class="keyword">var</span> newTree = el(<span class="string">&#x27;div&#x27;</span>, &#123;<span class="string">&#x27;id&#x27;</span>: <span class="string">&#x27;container&#x27;</span>&#125;, [</span><br><span class="line">    el(<span class="string">&#x27;h1&#x27;</span>, &#123;<span class="attr">style</span>: <span class="string">&#x27;color: red&#x27;</span>&#125;, [<span class="string">&#x27;simple virtal dom&#x27;</span>]),</span><br><span class="line">    el(<span class="string">&#x27;p&#x27;</span>, [<span class="string">&#x27;Hello, virtual-dom&#x27;</span>]),</span><br><span class="line">    el(<span class="string">&#x27;ul&#x27;</span>, [el(<span class="string">&#x27;li&#x27;</span>), el(<span class="string">&#x27;li&#x27;</span>)])</span><br><span class="line">])</span><br><span class="line"><span class="comment">// 4. 比较两棵虚拟 DOM 树的不同</span></span><br><span class="line"><span class="keyword">var</span> patches = diff(tree, newTree)</span><br><span class="line"><span class="comment">// 5. 在真正的 DOM 元素上应用变更</span></span><br><span class="line">patch(root, patches)</span><br></pre></td></tr></table></figure>
-
-<p>当然这是非常粗糙的实践，实际中还需要处理事件监听等；生成虚拟 DOM 的时候也可以加入 JSX 语法。这些事情都做了的话，就可以构造一个简单的 ReactJS 了。</p>
-<h4 style="color: rgb(53, 179, 120)"> 非父子组件如何通信 ？</h4>
-
-<p>Vue 官网介绍了非父子组件通信方法：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/8.png" alt="图片" style="zoom:50%;">
-
-<p>在 bus.js 里面 写入下面信息</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span><span class="string">&#x27;vue&#x27;</span></span><br><span class="line">exportdefaultnew Vue();</span><br></pre></td></tr></table></figure>
-
-<p>在需要通信的组件都引入 Bus.js</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;emit&quot;&gt;</span><br><span class="line">    &lt;button @click=&quot;bus&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template &gt;</span><br><span class="line">import Bus from &#x27;./bus.js&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      message: &#x27;&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    bus() &#123;</span><br><span class="line">      Bus.$emit(&#x27;msg&#x27;, &#x27;我要传给兄弟组件们，你收到没有&#x27;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div id=&quot;on&quot;&gt;</span><br><span class="line">      &lt;p&gt;&#123;&#123;message&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">import Bus from &#x27;./bus.js&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        message:  &#x27;&#x27;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;　　　</span><br><span class="line">       let self = this</span><br><span class="line">       Bus.$on(&#x27;msg&#x27;, (e) =&gt; &#123;</span><br><span class="line">         self.message = e</span><br><span class="line">         console.log(`传来的数据是：$&#123;e&#125;`)</span><br><span class="line">       &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>最后 p 会显示来自 $emit 传来的信息。</p>
-<h4 style="color: rgb(53, 179, 120)"> 什么情况下我应该使用 Vuex ？</h4>
-
-<ul>
-<li>虽然 Vuex 可以帮助我们管理共享状态，但也附带了更多的概念和框架。这需要对短期和长期效益进行权衡。</li>
-<li>如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此，如果您的应用够简单，您最好不要使用 Vuex。一个简单的 <strong>global event bus</strong>[2] 就足够您所需了。</li>
-<li>但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。</li>
-</ul>
-<h4 style="color: rgb(53, 179, 120)"> Vue 过程图解</h4>
-
-<p>Vue 生命周期过程图解</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/9.png" alt="图片" style="zoom:50%;">
-
-<p style="text-align:center">Vue 生命周期</p>
-
-<p>Vue 响应式原理</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/10.png" alt="图片" style="zoom:50%;">
-
-<p style="text-align:center">Vue 响应式原理</p>
-Vue 过程图解
-
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/11.png" alt="图片" style="zoom:50%;">
-
-<p style="text-align:center">Vue 过程图解</p>
-Vuex
-
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/12.png" alt="图片" style="zoom:50%;">
-
-<p style="text-align:center">Vuex</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-id">#wrapper</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">width</span>: <span class="number">500px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">height</span>: <span class="number">800px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">background-color</span>: <span class="number">#ccc</span>;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.parent</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">height</span>: <span class="number">400px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">background-color</span>: yellow;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.son</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="comment">/* 90*40 */</span></span></span><br><span class="line"><span class="css">        <span class="attribute">width</span>: <span class="number">30%</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">height</span>: <span class="number">10%</span>;</span></span><br><span class="line"><span class="css">        <span class="comment">/* 30 30 */</span></span></span><br><span class="line"><span class="css">        <span class="attribute">padding-left</span>: <span class="number">10%</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">margin-left</span>: <span class="number">10%</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">background-color</span>: green;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parent&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
-        <tag>vue</tag>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue生命周期</title>
-    <url>/2021/08/04/vue-lifeCycle/</url>
-    <content><![CDATA[<blockquote>
-<p>生命周期：Vue 实例从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等一系列过程，我们称这是 Vue 的生命周期，各个阶段有相对应的事件钩子</p>
-</blockquote>
-<h2 id="生命周期钩子函数"><a href="#生命周期钩子函数" class="headerlink" title="生命周期钩子函数"></a>生命周期钩子函数</h2><p>下面这张图是vue生命周期各个阶段的执行情况：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-1.png" alt="img" style="zoom:50%;">
-
-
-<table>
-<thead>
-<tr>
-<th><strong>生命周期钩子</strong></th>
-<th>组件状态</th>
-<th><strong>最佳实践</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>beforeCreate</td>
-<td>实例初始化之后，this指向创建的实例，不能访问到data、computed、watch、methods上的方法和数据</td>
-<td>常用于初始化非响应式变量</td>
-</tr>
-<tr>
-<td>created</td>
-<td>实例创建完成，可访问data、computed、watch、methods上的方法和数据，未挂载到DOM，不能访问到el属性，ref属性内容为空数组</td>
-<td>常用于简单的ajax请求，页面的初始化</td>
-</tr>
-<tr>
-<td>beforeMount</td>
-<td>在挂载开始之前被调用，beforeMount之前，会找到对应的template，并编译成render函数</td>
-<td>-</td>
-</tr>
-<tr>
-<td>mounted</td>
-<td>实例挂载到DOM上，此时可以通过DOM API获取到DOM节点，$ref属性可以访问常用于获取VNode信息和操作，ajax请求</td>
-<td>常用于获取VNode信息和操作，ajax请求</td>
-</tr>
-<tr>
-<td>beforeupdate</td>
-<td>响应式数据更新时调用，发生在虚拟DOM打补丁之前</td>
-<td>适合在更新之前访问现有的DOM，比如手动移除已添加的事件监听器</td>
-</tr>
-<tr>
-<td>updated</td>
-<td>虚拟 DOM 重新渲染和打补丁之后调用，组件DOM已经更新，可执行依赖于DOM的操作</td>
-<td>避免在这个钩子函数中操作数据，可能陷入死循环</td>
-</tr>
-<tr>
-<td>beforeDestroy</td>
-<td>实例销毁之前调用。这一步，实例仍然完全可用，this仍能获取到实例</td>
-<td>常用于销毁定时器、解绑全局事件、销毁插件对象等操作</td>
-</tr>
-<tr>
-<td>destroyed</td>
-<td>实例销毁后调用，调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁</td>
-<td>-</td>
-</tr>
-</tbody></table>
-<p>注意：</p>
-<ol>
-<li>created阶段的ajax请求与mounted请求的区别：前者页面视图未出现，如果请求信息过多，页面会长时间处于白屏状态</li>
-<li><code>mounted</code> 不会承诺所有的子组件也都一起被挂载。如果你希望等到整个视图都渲染</li>
-</ol>
-<p>完毕，可以用 <a href="https://cn.vuejs.org/v2/api/#vm-nextTick">vm.$nextTick</a></p>
-<ol>
-<li>vue2.0之后主动调用$destroy()不会移除dom节点，作者不推荐直接destroy这种做法，如果实在需要这样用可以在这个生命周期钩子中手动移除dom节点</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>vue生命周期学习<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/vue/2.4.2/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line"><span class="javascript">    <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="javascript">      <span class="attr">message</span>: <span class="string">&#x27;Vue的生命周期&#x27;</span></span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">beforeCreate</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;------beforeCreate创建前状态------&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span> , <span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el); <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); <span class="comment">//undefined </span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message) </span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;------created创建完毕状态------&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el); <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); <span class="comment">//已被初始化 </span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">beforeMount</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;------beforeMount挂载前状态------&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + (<span class="built_in">this</span>.$el)); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); <span class="comment">//已被初始化  </span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); <span class="comment">//已被初始化  </span></span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">mounted</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;------mounted 挂载结束状态------&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el);    </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); <span class="comment">//已被初始化</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); <span class="comment">//已被初始化 </span></span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">beforeUpdate</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;beforeUpdate 更新前状态===============》&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el);   </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); </span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">updated</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;updated 更新完成状态===============》&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); </span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">beforeDestroy</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;beforeDestroy 销毁前状态===============》&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el);    </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message); </span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript">    <span class="attr">destroyed</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.group(<span class="string">&#x27;destroyed 销毁完成状态===============》&#x27;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;el     : &quot;</span> + <span class="built_in">this</span>.$el);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="built_in">this</span>.$el);  </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;data   : &quot;</span> + <span class="built_in">this</span>.$data); </span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">&quot;%c%s&quot;</span>, <span class="string">&quot;color:red&quot;</span>,<span class="string">&quot;message: &quot;</span> + <span class="built_in">this</span>.message)</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript">  &#125;)</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>运行后打开console可以看到打印出来内容如下:<br><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-3.png"></p>
-<h2 id="单个组件的生命周期"><a href="#单个组件的生命周期" class="headerlink" title="单个组件的生命周期"></a>单个组件的生命周期</h2><p>现根据实际代码执行情况分析：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h3&gt;单组件&lt;/h3&gt;</span><br><span class="line">        &lt;el-button @click=&quot;dataVar += 1&quot;&gt;更新 &#123;&#123;dataVar&#125;&#125;&lt;/el-button&gt;</span><br><span class="line">        &lt;el-button @click=&quot;handleDestroy&quot;&gt;销毁&lt;/el-button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            dataVar: 1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeCreate() &#123;</span><br><span class="line">        this.compName = &#x27;single&#x27;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--beforeCreate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--created`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeMount() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--beforeMount`)</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--mounted`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeUpdate() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--beforeUpdate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    updated() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--updated`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeDestroy() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--beforeDestroy`)</span><br><span class="line">    &#125;,</span><br><span class="line">    destroyed() &#123;</span><br><span class="line">        console.log(`--$&#123;this.compName&#125;--destroyed`)</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        handleDestroy() &#123;</span><br><span class="line">            this.$destroy()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>初始化组件时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-2.webp" alt="14483412-308eb2388198fe14" style="zoom:80%;">
-
-<p>当data中的值变化时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-3.webp" alt="img" style="zoom:80%;">
-
-<p>当组件销毁时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-4.webp" alt="img" style="zoom:80%;">
-
-<p>从打印结果可以看出:</p>
-<ol>
-<li>初始化组件时，仅执行了beforeCreate/Created/beforeMount/mounted四个钩子函数</li>
-<li>当改变data中定义的变量（响应式变量）时，会执行beforeUpdate/updated钩子函数</li>
-<li>当切换组件（当前组件未缓存）时，会执行beforeDestory/destroyed钩子函数</li>
-<li><strong>初始化和销毁时的生命钩子函数均只会执行一次，beforeUpdate/updated可多次执行</strong></li>
-</ol>
-<h2 id="父子组件的生命周期"><a href="#父子组件的生命周期" class="headerlink" title="父子组件的生命周期"></a>父子组件的生命周期</h2><p>将单组件作为基础组件（由于props在beforeCreate()中未初始化），需要做如下更改：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">    compName: &#123;</span><br><span class="line">        type: String,</span><br><span class="line">        default: &#x27;single&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">beforeCreate() &#123;</span><br><span class="line">    // this.compName = &#x27;single&#x27;</span><br><span class="line">    // console.log(`--$&#123;this.compName&#125;--beforeCreate`)</span><br><span class="line"></span><br><span class="line">    console.log(` --data未初始化--beforeCreate`)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<p>父组件代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class=&quot;complex&quot;&gt;</span><br><span class="line">        &lt;h3&gt;复杂组件&lt;/h3&gt;</span><br><span class="line">        &lt;lifecycle-single compName=&quot;child&quot;&gt;&lt;/lifecycle-single&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const COMPONENT_NAME = &#x27;complex&#x27;</span><br><span class="line"></span><br><span class="line">import LifecycleSingle from &#x27;./LifeCycleSingle&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    beforeCreate() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeCreate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--created`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeMount() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeMount`)</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--mounted`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeUpdate() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeUpdate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    updated() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--updated`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeDestroy() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeDestroy`)</span><br><span class="line">    &#125;,</span><br><span class="line">    destroyed() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--destroyed`)</span><br><span class="line">    &#125;,</span><br><span class="line">    components: &#123;</span><br><span class="line">        LifecycleSingle</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>初始化组件时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-5.webp" alt="img" style="zoom:80%;">
-
-<p>当子组件data中的值变化时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-6.webp" alt="img" style="zoom:80%;">
-
-<p>当父组件data中的值变化时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-7.webp" alt="img" style="zoom:80%;">
-
-<p>当props改变时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-8.webp" alt="img" style="zoom:80%;">
-
-<p>当子组件销毁时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-9.webp" alt="img" style="zoom:80%;">
-
-<p>当父组件销毁时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-10.webp" alt="img" style="zoom:80%;">
-
-<p>从打印结果可以看出:</p>
-<ol>
-<li>仅当子组件完成挂载后，父组件才会挂载</li>
-<li>当子组件完成挂载后，父组件会主动执行一次beforeUpdate/updated钩子函数（仅首次）</li>
-<li>父子组件在data变化中是分别监控的，但是在更新props中的数据是关联的（可实践）</li>
-<li>销毁父组件时，先将子组件销毁后才会销毁父组件</li>
-</ol>
-<h2 id="在上面的基础上，复杂组件做如下更改"><a href="#在上面的基础上，复杂组件做如下更改" class="headerlink" title="在上面的基础上，复杂组件做如下更改"></a>在上面的基础上，复杂组件做如下更改</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class=&quot;complex&quot;&gt;</span><br><span class="line">        &lt;h3&gt;复杂组件&lt;/h3&gt;</span><br><span class="line">        &lt;lifecycle-single compName=&quot;cihld1&quot;&gt;&lt;/lifecycle-single&gt;</span><br><span class="line">        &lt;lifecycle-single compName=&quot;child2&quot;&gt;&lt;/lifecycle-single&gt;</span><br><span class="line">        &lt;el-button @click=&quot;dataVar += 1&quot;&gt;complex更新 &#123;&#123;dataVar&#125;&#125;&lt;/el-button&gt;</span><br><span class="line">        &lt;el-button @click=&quot;handleDestroy&quot;&gt;complex销毁&lt;/el-button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>初始化组件时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-11.webp" alt="img" style="zoom:80%;">
-
-<p>当child1更新和销毁时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-12.webp" alt="img" style="zoom:80%;">
-
-<p>当child2更新和销毁时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-13.webp" alt="img" style="zoom: 80%;">
-
-<p>当父组件销毁时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-14.webp" alt="img" style="zoom:80%;">
-
-<p>从打印结果可以看出:</p>
-<ol>
-<li>组件的初始化（mounted之前）分开进行，挂载是从上到下依次进行</li>
-<li>当没有数据关联时，兄弟组件之间的更新和销毁是互不关联的</li>
-</ol>
-<h2 id="宏mixin的生命周期"><a href="#宏mixin的生命周期" class="headerlink" title="宏mixin的生命周期"></a>宏mixin的生命周期</h2><p>在上面的基础上，添加一个mixin.js文件，内容如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const COMPONENT_NAME = &#x27;lifecycleMixin&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: COMPONENT_NAME,</span><br><span class="line">    beforeCreate() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeCreate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--created`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeMount() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeMount`)</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--mounted`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeUpdate() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeUpdate`)</span><br><span class="line">    &#125;,</span><br><span class="line">    updated() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--updated`)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeDestroy() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--beforeDestroy`)</span><br><span class="line">    &#125;,</span><br><span class="line">    destroyed() &#123;</span><br><span class="line">        console.log(`--$&#123;COMPONENT_NAME&#125;--destroyed`)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同样的，复杂组件做如下更改：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import lifecycleMixin from &#x27;./mixin&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    mixins: [lifecycleMixin],</span><br><span class="line">    // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>组件初始化时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-15.webp" alt="img" style="zoom:80%;">
-
-<p>组件销毁时，打印：</p>
-<img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/hexo/v-16.webp" alt="img" style="zoom:80%;">
-
-<p>从打印结果可以看出:<br>mixin中的生命周期与引入该组件的生命周期是仅仅关联的，且<strong>mixin的生命周期优先执行</strong></p>
-]]></content>
-      <tags>
-        <tag>vue</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -1931,6 +1947,122 @@ Vuex
 ]]></content>
       <tags>
         <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>彻底搞懂CSS层叠上下文、层叠等级、层叠顺序、z-index</title>
+    <url>/2021/08/04/z-index/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近，在项目中遇到一个关于CSS中元素<code>z-index</code>属性的问题，具体问题不太好描述，总结起来就是当给元素和父元素色设置<code>position</code>属性和<code>z-index</code>相关属性后，页面上渲染的元素层级结果和我预想的不一样。根据自己之前的理解，也没找到一个合理的解释。我知道，肯定是我对相关属性的细节理解存在问题，所以结合官方文档和在网上各种搜集整理，明白了其中的原因。写下这篇文章，和大家分享有关CSS中<code>层叠上下文</code>、<code>层叠等级</code>、<code>层叠顺序</code>以及<code>z-index</code>相关的一整套技术细节。</p>
+<h3 id="一个“片面”的理解"><a href="#一个“片面”的理解" class="headerlink" title="一个“片面”的理解"></a>一个“片面”的理解</h3><p>以往，由于自己使用<code>z-index</code>的频率不大，所以对这个CSS属性存在比较片面的认识。一直认为<code>z-index</code>就是用来描述定义一个元素在屏幕<code>Z轴</code>上的堆叠顺序。<code>z-index</code>值越大在<code>Z轴</code>上就越靠上，也就是离屏幕观察者越近。最后才发现这个认识存在很大的问题：</p>
+<ol>
+<li>首先，<code>z-index</code>属性值并不是在任何元素上都有效果。它<strong>仅在</strong>定位元素（定义了<code>position</code>属性，且属性值为非<code>static</code>值的元素）上有效果。</li>
+<li>判断元素在<code>Z轴</code>上的堆叠顺序，不仅仅是直接比较两个元素的<code>z-index</code>值的大小，这个堆叠顺序实际由元素的<strong>层叠上下文</strong>、<strong>层叠等级</strong>共同决定。</li>
+</ol>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/8/30/165890e473ce9cd3~tplv-t2oaga2asx-image.image" alt="img"></p>
+<p>要想完全理解一个东西，首先要明白它是什么，也就是它的定义。我们先看看上面提到的<code>层叠上下文</code>、<code>层叠等级</code>、<code>层叠顺序</code>都是什么？定义又太过抽象，后面会再用一个具象的比喻来让你彻底明白它们到底是什么，有什么联系。</p>
+<h3 id="什么是“层叠上下文”"><a href="#什么是“层叠上下文”" class="headerlink" title="什么是“层叠上下文”"></a>什么是“层叠上下文”</h3><p>层叠上下文(stacking context)，是HTML中一个三维的概念。在CSS2.1规范中，每个盒模型的位置是三维的，分别是平面画布上的<code>X轴</code>，<code>Y轴</code>以及表示层叠的<code>Z轴</code>。一般情况下，元素在页面上沿<code>X轴Y轴</code>平铺，我们察觉不到它们在<code>Z轴</code>上的层叠关系。而一旦元素发生堆叠，这时就能发现某个元素可能覆盖了另一个元素或者被另一个元素覆盖。</p>
+<p>如果一个元素含有层叠上下文，(也就是说它是层叠上下文元素)，我们可以理解为这个元素在<code>Z轴</code>上就“高人一等”，最终表现就是它离屏幕观察者更近。</p>
+<blockquote>
+<p><strong>具象的比喻</strong>：你可以把层叠上下文元素理解为理解为<strong>该元素当了官</strong>，而其他非层叠上下文元素则可以理解为普通群众。凡是“当了官的元素”就比普通元素等级要高，也就是说元素在<code>Z轴</code>上更靠上，更靠近观察者。</p>
+</blockquote>
+<h3 id="什么是“层叠等级”"><a href="#什么是“层叠等级”" class="headerlink" title="什么是“层叠等级”"></a>什么是“层叠等级”</h3><p>那么，层叠等级指的又是什么？层叠等级(stacking level，叫“层叠级别”/“层叠水平”也行)</p>
+<ul>
+<li>在同一个层叠上下文中，它描述定义的是该层叠上下文中的层叠上下文元素在<code>Z轴</code>上的上下顺序。</li>
+<li>在其他普通元素中，它描述定义的是这些普通元素在<code>Z轴</code>上的上下顺序。</li>
+</ul>
+<p>说到这，可能很多人疑问了，不论在层叠上下文中还是在普通元素中，层叠等级都表示元素在<code>Z轴</code>上的上下顺序，那就直接说它描述定义了所有元素在<code>Z轴</code>上的上下顺序就OK啊！为什么要分开描述？</p>
+<p>为了说明原因，先举个栗子：</p>
+<blockquote>
+<p><strong>具象的比喻</strong>：我们之前说到，处于层叠上下文中的元素，就像是元素当了官，等级自然比普通元素高。再想象一下，假设一个官员A是个省级领导，他下属有一个秘书a-1，家里有一个保姆a-2。另一个官员B是一个县级领导，他下属有一个秘书b-1，家里有一个保姆b-2。a-1和b-1虽然都是秘书，但是你想一个省级领导的秘书和一个县级领导的秘书之间有可比性么？甚至保姆a-2都要比秘书b-1的等级高得多。谁大谁小，谁高谁低一目了然，所以根本没有比较的意义。只有在A下属的a-1、a-2以及B下属的b-1、b-2中相互比较大小高低才有意义。</p>
+</blockquote>
+<p><strong>再类比回“层叠上下文”和“层叠等级”，就得出一个结论：</strong></p>
+<ol>
+<li>普通元素的层叠等级优先由其所在的层叠上下文决定。</li>
+<li>层叠等级的比较只有在当前层叠上下文元素中才有意义。不同层叠上下文中比较层叠等级是没有意义的。</li>
+</ol>
+<h3 id="如何产生“层叠上下文”"><a href="#如何产生“层叠上下文”" class="headerlink" title="如何产生“层叠上下文”"></a>如何产生“层叠上下文”</h3><p>前面说了那么多，知道了“层叠上下文”和“层叠等级”，其中还有一个最关键的问题：到底如何产生层叠上下文呢？如何让一个元素变成层叠上下文元素呢？</p>
+<p>其实，层叠上下文也基本上是有一些特定的CSS属性创建的，一般有3种方法：</p>
+<ol>
+<li><code>HTML</code>中的根元素<code>&lt;html&gt;&lt;/html&gt;</code>本身j就具有层叠上下文，称为“根层叠上下文”。</li>
+<li>普通元素设置<code>position</code>属性为<strong>非</strong><code>static</code>值并设置<code>z-index</code>属性为具体数值，产生层叠上下文。</li>
+<li>CSS3中的新属性也可以产生层叠上下文。</li>
+</ol>
+<p>至此，终于可以上代码了，我们用代码说话，来验证上面的结论：</p>
+<p><strong>栗子1:</strong> <strong>有两个div，p.a、p.b被包裹在一个div里，p.c被包裹在另一个盒子里，只为.a、.b、.c设置<code>position</code>和<code>z-index</code>属性</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-tag">div</span> &#123;  </span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: relative;  </span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">100px</span>;  </span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">100px</span>;  </span></span><br><span class="line"><span class="css">  &#125;  </span></span><br><span class="line"><span class="css">  <span class="selector-tag">p</span> &#123;  </span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: absolute;  </span></span><br><span class="line"><span class="css">    <span class="attribute">font-size</span>: <span class="number">20px</span>;  </span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">100px</span>;  </span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">100px</span>;  </span></span><br><span class="line"><span class="css">  &#125;  </span></span><br><span class="line"><span class="css">  <span class="selector-class">.a</span> &#123;  </span></span><br><span class="line"><span class="css">    <span class="attribute">background-color</span>: blue;  </span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">1</span>;  </span></span><br><span class="line"><span class="css">  &#125;  </span></span><br><span class="line"><span class="css">  <span class="selector-class">.b</span> &#123;  </span></span><br><span class="line"><span class="css">    <span class="attribute">background-color</span>: green;  </span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">2</span>;  </span></span><br><span class="line"><span class="css">    <span class="attribute">top</span>: <span class="number">20px</span>;  </span></span><br><span class="line"><span class="css">    <span class="attribute">left</span>: <span class="number">20px</span>;  </span></span><br><span class="line"><span class="css">  &#125;  </span></span><br><span class="line"><span class="css">  <span class="selector-class">.c</span> &#123;  </span></span><br><span class="line"><span class="css">    <span class="attribute">background-color</span>: red;  </span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">3</span>;  </span></span><br><span class="line"><span class="css">    <span class="attribute">top</span>: -<span class="number">20px</span>;  </span></span><br><span class="line"><span class="css">    <span class="attribute">left</span>: <span class="number">40px</span>;  </span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;a&quot;</span>&gt;</span>a<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;b&quot;</span>&gt;</span>b<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;c&quot;</span>&gt;</span>c<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/8/30/165890e9dcadf485~tplv-t2oaga2asx-image.image" alt="img"></p>
+<p>因为p.a、p.b、p.c三个的父元素div都没有设置<code>z-index</code>，所以不会产生层叠上下文，所以.a、.b、.c都处于由<code>&lt;html&gt;&lt;/html&gt;</code>标签产生的“根层叠上下文”中，属于同一个层叠上下文，此时谁的<code>z-index</code>值大，谁在上面。</p>
+<p><strong>栗子2：</strong> <strong>有两个div，p.a、p.b被包裹在一个div里，p.c被包裹在另一个盒子里，同时为两个div和.a、.b、.c设置<code>position</code>和<code>z-index</code>属性</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: relative;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.box1</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">2</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.box2</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">1</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">p</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.a</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">background-color</span>: blue;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">100</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.b</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">background-color</span>: green;</span></span><br><span class="line"><span class="css">    <span class="attribute">top</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">left</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">200</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.c</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="css">    <span class="attribute">top</span>: -<span class="number">20px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">left</span>: <span class="number">40px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">9999</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;a&quot;</span>&gt;</span>a<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;b&quot;</span>&gt;</span>b<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box2&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;c&quot;</span>&gt;</span>c<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/8/30/165890ecb78125b2~tplv-t2oaga2asx-image.image" alt="img"></p>
+<p>我们发下，虽然<code>p.c</code>元素的<code>z-index</code>值为9999，远大于<code>p.a</code>和<code>p.b</code>的<code>z-index</code>值，但是由于<code>p.a</code>、<code>p.b</code>的父元素<code>div.box1</code>产生的层叠上下文的<code>z-index</code>的值为2，<code>p.c</code>的父元素<code>div.box2</code>所产生的层叠上下文的<code>z-index</code>值为1，所以<code>p.c</code>永远在<code>p.a</code>和<code>p.b</code>下面。</p>
+<p>同时，如果我们只更改<code>p.a</code>和<code>p.b</code>的<code>z-index</code>值，由于这两个元素都在父元素<code>div.box1</code>产生的层叠上下文中，所以，谁的<code>z-index</code>值大，谁在上面。</p>
+<h3 id="什么是“层叠顺序”"><a href="#什么是“层叠顺序”" class="headerlink" title="什么是“层叠顺序”"></a>什么是“层叠顺序”</h3><p>说完“层叠上下文”和“层叠等级”，我们再来说说“层叠顺序”。“层叠顺序”(stacking order)表示元素发生层叠时按照特定的顺序规则在<code>Z轴</code>上垂直显示。<strong>由此可见，前面所说的“层叠上下文”和“层叠等级”是一种概念，而这里的“层叠顺序”是一种规则。</strong></p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/8/30/1658910c5cb364b6~tplv-t2oaga2asx-image.image" alt="img"></p>
+<p>在不考虑CSS3的情况下，当元素发生层叠时，层叠顺讯遵循上面途中的规则。 <strong>这里值得注意的是：</strong></p>
+<ol>
+<li>左上角”层叠上下文<code>background/border</code>“指的是层叠上下文元素的背景和边框。</li>
+<li><code>inline/inline-block</code>元素的层叠顺序要高于<code>block</code>(块级)/<code>float</code>(浮动)元素。</li>
+<li>单纯考虑层叠顺序，<code>z-index: auto</code>和<code>z-index: 0</code>在同一层级，但这两个属性值本身是有根本区别的。</li>
+</ol>
+<blockquote>
+<p>对于上面第2条，为什么<code>inline/inline-block</code>元素的层叠顺序要高于<code>block</code>(块级)/<code>float</code>(浮动)元素？这个大家可以思考一下！ 其实很简单，像<code>border/background</code>属于装饰元素的属性，浮动和块级元素一般用来页面布局，而网页设计之初最重要的就是文字内容，所以在发生层叠时会优先显示文字内容，保证其不被覆盖。</p>
+</blockquote>
+<h3 id="你要的“套路”"><a href="#你要的“套路”" class="headerlink" title="你要的“套路”"></a>你要的“套路”</h3><p>上面说了那么多，可能你还是有点懵。这么多概念规则，来点最实际的，有没有一个“套路”当遇到元素层叠时，能很清晰地判断出他们谁在上谁在下呢？答案是——肯定有啊！</p>
+<blockquote>
+<p>1、首先先看要比较的两个元素是否处于同一个层叠上下文中：    1.1如果是，谁的层叠等级大，谁在上面（怎么判断层叠等级大小呢？——看“层叠顺序”图）。    1.2如果两个元素不在统一层叠上下文中，请先比较他们所处的层叠上下文的层叠等级。 2、当两个元素层叠等级相同、层叠顺序相同时，在DOM结构中后面的元素层叠等级在前面元素之上。</p>
+</blockquote>
+<h3 id="光说不练假把式"><a href="#光说不练假把式" class="headerlink" title="光说不练假把式"></a>光说不练假把式</h3><p>对于技术学习，代码展示是最直观最易懂的方式之一。话不多说，直接上代码，我们通过以下几个“栗子”，来进一步验证掌握上面的结论。</p>
+<p><strong>栗子3：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.box1</span>, <span class="selector-class">.box2</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: relative;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: auto;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.child1</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">background</span>: <span class="number">#168bf5</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">    <span class="attribute">top</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">left</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">2</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.child2</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">background</span>: <span class="number">#32c292</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">    <span class="attribute">top</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">left</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">1</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;child1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box2&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;child2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/8/30/165890f2191f7d05~tplv-t2oaga2asx-image.image" alt="img"></p>
+<p><strong>说明：</strong><code>.box1/.box2</code>虽然设置了<code>position: relative</code>，但是<code>z-index: auto</code>的情况下，这两个<code>div</code>还是普通元素，并没有产生层叠上下文。所以，<code>child1/.child2</code>属于<code>&lt;html&gt;&lt;/html&gt;</code>元素的“根层叠上下文”中，此时，<strong>谁的<code>z-index</code>值大，谁在上面</strong>。</p>
+<p><strong>栗子4：</strong></p>
+<p>对于栗子1中的CSS代码，我们只把<code>.box1/.box2</code>的<code>z-index</code>属性值改为<code>数值0</code>，其余不变。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box1</span>, <span class="selector-class">.box2</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/8/30/165890f4aabe3939~tplv-t2oaga2asx-image.image" alt="img"></p>
+<p><strong>说明：</strong> 此时，我们发现，仅仅修改了<code>.box1/.box2</code>的<code>z-index</code>属性值改为<code>数值0</code>，最终结果完全相反。这时<code>.child2</code>覆盖在了<code>.child1</code>上面。原因是什么呢？很简单：因为设置<code>z-index: 0</code>后，<code>.box1/.box2</code>产生了各自的层叠上下文，这时候要比较<code>.child1/.child2</code>的层叠关系完全由父元素<code>.box1/.box2</code>的层叠关系决定。但是<code>.box1/.box2</code>的<code>z-index</code>值都为<code>0</code>，都是块级元素（所以它们的层叠等级，层叠顺序是相同的），这种情况下，在<code>DOM</code>结构中<strong>后面的覆盖前面的</strong>，所以<code>.child2</code>就在上面。</p>
+<h3 id="CSS3中的属性对层叠上下文的影响"><a href="#CSS3中的属性对层叠上下文的影响" class="headerlink" title="CSS3中的属性对层叠上下文的影响"></a>CSS3中的属性对层叠上下文的影响</h3><p>CSS3中出现了很多新属性，其中一些属性对层叠上下文也产生了很大的影响。如下：</p>
+<ol>
+<li>父元素的display属性值为<code>flex|inline-flex</code>，子元素<code>z-index</code>属性值不为<code>auto</code>的时候，子元素为层叠上下文元素；</li>
+<li>元素的<code>opacity</code>属性值不是<code>1</code>；</li>
+<li>元素的<code>transform</code>属性值不是<code>none</code>；</li>
+<li>元素<code>mix-blend-mode属性值不是</code>normal`；</li>
+<li>元素的<code>filter</code>属性值不是<code>none</code>；</li>
+<li>元素的<code>isolation</code>属性值是<code>isolate</code>；</li>
+<li><code>will-change</code>指定的属性值为上面任意一个；</li>
+<li>元素的<code>-webkit-overflow-scrolling</code>属性值设置为<code>touch</code>。</li>
+</ol>
+<p>CSS3中，元素属性满足以上条件之一，就会产生层叠上下文。我们用第1条来做一个简单的解释说明。</p>
+<p><strong>栗子5：</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  <span class="selector-class">.box</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#168bf5</span>;</span><br><span class="line">    <span class="comment">/* 虽然设置了z-index，但是没有设置position，z-index无效，.parent还是普通元素，没有产生层叠上下文 */</span></span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#32d19c</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">div</span> class=&quot;box&quot;&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;parent&quot;&gt;</span><br><span class="line">      parent</span><br><span class="line">      &lt;<span class="selector-tag">div</span> class=&quot;child&quot;&gt;child&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">    &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">  &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/8/30/165890f762484a78~tplv-t2oaga2asx-image.image" alt="img"></p>
+<p><strong>说明：</strong> 我们发现，<code>.child</code>被<code>.parent</code>覆盖了。按照“套路”来分析一下： 虽然<code>.parent</code>设置了<code>z-index</code>属性值，但是没有设置<code>position</code>属性，<code>z-index</code>无效，所以没有产生层叠上下文，<code>.parent</code>还是普通的块级元素。此时，在层叠顺序规则中，<code>z-index</code>值小于<code>0</code>的<code>.child</code>会被普通的<code>block</code>块级元素<code>.parent</code>覆盖。</p>
+<p><strong>栗子6：</strong></p>
+<p>对于上面的栗子，我们只修改.box的属性，设置display: flex，其余属性和DOM结构不变。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/8/30/165890f9438f582c~tplv-t2oaga2asx-image.image" alt="img"></p>
+<p><strong>说明：</strong> 当给<code>.box</code>设置<code>display: flex</code>时，<code>.parent</code>就变成层叠上下文元素，根据层叠顺序规则，层叠上下文元素的<code>background/border</code>的层叠等级小于<code>z-index</code>值小于<code>0</code>的元素的层叠等级，所以<code>z-index</code>值为<code>-1</code>的<code>.child</code>在<code>.parent</code>上面。</p>
+<h3 id="小测试"><a href="#小测试" class="headerlink" title="小测试"></a>小测试</h3><p>下面的代码，我会把最终页面渲染的结果放在代码之后，有兴趣的“童鞋”可以分析一下，各个元素的层叠等级，最后来确定这些元素哪个在上哪个在下。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.parent</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">background</span>: <span class="number">#168bf5</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">    <span class="attribute">top</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">left</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.child1</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">background</span>: <span class="number">#32d19c</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">    <span class="attribute">top</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">left</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">1</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.child2</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">background</span>: <span class="number">#e4c950</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">    <span class="attribute">top</span>: <span class="number">40px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">left</span>: <span class="number">40px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: -<span class="number">1</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.child2-1</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">background</span>: <span class="number">#e45050</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">    <span class="attribute">top</span>: <span class="number">60px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">left</span>: <span class="number">60px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: <span class="number">9999</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.child2-2</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">background</span>: <span class="number">#db68a7</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="css">    <span class="attribute">top</span>: <span class="number">80px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">left</span>: <span class="number">40px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">z-index</span>: -<span class="number">9999</span>;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parent&quot;</span>&gt;</span></span><br><span class="line">    parent</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;child1&quot;</span>&gt;</span>child1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;child2&quot;</span>&gt;</span></span><br><span class="line">      child2</span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;child2-1&quot;</span>&gt;</span>child2-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;child2-2&quot;</span>&gt;</span>child2-2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/8/30/165890fc4aa5ba15~tplv-t2oaga2asx-image.image" alt="img"></p>
+]]></content>
+      <tags>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -2894,11 +3026,9 @@ Vuex
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    #wrapper &#123;</span><br><span class="line">        width: 500px;</span><br><span class="line">        height: 800px;</span><br><span class="line">        background-color: #ccc;</span><br><span class="line">    &#125;</span><br><span class="line">    .parent &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        height: 400px;</span><br><span class="line">        background-color: yellow;</span><br><span class="line">    &#125;</span><br><span class="line">    .son &#123;</span><br><span class="line">        /* 90*40 */</span><br><span class="line">        width: 30%;</span><br><span class="line">        height: 10%;</span><br><span class="line">        /* 30 30 */</span><br><span class="line">        padding-left: 10%;</span><br><span class="line">        margin-left: 10%;</span><br><span class="line">        background-color: green;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;son&quot;&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
 <p>相关文章：</p>
-<ul>
-<li><a href="https://segmentfault.com/a/1190000012698032">transform，transition，animation，keyframes区别</a></li>
-<li><a href="https://www.jianshu.com/p/075839c8e2f2">width 和 height 的百分比是相对谁讲的 ？margin 和 padding 呢？</a></li>
-<li><a href="https://juejin.im/post/5b876f86518825431079ddd6">彻底搞懂 CSS 层叠上下文、层叠等级、层叠顺序、z-index</a></li>
-</ul>
+<p><a href="https://yx-dimples.vercel.app/2021/08/04/transform%EF%BC%8Ctransition%EF%BC%8Canimation%EF%BC%8Ckeyframes/">https://yx-dimples.vercel.app/2021/08/04/transform%EF%BC%8Ctransition%EF%BC%8Canimation%EF%BC%8Ckeyframes/</a></p>
+<p><a href="https://yx-dimples.vercel.app/2021/08/04/width%EF%BC%8Cheight%EF%BC%8Cmargin%EF%BC%8Cpadding/">https://yx-dimples.vercel.app/2021/08/04/width%EF%BC%8Cheight%EF%BC%8Cmargin%EF%BC%8Cpadding/</a></p>
+<p><a href="https://yx-dimples.vercel.app/2021/08/04/z-index/">https://yx-dimples.vercel.app/2021/08/04/z-index/</a></p>
 <hr>
 <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p><strong>常见的浏览器内核有哪些 ？</strong></p>
 <ul>
