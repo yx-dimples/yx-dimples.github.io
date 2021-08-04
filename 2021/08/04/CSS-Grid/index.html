@@ -1,0 +1,1153 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS Grid 网格布局教程 | dimplesの酒窝</title><meta name="keywords" content="css,css布局"><meta name="author" content="dimples"><meta name="copyright" content="dimples"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="概述网格布局（Grid）是最强大的 CSS 布局方案。 它将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。以前，只能通过复杂的 CSS 框架达到的效果，现在浏览器内置了。  上图这样的布局，就是 Grid 布局的拿手好戏。 Grid 布局与 Flex 布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。 Flex 布局是轴线布局，只能指定”项目”针对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS Grid 网格布局教程">
+<meta property="og:url" content="http://example.com/2021/08/04/CSS-Grid/index.html">
+<meta property="og:site_name" content="dimplesの酒窝">
+<meta property="og:description" content="概述网格布局（Grid）是最强大的 CSS 布局方案。 它将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。以前，只能通过复杂的 CSS 框架达到的效果，现在浏览器内置了。  上图这样的布局，就是 Grid 布局的拿手好戏。 Grid 布局与 Flex 布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。 Flex 布局是轴线布局，只能指定”项目”针对">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-08-04T02:13:04.955Z">
+<meta property="article:modified_time" content="2021-08-04T02:13:29.832Z">
+<meta property="article:author" content="dimples">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="css布局">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/08/04/CSS-Grid/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CSS Grid 网格布局教程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-08-04 10:13:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/static-butterfly/dist/css/index.min.css"><link rel="stylesheet" href="/css/flipcountdown.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/poem/poem.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="wizard-scene"><div class="wizard-objects"><div class="wizard-square"></div><div class="wizard-circle"></div><div class="wizard-triangle"></div></div><div class="wizard"><div class="wizard-body"></div><div class="wizard-right-arm"><div class="wizard-right-hand"></div></div><div class="wizard-left-arm"><div class="wizard-left-hand"></div></div><div class="wizard-head"><div class="wizard-beard"></div><div class="wizard-face"><div class="wizard-adds"></div></div><div class="wizard-hat"><div class="wizard-hat-of-the-hat"></div><div class="wizard-four-point-star --first"></div><div class="wizard-four-point-star --second"></div><div class="wizard-four-point-star --third"></div></div></div></div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><!--!=partial('includes/header/nav', {}, {cache: true})--><nav id="nav"><span id="blog_name"><a id="site-name" onclick="btf.scrollToDest(0, 500)" data-title="愿你有愉快的一天">CSS Grid 网格布局教程</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CSS Grid 网格布局教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-04T02:13:04.955Z" title="发表于 2021-08-04 10:13:04">2021-08-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-04T02:13:29.832Z" title="更新于 2021-08-04 10:13:29">2021-08-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CSS Grid 网格布局教程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><p>网格布局（Grid）是最强大的 CSS 布局方案。</p>
+<p>它将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。以前，只能通过复杂的 CSS 框架达到的效果，现在浏览器内置了。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032501.png" alt="img"></p>
+<p>上图这样的布局，就是 Grid 布局的拿手好戏。</p>
+<p>Grid 布局与 <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">Flex 布局</a>有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。</p>
+<p>Flex 布局是轴线布局，只能指定”项目”针对轴线的位置，可以看作是<strong>一维布局</strong>。Grid 布局则是将容器划分成”行”和”列”，产生单元格，然后指定”项目所在”的单元格，可以看作是<strong>二维布局</strong>。Grid 布局远比 Flex 布局强大。</p>
+<h5 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h5><p>学习 Grid 布局之前，需要了解一些基本概念。</p>
+<h6 id="容器和项目"><a href="#容器和项目" class="headerlink" title="容器和项目"></a>容器和项目</h6><p>采用网格布局的区域，称为”容器”（container）。容器内部采用网格定位的子元素，称为”项目”（item）。</p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">&lt;div&gt;&lt;p&gt;1&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">&lt;div&gt;&lt;p&gt;2&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">&lt;div&gt;&lt;p&gt;3&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，最外层的<code>&lt;div&gt;</code>元素就是容器，内层的三个<code>&lt;div&gt;</code>元素就是项目。</p>
+<p>注意：项目只能是容器的顶层子元素，不包含项目的子元素，比如上面代码的<code>&lt;p&gt;</code>元素就不是项目。Grid 布局只对项目生效。</p>
+<h6 id="行和列"><a href="#行和列" class="headerlink" title="行和列"></a>行和列</h6><p>容器里面的水平区域称为”行”（row），垂直区域称为”列”（column）。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032502.png" alt="img"></p>
+<p>上图中，水平的深色区域就是”行”，垂直的深色区域就是”列”。</p>
+<h6 id="单元格"><a href="#单元格" class="headerlink" title="单元格"></a>单元格</h6><p>行和列的交叉区域，称为”单元格”（cell）。</p>
+<p>正常情况下，<code>n</code>行和<code>m</code>列会产生<code>n x m</code>个单元格。比如，3行3列会产生9个单元格。</p>
+<h6 id="网格线"><a href="#网格线" class="headerlink" title="网格线"></a>网格线</h6><p>划分网格的线，称为”网格线”（grid line）。水平网格线划分出行，垂直网格线划分出列。</p>
+<p>正常情况下，<code>n</code>行有<code>n + 1</code>根水平网格线，<code>m</code>列有<code>m + 1</code>根垂直网格线，比如三行就有四根水平网格线。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032503.png" alt="img"></p>
+<p>上图是一个 4 x 4 的网格，共有5根水平网格线和5根垂直网格线。</p>
+<h5 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h5><p>Grid 布局的属性分成两类。一类定义在容器上面，称为容器属性；另一类定义在项目上面，称为项目属性。这部分先介绍容器属性。</p>
+<h6 id="display-grid指定一个容器采用网格布局。"><a href="#display-grid指定一个容器采用网格布局。" class="headerlink" title="display: grid指定一个容器采用网格布局。"></a><code>display: grid</code>指定一个容器采用网格布局。</h6><blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032504.png" alt="img"></p>
+<p>上图是<code>display: grid</code>的<a target="_blank" rel="noopener" href="https://jsbin.com/guvivum/edit?html,css,output">效果</a>。</p>
+<p>默认情况下，容器元素都是块级元素，但也可以设成行内元素。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: inline-grid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码指定<code>div</code>是一个行内元素，该元素内部采用网格布局。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032505.png" alt="img"></p>
+<p>上图是<code>display: inline-grid</code>的<a target="_blank" rel="noopener" href="https://jsbin.com/qatitav/edit?html,css,output">效果</a>。</p>
+<blockquote>
+<p>注意，设为网格布局以后，容器子元素（项目）的<code>float</code>、<code>display: inline-block</code>、<code>display: table-cell</code>、<code>vertical-align</code>和<code>column-*</code>等设置都将失效。</p>
+</blockquote>
+<h6 id="grid-template-columns-属性，-grid-template-rows-属性"><a href="#grid-template-columns-属性，-grid-template-rows-属性" class="headerlink" title="grid-template-columns 属性， grid-template-rows 属性"></a>grid-template-columns 属性， grid-template-rows 属性</h6><p>容器指定了网格布局以后，接着就要划分行和列。<code>grid-template-columns</code>属性定义每一列的列宽，<code>grid-template-rows</code>属性定义每一行的行高。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line">grid-template-<span class="attribute">columns</span>: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">grid-template-rows: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/qiginur/edit?css,output">上面代码</a>指定了一个三行三列的网格，列宽和行高都是<code>100px</code>。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032506.png" alt="img"></p>
+<p>除了使用绝对单位，也可以使用百分比。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line">grid-template-<span class="attribute">columns</span>: <span class="number">33.33%</span> <span class="number">33.33%</span> <span class="number">33.33%</span>;</span><br><span class="line">grid-template-rows: <span class="number">33.33%</span> <span class="number">33.33%</span> <span class="number">33.33%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>（1）repeat()</strong></p>
+<p>有时候，重复写同样的值非常麻烦，尤其网格很多时。这时，可以使用<code>repeat()</code>函数，简化重复的值。上面的代码用<code>repeat()</code>改写如下。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line">grid-template-<span class="attribute">columns</span>: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">33.33%</span>);</span><br><span class="line">grid-template-rows: <span class="built_in">repeat</span>(<span class="number">3</span>, <span class="number">33.33%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><code>repeat()</code>接受两个参数，第一个参数是重复的次数（上例是3），第二个参数是所要重复的值。</p>
+<p><code>repeat()</code>重复某种模式也是可以的。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-template-<span class="attribute">columns</span>: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">100px</span> <span class="number">20px</span> <span class="number">80px</span>);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/cokohu/edit?css,output">上面代码</a>定义了6列，第一列和第四列的宽度为<code>100px</code>，第二列和第五列为<code>20px</code>，第三列和第六列为<code>80px</code>。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032507.png" alt="img"></p>
+<p><strong>（2）auto-fill 关键字</strong></p>
+<p>有时，单元格的大小是固定的，但是容器的大小不确定。如果希望每一行（或每一列）容纳尽可能多的单元格，这时可以使用<code>auto-fill</code>关键字表示自动填充。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line">grid-template-<span class="attribute">columns</span>: <span class="built_in">repeat</span>(auto-fill, <span class="number">100px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/himoku/edit?css,output">上面代码</a>表示每列宽度<code>100px</code>，然后自动填充，直到容器不能放置更多的列。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032508.png" alt="img"></p>
+<p><strong>（3）fr 关键字</strong></p>
+<p>为了方便表示比例关系，网格布局提供了<code>fr</code>关键字（fraction 的缩写，意为”片段”）。如果两列的宽度分别为<code>1fr</code>和<code>2fr</code>，就表示后者是前者的两倍。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line">grid-template-<span class="attribute">columns</span>: <span class="number">1</span>fr <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/hadexek/edit?html,css,output">上面代码</a>表示两个相同宽度的列。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/1_bg2019032509.png" alt="img"></p>
+<p><code>fr</code>可以与绝对长度的单位结合使用，这时会非常方便。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line">grid-template-<span class="attribute">columns</span>: <span class="number">150px</span> <span class="number">1</span>fr <span class="number">2</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/remowec/edit?html,css,output">上面代码</a>表示，第一列的宽度为150像素，第二列的宽度是第三列的一半。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032510.png" alt="img"></p>
+<p><strong>（4）minmax()</strong></p>
+<p><code>minmax()</code>函数产生一个长度范围，表示长度就在这个范围之中。它接受两个参数，分别为最小值和最大值。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-template-<span class="attribute">columns</span>: <span class="number">1</span>fr <span class="number">1</span>fr <span class="built_in">minmax</span>(<span class="number">100px</span>, <span class="number">1</span>fr);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，<code>minmax(100px, 1fr)</code>表示列宽不小于<code>100px</code>，不大于<code>1fr</code>。</p>
+<p><strong>（5）auto 关键字</strong></p>
+<p><code>auto</code>关键字表示由浏览器自己决定长度。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-template-<span class="attribute">columns</span>: <span class="number">100px</span> auto <span class="number">100px</span>;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，第二列的宽度，基本上等于该列单元格的最大宽度，除非单元格内容设置了<code>min-width</code>，且这个值大于最大宽度。</p>
+<p><strong>（6）网格线的名称</strong></p>
+<p><code>grid-template-columns</code>属性和<code>grid-template-rows</code>属性里面，还可以使用方括号，指定每一根网格线的名字，方便以后的引用。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line">grid-template-<span class="attribute">columns</span>: [c1] <span class="number">100px</span> [c2] <span class="number">100px</span> [c3] auto [c4];</span><br><span class="line">grid-template-rows: [r1] <span class="number">100px</span> [r2] <span class="number">100px</span> [r3] auto [r4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码指定网格布局为3行 x 3列，因此有4根垂直网格线和4根水平网格线。方括号里面依次是这八根线的名字。</p>
+<p>网格布局允许同一根线有多个名字，比如<code>[fifth-line row-5]</code>。</p>
+<p><strong>（7）布局实例</strong></p>
+<p><code>grid-template-columns</code>属性对于网页布局非常有用。两栏式布局只需要一行代码。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line">grid-template-<span class="attribute">columns</span>: <span class="number">70%</span> <span class="number">30%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码将左边栏设为70%，右边栏设为30%。</p>
+<p>传统的十二网格布局，写起来也很容易。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-template-<span class="attribute">columns</span>: <span class="built_in">repeat</span>(<span class="number">12</span>, <span class="number">1</span>fr);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h6 id="grid-row-gap-属性，-grid-column-gap-属性，-grid-gap-属性"><a href="#grid-row-gap-属性，-grid-column-gap-属性，-grid-gap-属性" class="headerlink" title="grid-row-gap 属性， grid-column-gap 属性， grid-gap 属性"></a>grid-row-gap 属性， grid-column-gap 属性， grid-gap 属性</h6><p><code>grid-row-gap</code>属性设置行与行的间隔（行间距），<code>grid-column-gap</code>属性设置列与列的间隔（列间距）。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">grid-row-gap: <span class="number">20px</span>;</span><br><span class="line">grid-<span class="attribute">column-gap</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/mezufab/edit?css,output">上面代码</a>中，<code>grid-row-gap</code>用于设置行间距，<code>grid-column-gap</code>用于设置列间距。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032511.png" alt="img"></p>
+<p><code>grid-gap</code>属性是<code>grid-column-gap</code>和<code>grid-row-gap</code>的合并简写形式，语法如下。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-gap: &lt;grid-row-gap&gt; &lt;grid-column-gap&gt;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>因此，上面一段 CSS 代码等同于下面的代码。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">grid-gap: <span class="number">20px</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>如果<code>grid-gap</code>省略了第二个值，浏览器认为第二个值等于第一个值。</p>
+<blockquote>
+<p>根据最新标准，上面三个属性名的<code>grid-</code>前缀已经删除，<code>grid-column-gap</code>和<code>grid-row-gap</code>写成<code>column-gap</code>和<code>row-gap</code>，<code>grid-gap</code>写成<code>gap</code>。</p>
+</blockquote>
+<h6 id="grid-template-areas-属性"><a href="#grid-template-areas-属性" class="headerlink" title="grid-template-areas 属性"></a>grid-template-areas 属性</h6><p>网格布局允许指定”区域”（area），一个区域由单个或多个单元格组成。<code>grid-template-areas</code>属性用于定义区域。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line">grid-template-<span class="attribute">columns</span>: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">grid-template-rows: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">grid-template-areas: <span class="string">&#x27;a b c&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;d e f&#x27;</span></span><br><span class="line">                    <span class="string">&#x27;g h i&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码先划分出9个单元格，然后将其定名为<code>a</code>到<code>i</code>的九个区域，分别对应这九个单元格。</p>
+<p>多个单元格合并成一个区域的写法如下。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grid-template-areas: <span class="string">&#x27;a a a&#x27;</span></span><br><span class="line">                  <span class="string">&#x27;b b b&#x27;</span></span><br><span class="line">                  <span class="string">&#x27;c c c&#x27;</span>;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码将9个单元格分成<code>a</code>、<code>b</code>、<code>c</code>三个区域。</p>
+<p>下面是一个布局实例。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grid-template-areas: <span class="string">&quot;header header header&quot;</span></span><br><span class="line">                  <span class="string">&quot;main main sidebar&quot;</span></span><br><span class="line">                  <span class="string">&quot;footer footer footer&quot;</span>;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，顶部是页眉区域<code>header</code>，底部是页脚区域<code>footer</code>，中间部分则为<code>main</code>和<code>sidebar</code>。</p>
+<p>如果某些区域不需要利用，则使用”点”（<code>.</code>）表示。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grid-template-areas: <span class="string">&#x27;a . c&#x27;</span></span><br><span class="line">                  <span class="string">&#x27;d . f&#x27;</span></span><br><span class="line">                  <span class="string">&#x27;g . i&#x27;</span>;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，中间一列为点，表示没有用到该单元格，或者该单元格不属于任何区域。</p>
+<blockquote>
+<p>注意，区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为<code>区域名-start</code>，终止网格线自动命名为<code>区域名-end</code>。</p>
+<p>比如，区域名为<code>header</code>，则起始位置的水平网格线和垂直网格线叫做<code>header-start</code>，终止位置的水平网格线和垂直网格线叫做<code>header-end</code>。</p>
+</blockquote>
+<h3 id="3-5-grid-auto-flow-属性"><a href="#3-5-grid-auto-flow-属性" class="headerlink" title="3.5 grid-auto-flow 属性"></a>3.5 grid-auto-flow 属性</h3><p>划分网格以后，容器的子元素会按照顺序，自动放置在每一个网格。默认的放置顺序是”先行后列”，即先填满第一行，再开始放入第二行，即下图数字的顺序。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032506.png" alt="img"></p>
+<p>这个顺序由<code>grid-auto-flow</code>属性决定，默认值是<code>row</code>，即”先行后列”。也可以将它设成<code>column</code>，变成”先列后行”。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-<span class="attribute">auto</span>-flow: column;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/xutokec/edit?css,output">上面代码</a>设置了<code>column</code>以后，放置顺序就变成了下图。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032512.png" alt="img"></p>
+<p><code>grid-auto-flow</code>属性除了设置成<code>row</code>和<code>column</code>，还可以设成<code>row dense</code>和<code>column dense</code>。这两个值主要用于，某些项目指定位置以后，剩下的项目怎么自动放置。</p>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/wapejok/edit?css,output">下面的例子</a>让1号项目和2号项目各占据两个单元格，然后在默认的<code>grid-auto-flow: row</code>情况下，会产生下面这样的布局。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032513.png" alt="img"></p>
+<p>上图中，1号项目后面的位置是空的，这是因为3号项目默认跟着2号项目，所以会排在2号项目后面。</p>
+<p>现在修改设置，设为<code>row dense</code>，表示”先行后列”，并且尽可能紧密填满，尽量不出现空格。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-<span class="attribute">auto</span>-flow: row dense;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/helewuy/edit?css,output">上面代码</a>的效果如下。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032514.png" alt="img"></p>
+<p>上图会先填满第一行，再填满第二行，所以3号项目就会紧跟在1号项目的后面。8号项目和9号项目就会排到第四行。</p>
+<p>如果将设置改为<code>column dense</code>，表示”先列后行”，并且尽量填满空格。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid-<span class="attribute">auto</span>-flow: column dense;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/pupoduc/1/edit?html,css,output">上面代码</a>的效果如下。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032515.png" alt="img"></p>
+<p>上图会先填满第一列，再填满第2列，所以3号项目在第一列，4号项目在第二列。8号项目和9号项目被挤到了第四列。</p>
+<h3 id="3-6-justify-items-属性，-align-items-属性，-place-items-属性"><a href="#3-6-justify-items-属性，-align-items-属性，-place-items-属性" class="headerlink" title="3.6 justify-items 属性， align-items 属性， place-items 属性"></a>3.6 justify-items 属性， align-items 属性， place-items 属性</h3><p><code>justify-items</code>属性设置单元格内容的水平位置（左中右），<code>align-items</code>属性设置单元格内容的垂直位置（上中下）。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">justify-items: start | end | center | stretch;</span><br><span class="line"><span class="attribute">align-items</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>这两个属性的写法完全相同，都可以取下面这些值。</p>
+<blockquote>
+<ul>
+<li>start：对齐单元格的起始边缘。</li>
+<li>end：对齐单元格的结束边缘。</li>
+<li>center：单元格内部居中。</li>
+<li>stretch：拉伸，占满单元格的整个宽度（默认值）。</li>
+</ul>
+</blockquote>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">justify-items: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/gijeqej/edit?css,output">上面代码</a>表示，单元格的内容左对齐，效果如下图。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032516.png" alt="img"></p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">align-items</span>: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/tecawur/edit?css,output">上面代码</a>表示，单元格的内容头部对齐，效果如下图。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032517.png" alt="img"></p>
+<p><code>place-items</code>属性是<code>align-items</code>属性和<code>justify-items</code>属性的合并简写形式。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">place-items: &lt;align-items&gt; &lt;justify-items&gt;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>下面是一个例子。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">place-items: start end;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>如果省略第二个值，则浏览器认为与第一个值相等。</p>
+<h3 id="3-7-justify-content-属性，-align-content-属性，-place-content-属性"><a href="#3-7-justify-content-属性，-align-content-属性，-place-content-属性" class="headerlink" title="3.7 justify-content 属性， align-content 属性， place-content 属性"></a>3.7 justify-content 属性， align-content 属性， place-content 属性</h3><p><code>justify-content</code>属性是整个内容区域在容器里面的水平位置（左中右），<code>align-content</code>属性是整个内容区域的垂直位置（上中下）。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">justify-content</span>: start | end | center | stretch | space-around | space-between | space-evenly;</span><br><span class="line"><span class="attribute">align-content</span>: start | end | center | stretch | space-around | space-between | space-evenly;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>这两个属性的写法完全相同，都可以取下面这些值。（下面的图都以<code>justify-content</code>属性为例，<code>align-content</code>属性的图完全一样，只是将水平方向改成垂直方向。）</p>
+<blockquote>
+<ul>
+<li>start - 对齐容器的起始边框。</li>
+</ul>
+</blockquote>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032519.png" alt="img"></p>
+<blockquote>
+<ul>
+<li>end - 对齐容器的结束边框。</li>
+</ul>
+</blockquote>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032518.png" alt="img"></p>
+<blockquote>
+<ul>
+<li>center - 容器内部居中。</li>
+</ul>
+</blockquote>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032520.png" alt="img"></p>
+<blockquote>
+<ul>
+<li>stretch - 项目大小没有指定时，拉伸占据整个网格容器。</li>
+</ul>
+</blockquote>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032521.png" alt="img"></p>
+<blockquote>
+<ul>
+<li>space-around - 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与容器边框的间隔大一倍。</li>
+</ul>
+</blockquote>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032522.png" alt="img"></p>
+<blockquote>
+<ul>
+<li>space-between - 项目与项目的间隔相等，项目与容器边框之间没有间隔。</li>
+</ul>
+</blockquote>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032523.png" alt="img"></p>
+<blockquote>
+<ul>
+<li>space-evenly - 项目与项目的间隔相等，项目与容器边框之间也是同样长度的间隔。</li>
+</ul>
+</blockquote>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032524.png" alt="img"></p>
+<p><code>place-content</code>属性是<code>align-content</code>属性和<code>justify-content</code>属性的合并简写形式。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">place-<span class="attribute">content</span>: &lt;align-content&gt; &lt;justify-content&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>下面是一个例子。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">place-<span class="attribute">content</span>: space-around space-evenly;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>如果省略第二个值，浏览器就会假定第二个值等于第一个值。</p>
+<h3 id="3-8-grid-auto-columns-属性，-grid-auto-rows-属性"><a href="#3-8-grid-auto-columns-属性，-grid-auto-rows-属性" class="headerlink" title="3.8 grid-auto-columns 属性， grid-auto-rows 属性"></a>3.8 grid-auto-columns 属性， grid-auto-rows 属性</h3><p>有时候，一些项目的指定位置，在现有网格的外部。比如网格只有3列，但是某一个项目指定在第5行。这时，浏览器会自动生成多余的网格，以便放置项目。</p>
+<p><code>grid-auto-columns</code>属性和<code>grid-auto-rows</code>属性用来设置，浏览器自动创建的多余网格的列宽和行高。它们的写法与<code>grid-template-columns</code>和<code>grid-template-rows</code>完全相同。如果不指定这两个属性，浏览器完全根据单元格内容的大小，决定新增网格的列宽和行高。</p>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/sayuric/edit?css,output">下面的例子</a>里面，划分好的网格是3行 x 3列，但是，8号项目指定在第4行，9号项目指定在第5行。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid;</span><br><span class="line">grid-template-<span class="attribute">columns</span>: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">grid-template-rows: <span class="number">100px</span> <span class="number">100px</span> <span class="number">100px</span>;</span><br><span class="line">grid-<span class="attribute">auto</span>-rows: <span class="number">50px</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码指定新增的行高统一为50px（原始的行高为100px）。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032525.png" alt="img"></p>
+<h3 id="3-9-grid-template-属性，-grid-属性"><a href="#3-9-grid-template-属性，-grid-属性" class="headerlink" title="3.9 grid-template 属性， grid 属性"></a>3.9 grid-template 属性， grid 属性</h3><p><code>grid-template</code>属性是<code>grid-template-columns</code>、<code>grid-template-rows</code>和<code>grid-template-areas</code>这三个属性的合并简写形式。</p>
+<p><code>grid</code>属性是<code>grid-template-rows</code>、<code>grid-template-columns</code>、<code>grid-template-areas</code>、 <code>grid-auto-rows</code>、<code>grid-auto-columns</code>、<code>grid-auto-flow</code>这六个属性的合并简写形式。</p>
+<p>从易读易写的角度考虑，还是建议不要合并属性，所以这里就不详细介绍这两个属性了。</p>
+<h2 id="四、项目属性"><a href="#四、项目属性" class="headerlink" title="四、项目属性"></a>四、项目属性</h2><p>下面这些属性定义在项目上面。</p>
+<h3 id="4-1-grid-column-start-属性，-grid-column-end-属性，-grid-row-start-属性，-grid-row-end-属性"><a href="#4-1-grid-column-start-属性，-grid-column-end-属性，-grid-row-start-属性，-grid-row-end-属性" class="headerlink" title="4.1 grid-column-start 属性， grid-column-end 属性， grid-row-start 属性， grid-row-end 属性"></a>4.1 grid-column-start 属性， grid-column-end 属性， grid-row-start 属性， grid-row-end 属性</h3><p>项目的位置是可以指定的，具体方法就是指定项目的四个边框，分别定位在哪根网格线。</p>
+<blockquote>
+<ul>
+<li><code>grid-column-start</code>属性：左边框所在的垂直网格线</li>
+<li><code>grid-column-end</code>属性：右边框所在的垂直网格线</li>
+<li><code>grid-row-start</code>属性：上边框所在的水平网格线</li>
+<li><code>grid-row-end</code>属性：下边框所在的水平网格线</li>
+</ul>
+</blockquote>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">grid-column-start: <span class="number">2</span>;</span><br><span class="line">grid-column-end: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/yukobuf/edit?css,output">上面代码</a>指定，1号项目的左边框是第二根垂直网格线，右边框是第四根垂直网格线。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032526.png" alt="img"></p>
+<p>上图中，只指定了1号项目的左右边框，没有指定上下边框，所以会采用默认位置，即上边框是第一根水平网格线，下边框是第二根水平网格线。</p>
+<p>除了1号项目以外，其他项目都没有指定位置，由浏览器自动布局，这时它们的位置由容器的<code>grid-auto-flow</code>属性决定，这个属性的默认值是<code>row</code>，因此会”先行后列”进行排列。读者可以把这个属性的值分别改成<code>column</code>、<code>row dense</code>和<code>column dense</code>，看看其他项目的位置发生了怎样的变化。</p>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/nagobey/edit?html,css,output">下面的例子</a>是指定四个边框位置的效果。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">grid-column-start: <span class="number">1</span>;</span><br><span class="line">grid-column-end: <span class="number">3</span>;</span><br><span class="line">grid-row-start: <span class="number">2</span>;</span><br><span class="line">grid-row-end: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032527.png" alt="img"></p>
+<p>这四个属性的值，除了指定为第几个网格线，还可以指定为网格线的名字。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">grid-column-start: header-start;</span><br><span class="line">grid-column-end: header-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，左边框和右边框的位置，都指定为网格线的名字。</p>
+<p>这四个属性的值还可以使用<code>span</code>关键字，表示”跨越”，即左右边框（上下边框）之间跨越多少个网格。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">grid-column-start: span <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/hehumay/edit?html,css,output">上面代码</a>表示，1号项目的左边框距离右边框跨越2个网格。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032528.png" alt="img"></p>
+<p>这与<a target="_blank" rel="noopener" href="https://jsbin.com/mujihib/edit?html,css,output">下面的代码</a>效果完全一样。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">grid-column-end: span <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>使用这四个属性，如果产生了项目的重叠，则使用<code>z-index</code>属性指定项目的重叠顺序。</p>
+<h3 id="4-2-grid-column-属性，-grid-row-属性"><a href="#4-2-grid-column-属性，-grid-row-属性" class="headerlink" title="4.2 grid-column 属性， grid-row 属性"></a>4.2 grid-column 属性， grid-row 属性</h3><p><code>grid-column</code>属性是<code>grid-column-start</code>和<code>grid-column-end</code>的合并简写形式，<code>grid-row</code>属性是<code>grid-row-start</code>属性和<code>grid-row-end</code>的合并简写形式。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">grid-column: &lt;start-line&gt; / &lt;end-line&gt;;</span><br><span class="line">grid-row: &lt;start-line&gt; / &lt;end-line&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>下面是一个例子。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">grid-column: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">grid-row: <span class="number">1</span> / <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 等同于 */</span></span><br><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">grid-column-start: <span class="number">1</span>;</span><br><span class="line">grid-column-end: <span class="number">3</span>;</span><br><span class="line">grid-row-start: <span class="number">1</span>;</span><br><span class="line">grid-row-end: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，项目<code>item-1</code>占据第一行，从第一根列线到第三根列线。</p>
+<p>这两个属性之中，也可以使用<code>span</code>关键字，表示跨越多少个网格。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line"><span class="attribute">background</span>: <span class="number">#b03532</span>;</span><br><span class="line">grid-column: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">grid-row: <span class="number">1</span> / <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 等同于 */</span></span><br><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line"><span class="attribute">background</span>: <span class="number">#b03532</span>;</span><br><span class="line">grid-column: <span class="number">1</span> / span <span class="number">2</span>;</span><br><span class="line">grid-row: <span class="number">1</span> / span <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/volugow/edit?html,css,output">上面代码</a>中，项目<code>item-1</code>占据的区域，包括第一行 + 第二行、第一列 + 第二列。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032529.png" alt="img"></p>
+<p>斜杠以及后面的部分可以省略，默认跨越一个网格。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">grid-column: <span class="number">1</span>;</span><br><span class="line">grid-row: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，项目<code>item-1</code>占据左上角第一个网格。</p>
+<h3 id="4-3-grid-area-属性"><a href="#4-3-grid-area-属性" class="headerlink" title="4.3 grid-area 属性"></a>4.3 grid-area 属性</h3><p><code>grid-area</code>属性指定项目放在哪一个区域。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">grid-area: e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://jsbin.com/qokexob/edit?css,output">上面代码</a>中，1号项目位于<code>e</code>区域，效果如下图。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032530.png" alt="img"></p>
+<p><code>grid-area</code>属性还可用作<code>grid-row-start</code>、<code>grid-column-start</code>、<code>grid-row-end</code>、<code>grid-column-end</code>的合并简写形式，直接指定项目的位置。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">grid-area: &lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>下面是一个<a target="_blank" rel="noopener" href="https://jsbin.com/duyafez/edit?css,output">例子</a>。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span> &#123;</span><br><span class="line">grid-area: <span class="number">1</span> / <span class="number">1</span> / <span class="number">3</span> / <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="4-4-justify-self-属性，-align-self-属性，-place-self-属性"><a href="#4-4-justify-self-属性，-align-self-属性，-place-self-属性" class="headerlink" title="4.4 justify-self 属性， align-self 属性， place-self 属性"></a>4.4 justify-self 属性， align-self 属性， place-self 属性</h3><p><code>justify-self</code>属性设置单元格内容的水平位置（左中右），跟<code>justify-items</code>属性的用法完全一致，但只作用于单个项目。</p>
+<p><code>align-self</code>属性设置单元格内容的垂直位置（上中下），跟<code>align-items</code>属性的用法完全一致，也是只作用于单个项目。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">justify-self: start | end | center | stretch;</span><br><span class="line"><span class="attribute">align-self</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>这两个属性都可以取下面四个值。</p>
+<blockquote>
+<ul>
+<li>start：对齐单元格的起始边缘。</li>
+<li>end：对齐单元格的结束边缘。</li>
+<li>center：单元格内部居中。</li>
+<li>stretch：拉伸，占满单元格的整个宽度（默认值）。</li>
+</ul>
+</blockquote>
+<p>下面是<code>justify-self: start</code>的例子。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-1</span>  &#123;</span><br><span class="line">justify-self: start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="https://www.wangbase.com/blogimg/asset/201903/bg2019032532.png" alt="img"></p>
+<p><code>place-self</code>属性是<code>align-self</code>属性和<code>justify-self</code>属性的合并简写形式。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">place-self: &lt;align-self&gt; &lt;justify-self&gt;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>下面是一个例子。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">place-self: center center;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>如果省略第二个值，<code>place-self</code>属性会认为这两个值相等。</p>
+<h2 id="五、参考链接"><a href="#五、参考链接" class="headerlink" title="五、参考链接"></a>五、参考链接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://css-tricks.com/snippets/css/complete-guide-grid/">A Complete Guide to Grid</a>, by Chris House</li>
+<li><a target="_blank" rel="noopener" href="https://webdesign.tutsplus.com/series/understanding-the-css-grid-layout-module--cms-1079">Understanding the CSS Grid Layout Module</a>, by Ian Yates</li>
+<li><a target="_blank" rel="noopener" href="https://webdesign.tutsplus.com/tutorials/how-to-build-an-off-canvas-navigation-with-css-grid--cms-28191">How to Build an Off-Canvas Navigation With CSS Grid</a>, Ian Yates</li>
+<li><a target="_blank" rel="noopener" href="https://code.tutsplus.com/tutorials/introduction-to-css-grid-layout-with-examples--cms-25392">Introduction to the CSS Grid Layout With Examples</a>, Dogacan Bilgili</li>
+<li><a target="_blank" rel="noopener" href="http://learncssgrid.com/">Learn CSS Grid</a>, Jonathan Suh</li>
+<li><a target="_blank" rel="noopener" href="https://blog.theodo.fr/2018/03/stop-using-bootstrap-layout-thanks-to-css-grid/">How I stopped using Bootstrap’s layout thanks to CSS Grid</a>, Cédric Kui</li>
+</ul>
+<p>（完）</p>
+<h3 id="文档信息"><a href="#文档信息" class="headerlink" title="文档信息"></a>文档信息</h3><ul>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">创意共享3.0许可证</a>）</li>
+<li>发表日期： 2019年3月25日</li>
+</ul>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li><p>2021.05.10: <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2021/05/scaling-problem.html">软件工程的最大难题</a></p>
+<p>一、引言 大学有一门课程《软件工程》，研究如何组织和管理软件项目。</p>
+</li>
+<li><p>2020.12.13: <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2020/12/ssh-tutorial.html">《SSH 入门教程》发布了</a></p>
+<p>SSH 是登录 Linux 服务器的必备工具，只要你在做互联网开发，多多少少都会用到它。</p>
+</li>
+<li><p>2020.11.02: <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2020/11/wechat-miniprogram-tutorial-part-four.html">微信小程序入门教程之四：API 使用</a></p>
+<p>今天是这个系列教程的最后一篇。</p>
+</li>
+<li><p>2020.10.29: <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2020/10/wechat-miniprogram-tutorial-part-three.html">微信小程序入门教程之三：脚本编程</a></p>
+<p>这个系列教程的前两篇，介绍了小程序的项目结构和页面样式。</p>
+</li>
+</ul>
+<h2 id="留言（138条）"><a href="#留言（138条）" class="headerlink" title="留言（138条）"></a>留言（138条）</h2><p><strong><em>*<a target="_blank" rel="noopener" href="http://blog.xulihang.me/">xulihang</a>*</em> 说：</strong></p>
+<p>感觉Grid的一个缺点就是要写CSS，而用Bootstrap只要处理HTML就行了，这样的一个好处是用程序动态生成HTML就可以完成布局而不用考虑CSS。</p>
+<p><strong><em>*Mirr*</em> 说：</strong></p>
+<p>终于有教程了XD</p>
+<p><strong><em>*路过看看*</em> 说：</strong></p>
+<p>兼容性如何呢？移动端可以用在实际项目中吗？</p>
+<p><strong><em>*muller_zhang*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用xulihang的发言：</span><br></pre></td></tr></table></figure>
+
+<p>感觉Grid的一个缺点就是要写CSS，而用Bootstrap只要处理HTML就行了，这样的一个好处是用程序动态生成HTML就可以完成布局而不用考虑CSS。</p>
+</blockquote>
+<p>如果只是完成页面样式，用bootstrap（100k左右的css库）的成本是不是有点高</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://faichou.space/">周辉</a>*</em> 说：</strong></p>
+<p>grid 布局在 scrimba 上有免费的教程, 非常不错</p>
+<p><strong><em>*Neil Ning*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用xulihang的发言：</span><br></pre></td></tr></table></figure>
+
+<p>感觉Grid的一个缺点就是要写CSS，而用Bootstrap只要处理HTML就行了，这样的一个好处是用程序动态生成HTML就可以完成布局而不用考虑CSS。</p>
+</blockquote>
+<p>能这么说，说明你很年轻啊，弟弟。</p>
+<p><strong><em>*frank*</em> 说：</strong></p>
+<p>看起來只有 IE、EDGE 不支援</p>
+<p><strong><em>*any*</em> 说：</strong></p>
+<p>这属性不是一般的多</p>
+<p><strong><em>*无骛*</em> 说：</strong></p>
+<p>昨天上午还搜了一下老师有没有grid相关教程，现在就看到了~很通俗易懂</p>
+<p><strong><em>*steven*</em> 说：</strong></p>
+<p>不错，比flex更加强大，二维布局。感谢阮老师 指导</p>
+<p><strong><em>*绵绵天*</em> 说：</strong></p>
+<p>除了兼容性问题 grid比flex更好用</p>
+<p><strong><em>*超龙*</em> 说：</strong></p>
+<p>赶上了个热乎的了，刚想学一下，就Google到了很棒</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://blog.volc.top/">九歌</a>*</em> 说：</strong></p>
+<p>阮老师，fr 关键字 第二个示例的图是不是错了<br>.container {<br>display: grid;<br>grid-template-columns: 150px 1fr 2fr;<br>}</p>
+<p>第二个应该和 150px 等宽吧</p>
+<p><strong><em>*周昆*</em> 说：</strong></p>
+<p>特别实用，谢谢</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://gensfit.info/">Ceniy</a>*</em> 说：</strong></p>
+<p>正好在用 vuetify， 不看flex 布局的话，还真不知道怎么用，感谢!</p>
+<p><strong><em>*gabe*</em> 说：</strong></p>
+<p>感觉行间距的属性有点不够用</p>
+<p><strong><em>*郭二蛋*</em> 说：</strong></p>
+<p>特别实用，感谢阮老师。</p>
+<p><strong><em>*叶尘*</em> 说：</strong></p>
+<p>传统的十二栏布局也很容易吧，大神写的太快了字错了都没注意</p>
+<p><strong><em>*hjia*</em> 说：</strong></p>
+<p>可惜IE不支持，这样很难被项目采用啊</p>
+<p><strong><em>*gabe*</em> 说：</strong></p>
+<p>问个问题：<br>.container {<br>display: grid;<br>grid-template-columns: repeat(auto-fill, 33.33%);<br>}<br>container总宽度不固定，列均分为三，要实现item为正方形，<br>即高需要随宽变化，如何写？<br>如果还要加入固定的行间距呢？</p>
+<p><strong><em>*sio*</em> 说：</strong></p>
+<p>乘号改成 ‘×’ 好一些，用 ‘x’ 看着容易有歧义</p>
+<p>ps: 感谢分享，前几天刚看完MDN文档</p>
+<p><strong><em>*wm*</em> 说：</strong></p>
+<p>每天要进来扫一眼有没有更新，666</p>
+<p><strong><em>*<a href="http://https:kukecloud.com/">super</a>*</em> 说：</strong></p>
+<p>非常好的干货，收藏了</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://celwk.com/">Can</a>*</em> 说：</strong></p>
+<p>回归了以前用 table 来创建网页的传统了吗 ????</p>
+<p><strong><em>*L9m*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用gabe的发言：</span><br></pre></td></tr></table></figure>
+
+<p>问个问题：<br>.container {<br>display: grid;<br>grid-template-columns: repeat(auto-fill, 33.33%);<br>}<br>container总宽度不固定，列均分为三，要实现item为正方形，<br>即高需要随宽变化，如何写？<br>如果还要加入固定的行间距呢？</p>
+</blockquote>
+<p>你这个的问题其实是想要高宽对应关系，grid 中并没有这种对应关系，你可以试试padding margin， 它们在垂直方向是基于宽度的。</p>
+<p><strong><em>*Newton*</em> 说：</strong></p>
+<p>兼容性是大问题呀，比flex兼容性还差，哪里敢用！</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://www.zhaohang.site/">blossom</a>*</em> 说：</strong></p>
+<p>@gabe：</p>
+<p>这样写<br>width:33.3%;<br>padding-bottom: 33.3%</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://www.nanqi.org/">菲律宾游学</a>*</em> 说：</strong></p>
+<p>个人理解：grid对于已知晓内容的元素而言比较方便，但是对于由后台或者其他方式获得的未知数量、尺寸的内容，自适应性不是特别好，最好的方式是结合使用，比如：对于电商商品详情而言，单个商品的基本内容（模板）布局可以使用grid布局，但是对于整个列表，使用flex布局会更好一些。</p>
+<p><strong><em>*galenjiang*</em> 说：</strong></p>
+<p>之前看了flex的教程，整理的很棒。这次又更新了grid，谢谢分享</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://blog.isluo.com/">Logic</a>*</em> 说：</strong></p>
+<p>适用于整体页面布局，<br>需求改动的时候也能快速作出变更。<br>得先考虑好分成几行几列，就跟以前用table一样</p>
+<p><strong><em>*Thinker*</em> 说：</strong></p>
+<p>一直觉得阮老师的文章可看性非常高！美中不足的是竟然没有回到顶部的功能，特别是这篇文章比较长，想重新回去看还得点刷新</p>
+<p><strong><em>*kevinliang*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用Thinker的发言：</span><br></pre></td></tr></table></figure>
+
+<p>一直觉得阮老师的文章可看性非常高！美中不足的是竟然没有回到顶部的功能，特别是这篇文章比较长，想重新回去看还得点刷新</p>
+</blockquote>
+<p>如果你是mac电脑的话，command + ↑ 一下就回去了。 windows的话自己研究</p>
+<p><strong><em>*abc*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用gabe的发言：</span><br></pre></td></tr></table></figure>
+
+<p>问个问题：<br>.container {<br>display: grid;<br>grid-template-columns: repeat(auto-fill, 33.33%);<br>}<br>container总宽度不固定，列均分为三，要实现item为正方形，<br>即高需要随宽变化，如何写？<br>如果还要加入固定的行间距呢？</p>
+</blockquote>
+<p>.container {<br>display: grid;<br>grid-template-columns: repeat(3,calc(100wh / 3));<br>grid-template-rows:calc(100wh / 3);<br>}</p>
+<p><strong><em>*lcc*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用Thinker的发言：</span><br></pre></td></tr></table></figure>
+
+<p>一直觉得阮老师的文章可看性非常高！美中不足的是竟然没有回到顶部的功能，特别是这篇文章比较长，想重新回去看还得点刷新</p>
+</blockquote>
+<p>试试键盘上的 【home】 键</p>
+<p><strong><em>*Pigpiyo*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用Thinker的发言：</span><br></pre></td></tr></table></figure>
+
+<p>一直觉得阮老师的文章可看性非常高！美中不足的是竟然没有回到顶部的功能，特别是这篇文章比较长，想重新回去看还得点刷新</p>
+</blockquote>
+<p>喜欢用鼠标的话可以装个插件，自定义鼠标右键手势，例如 按下右键 往下滑动再往上滑动 就会飞回顶部，还有前进后退切换标签页等功能</p>
+<p><strong><em>*ykkkkk*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用kevinliang的发言：</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果你是mac电脑的话，command + ↑ 一下就回去了。 windows的话自己研究</p>
+</blockquote>
+<p>windows 电脑 Home键不就可以直接返回顶部吗？</p>
+<p><strong><em>*水流山*</em> 说：</strong></p>
+<p>感谢分享，每周必看的哈</p>
+<p><strong><em>*x2r*</em> 说：</strong></p>
+<p>Grid 的花样可真多啊，感觉又强大又复杂</p>
+<p><strong><em>*但是*</em> 说：</strong></p>
+<p>阮老师，你好。你上面说：注意，设为网格布局以后，容器的float、display: inline-block、display: table-cell、vertical-align和column-*等设置都将失效。我试了一下啊，float设置并没有失效啊</p>
+<p><strong><em>*阮一峰*</em> 说：</strong></p>
+<p>@但是：谢谢指出，这里应该是容器的子元素（项目），我已经改过来了。</p>
+<p><strong><em>*mo*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用ykkkkk的发言：</span><br></pre></td></tr></table></figure>
+
+
+
+<p>windows 电脑 Home键不就可以直接返回顶部吗？</p>
+</blockquote>
+<p>正解，按home键一键回顶部！</p>
+<p><strong><em>*屮鱼*</em> 说：</strong></p>
+<p>千呼万唤始出来～感谢大佬</p>
+<p><strong><em>*k2*</em> 说：</strong></p>
+<p>grid布局bug有点多，如果子容器全是英文或者数字，如aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa，那超出父容器的宽度将会溢出，阮老师可以试试，有没有什么解决方法呢？</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://jackie.top/">王佳培</a>*</em> 说：</strong></p>
+<p>@九歌：</p>
+<p>150px 1fr 2fr, 应该代表的是第一列 150px 宽, 第二列和第三列以 1:2 的宽度比平分剩余的宽度.</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="https://nicolaszhao.com/">Nicolas</a>*</em> 说：</strong></p>
+<p>阮老师的这篇 CSS Grid 文章，是我看过最通俗易懂的！赞～</p>
+<p><strong><em>*gemini*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用Can的发言：</span><br></pre></td></tr></table></figure>
+
+<p>回归了以前用 table 来创建网页的传统了吗????</p>
+</blockquote>
+<p>被你一语道破天机</p>
+<p><strong><em>*Mubin*</em> 说：</strong></p>
+<p>@k2：</p>
+<p>overflow:hidden ?不行</p>
+<p><strong><em>*程好好*</em> 说：</strong></p>
+<p>@九歌：</p>
+<p>不是的，fr只是平分100vw-150px剩下的宽度</p>
+<p><strong><em>*会飞*</em> 说：</strong></p>
+<p>循序渐进，写的真好，喜欢看老师的文章</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="https://juejin.im/user/5ab0be1b51882555720835a0/posts">Va007</a>*</em> 说：</strong></p>
+<p>兼容性怎么样呢？而且感觉目前项目中大部分需求用不到grid布局，用这个感觉有些大材小用了（写起来麻烦）</p>
+<p><strong><em>*avocado*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用Va007的发言：</span><br></pre></td></tr></table></figure>
+
+<p>兼容性怎么样呢？而且感觉目前项目中大部分需求用不到grid布局，用这个感觉有些大材小用了（写起来麻烦）</p>
+</blockquote>
+<p>不是用不到，是你习惯了不用 grid，我现在公司的项目大量使用 grid 和 flex</p>
+<p><strong><em>*Klart*</em> 说：</strong></p>
+<p>flex布局和grid布局可以一起使用么！</p>
+<p><strong><em>*h*</em> 说：</strong></p>
+<p>个人觉得单轴布局更灵活吧，这种网格的需求不是特别大，而且用起来好繁琐了。</p>
+<p><strong><em>*超超的banana*</em> 说：</strong></p>
+<p>非常非常感谢您的分享，很受益，明天可以用得到。</p>
+<p><strong><em>*umc*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用frank的发言：</span><br></pre></td></tr></table></figure>
+
+<p>看起來只有 IE、EDGE 不支援</p>
+</blockquote>
+<p>ie11以上支持，这个就是面对未来的新浏览器</p>
+<p><strong><em>*来碗粥*</em> 说：</strong></p>
+<p>所以这是新出来的布局方式 未来浏览器的走势？</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://knoooooooow@github.com/">痴人的梦</a>*</em> 说：</strong></p>
+<p>flex布局刚弄明白。。。这又来一个<br>简单的阅读了一遍得出结论：不考虑兼容flex面临淘汰(用flex意味着不考虑兼容吧？<br>如果三维布局出来。。。是不是grid也面临淘汰<br>我真的不想学css了。。。。真的。。。。</p>
+<p><strong><em>*fizzy*</em> 说：</strong></p>
+<p>@abc：</p>
+<p>是 vw，使用这个单位可以做到响应式的正方形</p>
+<p><strong><em>*elaine*</em> 说：</strong></p>
+<p>@九歌：</p>
+<p>你可以自己尝试下，我照着demo尝试了，第三个确实是第二个的2倍</p>
+<p><strong><em>*江训良*</em> 说：</strong></p>
+<p>ReactNative中也不支持</p>
+<p><strong><em>*雷锋*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用Thinker的发言：</span><br></pre></td></tr></table></figure>
+
+<p>一直觉得阮老师的文章可看性非常高！美中不足的是竟然没有回到顶部的功能，特别是这篇文章比较长，想重新回去看还得点刷新</p>
+</blockquote>
+<p>按住鼠标滚轮往上拖就好了</p>
+<p><strong><em>*BlurryFace9*</em> 说：</strong></p>
+<p>在学网格的时候看烦了，随手谷歌了下搜到老师的文章，一字不差地看完了，收益匪浅，谢谢老师。</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://www.panqibao.com/">潘提保</a>*</em> 说：</strong></p>
+<p>非常棒，就是兼容性还不行。</p>
+<p><strong><em>*奥马巴*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用xulihang的发言：</span><br></pre></td></tr></table></figure>
+
+<p>感觉Grid的一个缺点就是要写CSS，而用Bootstrap只要处理HTML就行了，这样的一个好处是用程序动态生成HTML就可以完成布局而不用考虑CSS。</p>
+</blockquote>
+<p>弟弟这根本就不是一个层面上的东西</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="https://www.vitian.vip/">小王子</a>*</em> 说：</strong></p>
+<p>第一次看阮一峰老师的文章还是flex布局，一路走到全栈，刚看完Grid收获挺大的。不过阮老师，有一个小建议，就是代码对webApp或者各种浏览器内核等的兼容性问题，您有时间可以补充提示一下的。感恩~~</p>
+<p><strong><em>*秋名山*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用kevinliang的发言：</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果你是mac电脑的话，command + ↑ 一下就回去了。 windows的话自己研究</p>
+</blockquote>
+<p>ctrl+ home</p>
+<p>ctrl + end</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="https://twoyoung6.github.io/">twoyoung</a>*</em> 说：</strong></p>
+<p>很强大的布局方式；写的通俗易懂了。</p>
+<p><strong><em>*燃叶*</em> 说：</strong></p>
+<p>希望老师补充一下动画这块<br><a target="_blank" rel="noopener" href="https://css-tricks.com/snippets/css/complete-guide-grid/">https://css-tricks.com/snippets/css/complete-guide-grid/</a></p>
+<p><strong><em>*神奇的呆子*</em> 说：</strong></p>
+<p>请问一下“auto-fit”这个属性是不是没有介绍到</p>
+<p><strong><em>*不爱梨*</em> 说：</strong></p>
+<p>太棒了 今天才知道这个属性，flex就是看的阮老师的教程学习的，接下来要学习这个了</p>
+<p><strong><em>*react*</em> 说：</strong></p>
+<p>这个布局,大家不觉得做大屏数据可视化的时候,是非常有用的吗?</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://496568223@qq.com/">Roczhang</a>*</em> 说：</strong></p>
+<p>阮老师的文章一如既往地让人毛塞顿开，大赞！！！</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="https://weijiyang.github.io/">糖少</a>*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用九歌的发言：</span><br></pre></td></tr></table></figure>
+
+<p>阮老师，fr 关键字 第二个示例的图是不是错了<br>.container {<br>display: grid;<br>grid-template-columns: 150px 1fr 2fr;<br>}</p>
+<p>第二个应该和 150px 等宽吧</p>
+</blockquote>
+<p>三个参数是三列的意思 宽度减去150px三等分</p>
+<p><strong><em>*德玛西亚*</em> 说：</strong></p>
+<p>请教：为什么设置了justify-items:start 或 justify-self: start后，项目的背景颜色只有和字一样大小了。而不是之前的背景铺满单元格？</p>
+<p><strong><em>*吃货*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用ykkkkk的发言：</span><br></pre></td></tr></table></figure>
+
+
+
+<p>windows 电脑 Home键不就可以直接返回顶部吗？</p>
+</blockquote>
+<p>阿西吧 我试了一下 果然有重新往下拉了一遍</p>
+<p><strong><em>*Draven*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用九歌的发言：</span><br></pre></td></tr></table></figure>
+
+<p>阮老师，fr 关键字 第二个示例的图是不是错了<br>.container {<br>display: grid;<br>grid-template-columns: 150px 1fr 2fr;<br>}</p>
+<p>第二个应该和 150px 等宽吧</p>
+</blockquote>
+<p>我也这么感觉的，去老师给的演示网站试了下，第二个与150px等宽</p>
+<p><strong><em>*1*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用Newton的发言：</span><br></pre></td></tr></table></figure>
+
+<p>兼容性是大问题呀，比flex兼容性还差，哪里敢用！</p>
+</blockquote>
+<p>ie 不兼容,edge, safai,火狐都还好</p>
+<p><strong><em>*幸永旭*</em> 说：</strong></p>
+<p>我grid子元素中，添加了一个div，结果子元素就被撑开了，这个怎么解决呢？？</p>
+<p><strong><em>*xiao6*</em> 说：</strong></p>
+<p>但是如果每个grid网格项里面放了img，又照设计稿设置了固定宽高，又要做出那种最开始那张图不规则的九宫格布局，列宽、行宽、网格项数量又要重新计算，感觉还不如绝对定位那种传统的实现方式实现好。</p>
+<p><strong><em>*LeonCui*</em> 说：</strong></p>
+<p>04 年阿捷翻译了 《网站重构》 这本书，div布局从此替代了table布局，现在时隔15年，又回去了吗，看介绍，简单的布局远不如float简单，方便，复杂的布局和组件布局，也不够灵活，那个说bootstrap 100k的，你知道单单核心栅栏布局有几行代码吗？自己写过css框架吗？知道bootstrap的代码有几行是写组件的吗？最简单地写，一个12栏网格浮动布局，只要4行（类名除外，一行一句属性），就够了</p>
+<p><strong><em>*dly*</em> 说：</strong></p>
+<p>感谢阮老师，又学到新的知识了。不过我看到您上面关于:</p>
+<p>.container {<br>display: grid;<br>grid-template-columns: repeat(auto-fill, 100px);<br>}</p>
+<p>这里的 auto-fill，然后我点进代码里面看发现代码里面写的是 auto-fit哦，然后我两个属性都试了一遍，发现都可以自动换行。想请教一下阮老师是以哪个为准呢</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://无名小卒/">马叶云</a>*</em> 说：</strong></p>
+<p>我水土不服就服我的阮一峰哥哥，能不能留下你的QQ或者微信！我特别崇拜你！</p>
+<p><strong><em>*Louis*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用Neil Ning的发言：</span><br></pre></td></tr></table></figure>
+
+<p>能这么说，说明你很年轻啊，弟弟。</p>
+</blockquote>
+<p>未必吧，bootstrap的grid是一个已经集成好的方案，用起来确实比自己用grid写方便。 如果有一天bootstrap的grid也用css grid来实现了，你还会说这句话么。</p>
+<p><strong><em>*Louis*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用xiao6的发言：</span><br></pre></td></tr></table></figure>
+
+<p>但是如果每个grid网格项里面放了img，又照设计稿设置了固定宽高，又要做出那种最开始那张图不规则的九宫格布局，列宽、行宽、网格项数量又要重新计算，感觉还不如绝对定位那种传统的实现方式实现好。</p>
+</blockquote>
+<p>具体情况具体分析，这就是个工具。没必要比较flex float 和 grid哪个好。 哪个适合你的应用场景哪个就是好的。</p>
+<p><strong><em>*前端蔡徐坤*</em> 说：</strong></p>
+<p>边做笔记，边自己想着打了出来。感觉超级无敌方便，很强。<br>要是兼容性也处理的很好的话，真是解放了</p>
+<p><strong><em>*冰儿*</em> 说：</strong></p>
+<p>请教一下老师，grid-column: 1 / 3 在scss中运用时候被计算了，这该怎么处理啊</p>
+<p><strong><em>*路漫漫*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用九歌的发言：</span><br></pre></td></tr></table></figure>
+
+<p>阮老师，fr 关键字 第二个示例的图是不是错了<br>.container {<br>display: grid;<br>grid-template-columns: 150px 1fr 2fr;<br>}</p>
+<p>第二个应该和 150px 等宽吧</p>
+</blockquote>
+<p>此处的fr是对剩余宽度的比例分配</p>
+<p><strong><em>*第二钢协*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用hjia的发言：</span><br></pre></td></tr></table></figure>
+
+<p>可惜IE不支持，这样很难被项目采用啊</p>
+</blockquote>
+<p>这都啥年代了还兼容IE呢。。。IE早该被弃了，一般程序现在都不用兼容IE，比如有道云笔记。难道你在政府企业搞开发？</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="https://www.dffzmxj.com/">学神之女</a>*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用路过看看的发言：</span><br></pre></td></tr></table></figure>
+
+<p>兼容性如何呢？移动端可以用在实际项目中吗？</p>
+</blockquote>
+<p>刚刚有查caniuse，IE11都有部分支持，所以……可以放心用。</p>
+<p><strong><em>*狼仔*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用第二钢协的发言：</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这都啥年代了还兼容IE呢。。。IE早该被弃了，一般程序现在都不用兼容IE，比如有道云笔记。难道你在政府企业搞开发？</p>
+</blockquote>
+<p>政府企业为何首选IE啊，，喜欢她的开源还是喜欢她的漏洞</p>
+<p><strong><em>*武汉加油*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用any的发言：</span><br></pre></td></tr></table></figure>
+
+<p>这属性不是一般的多</p>
+</blockquote>
+<p><strong>边看边打代码做笔记做个两个小时！！太多了，到时候用起来还得好好掂量掂量</strong></p>
+<p><strong><em>*杠精*</em> 说：</strong></p>
+<p>感觉回到了表格布局年代…</p>
+<p><strong><em>*yqwoshuai*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用第二钢协的发言：</span><br></pre></td></tr></table></figure>
+
+<p>这都啥年代了还兼容IE呢。。。IE早该被弃了，一般程序现在都不用兼容IE，比如有道云笔记。难道你在政府企业搞开发？</p>
+</blockquote>
+<p>没办法，政府部门全部都是IE</p>
+<p><strong><em>*醉生梦死*</em> 说：</strong></p>
+<p>IE不兼容，蓝廋香菇。</p>
+<p><strong><em>*pippo*</em> 说：</strong></p>
+<p>请教阮大神及各位老师，如何实现 grid 分格，然后拖拽调整分格的尺寸？</p>
+<p><strong><em>*peter*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用xulihang的发言：</span><br></pre></td></tr></table></figure>
+
+<p>感觉Grid的一个缺点就是要写CSS，而用Bootstrap只要处理HTML就行了，这样的一个好处是用程序动态生成HTML就可以完成布局而不用考虑CSS。</p>
+</blockquote>
+<p>总想着用框架，不加深基本功。。。<br>框架那么多，出一个学一个，然后又觉得迷茫了，东西太多了，我也无话可说了</p>
+<p><strong><em>*gaoweb*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用xulihang的发言：</span><br></pre></td></tr></table></figure>
+
+<p>感觉Grid的一个缺点就是要写CSS，而用Bootstrap只要处理HTML就行了，这样的一个好处是用程序动态生成HTML就可以完成布局而不用考虑CSS。</p>
+</blockquote>
+<p>你这个说法就问题大了，CSS跟Bootstrap就不是等价的好吧，&amp;无语</p>
+<p><strong><em>*zxy*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用Roczhang的发言：</span><br></pre></td></tr></table></figure>
+
+<p>阮老师的文章一如既往地让人毛塞顿开，大赞！！！</p>
+</blockquote>
+<p>茅塞顿开</p>
+<p><strong><em>*wzw*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用狼仔的发言：</span><br></pre></td></tr></table></figure>
+
+
+
+<p>政府企业为何首选IE啊，，喜欢她的开源还是喜欢她的漏洞</p>
+</blockquote>
+<p>ZF的系统都是定制版的, IE是自带的, 不能随便装软件的</p>
+<p><strong><em>*骑毛驴赶巴黎*</em> 说：</strong></p>
+<p>@gabe：</p>
+<p>项目不设置高度，padding-top或者padding-bottom的值为100%，就可实现永远正方形</p>
+<p><strong><em>*北风萧萧雪花飘飘*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用xulihang的发言：</span><br></pre></td></tr></table></figure>
+
+<p>感觉Grid的一个缺点就是要写CSS，而用Bootstrap只要处理HTML就行了，这样的一个好处是用程序动态生成HTML就可以完成布局而不用考虑CSS。</p>
+</blockquote>
+<p>假如我某一个页面只需要简单的grid布局，我值当引入Bootstrap吗?”Bootstrap只要处理HTML就行了”那是因为库帮你处理了css。</p>
+<p><strong><em>*庞诗琪*</em> 说：</strong></p>
+<p>新手表示，很全面，爱了爱了。</p>
+<p><strong><em>*BIgFatStar*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用Thinker的发言：</span><br></pre></td></tr></table></figure>
+
+<p>一直觉得阮老师的文章可看性非常高！美中不足的是竟然没有回到顶部的功能，特别是这篇文章比较长，想重新回去看还得点刷新</p>
+</blockquote>
+<p>HOME键不就回到顶部了吗</p>
+<p><strong><em>*ww*</em> 说：</strong></p>
+<p>有快速让grid布局下盒子里的内容水平垂直居中的方法吗</p>
+<p><strong><em>*Jam.Zhu*</em> 说：</strong></p>
+<p>挺好用的，就是属性太多了。兼容也有待考量。</p>
+<p><strong><em>*Bad Luke*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用xulihang的发言：</span><br></pre></td></tr></table></figure>
+
+<p>感觉Grid的一个缺点就是要写CSS，而用Bootstrap只要处理HTML就行了，这样的一个好处是用程序动态生成HTML就可以完成布局而不用考虑CSS。</p>
+</blockquote>
+<p>grid是css，bootstrap是一个库，这有啥好比的？</p>
+<p><strong><em>*三剑客*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用冰儿的发言：</span><br></pre></td></tr></table></figure>
+
+<p>请教一下老师，grid-column: 1 / 3 在scss中运用时候被计算了，这该怎么处理啊</p>
+</blockquote>
+<p>你说的是缩写，你可以试着不缩写</p>
+<p><strong><em>*98年老阿姨*</em> 说：</strong></p>
+<p>新手小白学习了…感谢老师！不过博客这么长，真的不打算在旁边加一个导航目录的功能跳转功能吗？&gt;_</p>
+<p><strong><em>*Liusyuan*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用98年老阿姨的发言：</span><br></pre></td></tr></table></figure>
+
+<p>新手小白学习了…感谢老师！不过博客这么长，真的不打算在旁边加一个导航目录的功能跳转功能吗？&gt;_</p>
+</blockquote>
+<p>阮老师的文章一定要从头看到尾亚</p>
+<p><strong><em>*李无敌*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用mo的发言：</span><br></pre></td></tr></table></figure>
+
+
+
+<p>正解，按home键一键回顶部！</p>
+</blockquote>
+<p>非常感谢，我看到一半直接飞上去了！</p>
+<p><strong><em>*sy*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用k2的发言：</span><br></pre></td></tr></table></figure>
+
+<p>grid布局bug有点多，如果子容器全是英文或者数字，如 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ，那超出父容器的宽度将会溢出，阮老师可以试试，有没有什么解决方法呢？</p>
+</blockquote>
+<p>试下word-break:break-all？ 这个貌似跟grid没啥关系吧？？？</p>
+<p><strong><em>*东方易*</em> 说：</strong></p>
+<p>这种布局怎样嵌套？？<br>比如：做一个上下固定中间自适应的布局。中间自适应的部分再布局成上下固定中间自适应的。</p>
+<p><strong><em>*richard*</em> 说：</strong></p>
+<p>@gabe：</p>
+<p>gird-template-columus: repeat(3, 100vw/3);<br>子项：height: 100vw/3</p>
+<p><strong><em>*richard*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用东方易的发言：</span><br></pre></td></tr></table></figure>
+
+<p>这种布局怎样嵌套？？<br>比如：做一个上下固定中间自适应的布局。中间自适应的部分再布局成上下固定中间自适应的。</p>
+</blockquote>
+<p>grid-template-rows: 100px auto 100px;</p>
+<p><strong><em>*艾欧尼亚*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用德玛西亚的发言：</span><br></pre></td></tr></table></figure>
+
+<p>请教：为什么设置了justify-items:start 或 justify-self: start后，项目的背景颜色只有和字一样大小了。而不是之前的背景铺满单元格？</p>
+</blockquote>
+<p>同问，我也有这个疑问，align-items就没有这个问题呢。</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="http://mirrortom.date/">mirror</a>*</em> 说：</strong></p>
+<p>好文,看了多次了,写的简单明了而又详尽却不繁琐.</p>
+<p><strong><em>*Ameng404*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用muller_zhang的发言：</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果只是完成页面样式，用bootstrap（100k左右的css库）的成本是不是有点高</p>
+</blockquote>
+<p>更大的项目都用了bootstrap，小项目用那就更应该了呀，你这种逻辑是不对的</p>
+<p><strong><em>*朱*</em> 说：</strong></p>
+<p>比flex更强大,以后布局会会更快也更好</p>
+<p><strong><em>*yk*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用菲律宾游学的发言：</span><br></pre></td></tr></table></figure>
+
+<p>个人理解：grid对于已知晓内容的元素而言比较方便，但是对于由后台或者其他方式获得的未知数量、尺寸的内容，自适应性不是特别好，最好的方式是结合使用，比如：对于电商商品详情而言，单个商品的基本内容（模板）布局可以使用grid布局，但是对于整个列表，使用flex布局会更好一些。</p>
+</blockquote>
+<p>认同，对于固定布局的一些页面，使用grid可能更快一些。但是对于动态查询上来数据再布局，grid的自适应能力就差很多了，人工去算每一个元素的宽度高度，然后套入grid布局，工作量巨大。</p>
+<p><strong><em>*boide.gui*</em> 说：</strong></p>
+<p>个人使用这个开发移动端瀑布流图册，问题是对某些手机会出现混乱，我开发的时候使用的是华为手机开发的，测试的时候，华为，苹果，小米手机展示正常，open，vivo部分手机展示的效果出现了混乱。其他机型未测试。</p>
+<p><strong><em>*BodomLake*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用Thinker的发言：</span><br></pre></td></tr></table></figure>
+
+<p>一直觉得阮老师的文章可看性非常高！美中不足的是竟然没有回到顶部的功能，特别是这篇文章比较长，想重新回去看还得点刷新</p>
+</blockquote>
+<p>执行 document.documentElement.scrollTop = 0;</p>
+<p><strong><em>*利*</em> 说：</strong></p>
+<p>棚格布局可以用于PC吗，不知道能不能兼容到IE9</p>
+<p><strong><em>*林先生*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用周辉的发言：</span><br></pre></td></tr></table></figure>
+
+<p>grid 布局在 scrimba 上有免费的教程, 非常不错</p>
+</blockquote>
+<p>谢谢提醒，刚刚看了两集，感觉还不错。就是每次进去退出都会提醒你充钱 -_-…</p>
+<p><strong><em>*away*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用xulihang的发言：</span><br></pre></td></tr></table></figure>
+
+<p>感觉Grid的一个缺点就是要写CSS，而用Bootstrap只要处理HTML就行了，这样的一个好处是用程序动态生成HTML就可以完成布局而不用考虑CSS。</p>
+</blockquote>
+<p>你这比较的两个东西都不是一个层面。。</p>
+<p><strong><em>*络石*</em> 说：</strong></p>
+<p>grid-gap 属性受到内部item元素padding值影响</p>
+<p><strong><em>*isurplus*</em> 说：</strong></p>
+<p>加一个标题导航多好</p>
+<p><strong><em>*阿甘骑士*</em> 说：</strong></p>
+<p>从头读到尾，包括flex布局的文章，对这两种布局差不多算是熟悉了，感谢作者！</p>
+<p><strong><em>*袁德圣*</em> 说：</strong></p>
+<p>@九歌：</p>
+<p>应该不是的,按照写法应该有3列,其中第一列占用了150px 剩下两列 参数1fr+2fr 应该是3份 第一列占用1/3 第二列占用2/3 不知道是不是这样理解的</p>
+<p><strong><em>*百良西瓜*</em> 说：</strong></p>
+<p>3.2 (3) 最后一个图，第1行的宽度貌似不对，( ╯□╰ )</p>
+<p><strong><em>*百良西瓜*</em> 说：</strong></p>
+<p>留言最好能能按倒序排下，习惯 (￣▽￣)”</p>
+<p><strong><em>*why*</em> 说：</strong></p>
+<p>看完了，初学grid，谢谢博主</p>
+<p><strong><em>*Mess*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用muller_zhang的发言：</span><br></pre></td></tr></table></figure>
+
+<p>如果只是完成页面样式，用bootstrap（100k左右的css库）的成本是不是有点高</p>
+</blockquote>
+<p>用 bootstrap 仅仅是方便维护而已。</p>
+<p><strong><em>*毛绒绒的大腿*</em> 说：</strong></p>
+<p>都看完，有没有人能把概述中说的 Grid 布局的拿手好戏的图用grid方式写出来的</p>
+<p><strong><em>*ThomasLiew*</em> 说：</strong></p>
+<p>这个用来写瀑布流就不用计算高度平流对齐了,一行搞定</p>
+<p><strong><em>*大西瓜*</em> 说：</strong></p>
+<p>自从用了grid，连margin和padding都不想用了，而且chrome调试时还有辅助线，真香！</p>
+<p><strong><em>*chuan*</em> 说：</strong></p>
+<p>感谢作者。<br>概述图我的实现：<a target="_blank" rel="noopener" href="https://codepen.io/huqifj/pen/GRWPWPL">https://codepen.io/huqifj/pen/GRWPWPL</a></p>
+<p><strong><em>*cong99*</em> 说：</strong></p>
+<p>看了老师的这篇文章，前后不到15分钟，觉得这15分钟感觉就像一块钱买了一件羽绒服一样，物超所值啊，真正的“老师”，言简意赅，图文并茂，深入浅出，真乃“传道受业解惑也”！</p>
+<p><strong><em>*<a target="_blank" rel="noopener" href="https://www.fhlz.top/">小峰酱</a>*</em> 说：</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">引用k2的发言：</span><br></pre></td></tr></table></figure>
+
+<p>grid布局bug有点多，如果子容器全是英文或者数字，如aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa，那超出父容器的宽度将会溢出，阮老师可以试试，有没有什么解决方法呢？</p>
+</blockquote>
+<p>字母都是这样的，其他的很多容器都会超出，用汉字就不会有这个问题</p>
+<h2 id="我要发表看法"><a href="#我要发表看法" class="headerlink" title="我要发表看法"></a>我要发表看法</h2><p>您的留言 （HTML标签部分可用）</p>
+<p>您的大名：</p>
+<p> «-必填</p>
+<p>电子邮件：</p>
+<p> «-必填，不公开</p>
+<p>个人网址：</p>
+<p> «-我信任你，不会填写广告链接</p>
+<p>记住个人信息？</p>
+<p> «- 点击按钮</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/202001/bg2020013101.jpg" alt="微信扫描"></p>
+<p><a target="_blank" rel="noopener" href="https://weibo.com/ruanyf">Weibo</a> | <a target="_blank" rel="noopener" href="https://twitter.com/ruanyf">Twitter</a> | <a target="_blank" rel="noopener" href="https://github.com/ruanyf">GitHub</a></p>
+<p>Email: [<a href="mailto:&#121;&#x69;&#102;&#101;&#x6e;&#103;&#46;&#x72;&#x75;&#x61;&#x6e;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#121;&#x69;&#102;&#101;&#x6e;&#103;&#46;&#x72;&#x75;&#x61;&#x6e;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#x6d;</a>](</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">dimples</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/08/04/CSS-Grid/">http://example.com/2021/08/04/CSS-Grid/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">dimplesの酒窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/css/">css</a><a class="post-meta__tags" href="/tags/css%E5%B8%83%E5%B1%80/">css布局</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/08/04/interview/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">面试题及答案</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/08/04/interview/" title="面试题及答案"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-04</div><div class="title">面试题及答案</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yx-dimples/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">dimples</div><div class="author-info__description">好运加倍</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yx-dimples" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="card-widget" id="card-poem"><div id="poem_sentence"></div><div id="poem_info"><div id="poem_dynasty"></div><div id="poem_author"></div></div></div><script src="https://cdn.jsdelivr.net/gh/zhheo/JS-Heo@main/poem/jinrishici.js" charset="utf-8"></script><script type="text/javascript">jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var author = document.querySelector("#poem_author")
+    var dynasty = document.querySelector("#poem_dynasty")
+
+    var sentenceText = result.data.content
+    sentenceText = sentenceText.substr(0, sentenceText.length - 1);
+    sentence.innerHTML = sentenceText
+    dynasty.innerHTML = result.data.origin.dynasty
+    author.innerHTML = result.data.origin.author + '《' + result.data.origin.title + '》'
+});</script><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E5%92%8C%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.1.</span> <span class="toc-text">容器和项目</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%A1%8C%E5%92%8C%E5%88%97"><span class="toc-number">2.2.</span> <span class="toc-text">行和列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8D%95%E5%85%83%E6%A0%BC"><span class="toc-number">2.3.</span> <span class="toc-text">单元格</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BD%91%E6%A0%BC%E7%BA%BF"><span class="toc-number">2.4.</span> <span class="toc-text">网格线</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E5%B1%9E%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">容器属性</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#display-grid%E6%8C%87%E5%AE%9A%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8%E9%87%87%E7%94%A8%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80%E3%80%82"><span class="toc-number">3.1.</span> <span class="toc-text">display: grid指定一个容器采用网格布局。</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#grid-template-columns-%E5%B1%9E%E6%80%A7%EF%BC%8C-grid-template-rows-%E5%B1%9E%E6%80%A7"><span class="toc-number">3.2.</span> <span class="toc-text">grid-template-columns 属性， grid-template-rows 属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#grid-row-gap-%E5%B1%9E%E6%80%A7%EF%BC%8C-grid-column-gap-%E5%B1%9E%E6%80%A7%EF%BC%8C-grid-gap-%E5%B1%9E%E6%80%A7"><span class="toc-number">3.3.</span> <span class="toc-text">grid-row-gap 属性， grid-column-gap 属性， grid-gap 属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#grid-template-areas-%E5%B1%9E%E6%80%A7"><span class="toc-number">3.4.</span> <span class="toc-text">grid-template-areas 属性</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-grid-auto-flow-%E5%B1%9E%E6%80%A7"><span class="toc-number"></span> <span class="toc-text">3.5 grid-auto-flow 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-justify-items-%E5%B1%9E%E6%80%A7%EF%BC%8C-align-items-%E5%B1%9E%E6%80%A7%EF%BC%8C-place-items-%E5%B1%9E%E6%80%A7"><span class="toc-number"></span> <span class="toc-text">3.6 justify-items 属性， align-items 属性， place-items 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-justify-content-%E5%B1%9E%E6%80%A7%EF%BC%8C-align-content-%E5%B1%9E%E6%80%A7%EF%BC%8C-place-content-%E5%B1%9E%E6%80%A7"><span class="toc-number"></span> <span class="toc-text">3.7 justify-content 属性， align-content 属性， place-content 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-grid-auto-columns-%E5%B1%9E%E6%80%A7%EF%BC%8C-grid-auto-rows-%E5%B1%9E%E6%80%A7"><span class="toc-number"></span> <span class="toc-text">3.8 grid-auto-columns 属性， grid-auto-rows 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-grid-template-%E5%B1%9E%E6%80%A7%EF%BC%8C-grid-%E5%B1%9E%E6%80%A7"><span class="toc-number"></span> <span class="toc-text">3.9 grid-template 属性， grid 属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%A1%B9%E7%9B%AE%E5%B1%9E%E6%80%A7"><span class="toc-number"></span> <span class="toc-text">四、项目属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-grid-column-start-%E5%B1%9E%E6%80%A7%EF%BC%8C-grid-column-end-%E5%B1%9E%E6%80%A7%EF%BC%8C-grid-row-start-%E5%B1%9E%E6%80%A7%EF%BC%8C-grid-row-end-%E5%B1%9E%E6%80%A7"><span class="toc-number"></span> <span class="toc-text">4.1 grid-column-start 属性， grid-column-end 属性， grid-row-start 属性， grid-row-end 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-grid-column-%E5%B1%9E%E6%80%A7%EF%BC%8C-grid-row-%E5%B1%9E%E6%80%A7"><span class="toc-number"></span> <span class="toc-text">4.2 grid-column 属性， grid-row 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-grid-area-%E5%B1%9E%E6%80%A7"><span class="toc-number"></span> <span class="toc-text">4.3 grid-area 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-justify-self-%E5%B1%9E%E6%80%A7%EF%BC%8C-align-self-%E5%B1%9E%E6%80%A7%EF%BC%8C-place-self-%E5%B1%9E%E6%80%A7"><span class="toc-number"></span> <span class="toc-text">4.4 justify-self 属性， align-self 属性， place-self 属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-number"></span> <span class="toc-text">五、参考链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E4%BF%A1%E6%81%AF"><span class="toc-number"></span> <span class="toc-text">文档信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E7%AB%A0"><span class="toc-number"></span> <span class="toc-text">相关文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%95%99%E8%A8%80%EF%BC%88138%E6%9D%A1%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">留言（138条）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E8%A6%81%E5%8F%91%E8%A1%A8%E7%9C%8B%E6%B3%95"><span class="toc-number"></span> <span class="toc-text">我要发表看法</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/08/04/CSS-Grid/" title="CSS Grid 网格布局教程"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS Grid 网格布局教程"/></a><div class="content"><a class="title" href="/2021/08/04/CSS-Grid/" title="CSS Grid 网格布局教程">CSS Grid 网格布局教程</a><time datetime="2021-08-04T02:13:04.955Z" title="发表于 2021-08-04 10:13:04">2021-08-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/04/interview/" title="面试题及答案"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试题及答案"/></a><div class="content"><a class="title" href="/2021/08/04/interview/" title="面试题及答案">面试题及答案</a><time datetime="2021-08-04T02:01:14.210Z" title="发表于 2021-08-04 10:01:14">2021-08-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/04/vue-note/" title="vue学习笔记-实现一个分页组件"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue学习笔记-实现一个分页组件"/></a><div class="content"><a class="title" href="/2021/08/04/vue-note/" title="vue学习笔记-实现一个分页组件">vue学习笔记-实现一个分页组件</a><time datetime="2021-08-04T01:51:09.282Z" title="发表于 2021-08-04 09:51:09">2021-08-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/04/Vue-comm_com/" title="Vue 组件间通信六种方式"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue 组件间通信六种方式"/></a><div class="content"><a class="title" href="/2021/08/04/Vue-comm_com/" title="Vue 组件间通信六种方式">Vue 组件间通信六种方式</a><time datetime="2021-08-04T01:30:54.018Z" title="发表于 2021-08-04 09:30:54">2021-08-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/04/vue-lifeCycle/" title="vue生命周期"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue生命周期"/></a><div class="content"><a class="title" href="/2021/08/04/vue-lifeCycle/" title="vue生命周期">vue生命周期</a><time datetime="2021-08-04T01:18:17.813Z" title="发表于 2021-08-04 09:18:17">2021-08-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By dimples</div><div class="footer_custom_text"><span id="runtime"></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})
+setTimeout(function(){preloader.endLoading();}, 3000);</script></div><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/flipcountdown.js"></script><script data-pjax src="/js/runtime.js"></script><script async src="//at.alicdn.com/t/font_2264842_3izu8i5eoc2.js"></script><div><canvas id="snow" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;pointer-events:none"></canvas></div><script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script><script async type="text/javascript" src="https://cdn.jsdelivr.net/gh/Candinya/Kratos-Rebirth@latest/source/js/snow.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?yx-dimples";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="yx-dimples";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
